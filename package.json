@@ -14,10 +14,15 @@
   },
   "keywords": [
     "tailwindcss",
+    "plugin",
     "radix",
-    "plugin"
+    "react"
   ],
-  "author": "ecklf",
+  "author": {
+    "email": "ecklf@icloud.com",
+    "name": "Florentin Eckl",
+    "url": "https://ecklf.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ecklf/tailwindcss-radix/issues"
