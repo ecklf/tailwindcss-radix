@@ -1,15 +1,9 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        sky: colors.sky,
-        cyan: colors.cyan,
-      },
       keyframes: {
         "scale-in": {
           "0%": { opacity: 0, transform: "scale(0)" },
