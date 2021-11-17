@@ -1,0 +1,32 @@
+{
+  "name": "tailwindcss-radix",
+  "version": "1.0.0",
+  "description": "TailwindCSS plugin that helps styling radix state",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecklf/tailwindcss-radix.git"
+  },
+  "keywords": [
+    "tailwindcss",
+    "radix",
+    "plugin"
+  ],
+  "author": "ecklf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecklf/tailwindcss-radix/issues"
+  },
+  "homepage": "https://github.com/ecklf/tailwindcss-radix#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.4.4"
+  }
+}
