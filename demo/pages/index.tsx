@@ -81,13 +81,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+      <main className="flex flex-col items-center justify-center flex-1 w-full text-center">
         <div className="relative inline-block text-left">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger
               className={cx(
                 "radix-state-open:bg-gray-800",
-                "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               )}
             >
               Dropdown
