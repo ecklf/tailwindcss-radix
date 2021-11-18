@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
+[![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
+
 # TailwindCSS Radix
 
 TailwindCSS plugin that helps styling radix state.
