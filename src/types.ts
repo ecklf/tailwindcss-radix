@@ -13,6 +13,7 @@ interface Helpers {
 
 interface PluginOptions {
   variantPrefix?: string;
+  skipAttributeNames?: boolean;
 }
 
 declare module "tailwindcss";

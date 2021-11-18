@@ -6,6 +6,12 @@ const dataAttributes = {
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
+  if (options.variantPrefix === "" && options.skipAttributeNames === true) {
+    throw new Error(
+      "tailwindcss-radix: Cannot use empty `variantPrefix` while `skipAttributeNames` is enabled"
+    );
+  }
+
   const variantPrefix = options
     ? options.variantPrefix === ""
       ? ""
@@ -18,16 +24,30 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     },
   });
 
-  Object.keys(dataAttributes).forEach((k) => {
-    dataAttributes[k as keyof typeof dataAttributes].forEach((v) => {
-      let variantName = `${variantPrefix}${k}-${v}`;
-      let selector = `data-${k}="${v}"`;
+  Object.keys(dataAttributes).forEach((attributeName) => {
+    dataAttributes[attributeName as keyof typeof dataAttributes].forEach(
+      (attributeValue) => {
+        let variantName = options.skipAttributeNames
+          ? `${variantPrefix}${attributeValue}`
+          : `${variantPrefix}${attributeName}-${attributeValue}`;
+        let selector = `data-${attributeName}="${attributeValue}"`;
 
-      addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }: { className: string }) => {
-          return `.${e(`${variantName}${separator}${className}`)}[${selector}]`;
+        addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
+          modifySelectors(({ className }: { className: string }) => {
+            return `.${e(
+              `${variantName}${separator}${className}`
+            )}[${selector}]`;
+          });
         });
-      });
-    });
+
+        addVariant(`group-${variantName}`, ({ modifySelectors, separator }) => {
+          modifySelectors(({ className }: { className: string }) => {
+            return `.group[${selector}] .${e(
+              `group-${variantName}${separator}${className}`
+            )}`;
+          });
+        });
+      }
+    );
   });
 });
