@@ -110,7 +110,7 @@ const App = () => {
           <Accordion.Trigger className="group">
             <div className="flex items-center">
               Item 1
-              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-radix-state-open:rotate-180" />
             </div>
           </Accordion.Trigger>
         </Accordion.Header>
@@ -121,7 +121,7 @@ const App = () => {
           <Accordion.Trigger className="group">
             <div className="flex items-center">
               Item 2
-              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-radix-state-open:rotate-180" />
             </div>
           </Accordion.Trigger>
         </Accordion.Header>
