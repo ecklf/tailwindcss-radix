@@ -31,17 +31,43 @@ module.exports = {
     // ...
   },
   plugins: [
-      // Passing no configuration will add `radix` to all generated classes. E.g. `radix-state-open`
+      // Initialize with default values (see options below)
       require("tailwindcss-radix")(),
-      // You can pass a custom prefix like this:
-      require("tailwindcss-radix")({
-        variantPrefix: "rdx"  
-      })
   ],
 };
 ```
 
+### Options
+
+```ts
+require("tailwindcss-radix")({
+  // Default: `"radix`
+  variantPrefix: "rdx",
+  // Default: `false`
+  // Enabling cannot be used in combination with `variantPrefix: ""`
+  skipAttributeNames: false
+})
+```
+
+```ts
+// Example 1: Generates `rdx-[state/side]-*` utilities for `data-[state/side]="*"`
+variantPrefix: "rdx",
+skipAttributeNames: false
+
+// Example 2: Generates `[state/side]-*` utilities for `data-[state/side]="*"`
+variantPrefix: "",
+skipAttributeNames: false
+
+// Example 3: Generates `rdx-*` utilities for `data-[state/side]="*"`
+variantPrefix: "rdx",
+skipAttributeNames: true
+```
+
 ### Styling state
+
+#### Basic usage
+
+This plugin works with CSS attribute selectors. Use the utilities based on the `data-*` attribute added by radix.
 
 ```tsx
 import React from "react";
@@ -63,19 +89,57 @@ const App = () => {
 export default App;
 ```
 
+#### Accessing parent state
+
+Sometimes we want to access state in the child of the trigger element. This can be achieved by using the `group` utilities.
+
+The below example shows how you can apply a conditional transform for a radix Accordion:
+
+```tsx
+import React from "react";
+import * as DropdownMenu from "@radix-ui/react-accordion";
+
+const App = () => {
+  return (
+    <Accordion.Root type="multiple">
+      <Accordion.Item value="item-1">
+        <Accordion.Header>
+          <Accordion.Trigger className="group">
+            <div className="flex items-center">
+              Item 1
+              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+            </div>
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Content>Content 1</Accordion.Content>
+      </Accordion.Item>
+      <Accordion.Item value="item-2">
+        <Accordion.Header>
+          <Accordion.Trigger className="group">
+            <div className="flex items-center">
+              Item 2
+              <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+            </div>
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Content>Content 2</Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root> 
+  );
+};
+
+export default App;
+```
+
 ### Animating from origin
 
-This plugin also generates the following class to transform from the menu content position origin:
+This plugin also generates the following class to transform from the menu content position origin.
 
 ```css
 .origin-radix-dropdown {
     transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 }
 ```
-
-## Limitations
-
-Classes will only work on the element with the radix `data-xyz` attribute as of now.
 
 ## License
 
