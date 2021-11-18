@@ -86,7 +86,7 @@ export default function Home() {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger
               className={cx(
-                "radix-state-open:bg-gray-800",
+                "rdx-state-open:bg-gray-800",
                 "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               )}
             >
@@ -101,7 +101,7 @@ export default function Home() {
               align="end"
               sideOffset={10}
               className={cx(
-                " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
+                " rdx-side-bottom:animate-slide-down rdx-side-top:animate-slide-up",
                 "w-56 px-1 py-1 bg-white rounded-lg shadow-md"
               )}
             >
@@ -177,7 +177,7 @@ export default function Home() {
                 </DropdownMenu.TriggerItem>
                 <DropdownMenu.Content
                   className={cx(
-                    "radix-side-right:animate-scale-in origin-radix-dropdown",
+                    "rdx-side-right:animate-scale-in origin-rdx-dropdown",
                     "px-1 py-1 w-full bg-white text-sm rounded-md shadow-md"
                   )}
                 >
