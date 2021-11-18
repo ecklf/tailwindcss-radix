@@ -30,7 +30,6 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-radix")({
-      // Passing no options will use `radix`
       variantPrefix: "rdx",
     }),
   ],
