@@ -12,7 +12,7 @@ import {
   Link2Icon,
   MixerHorizontalIcon,
   PersonIcon,
-  TransparencyGridIcon,
+  TransparencyGridIcon
 } from "@radix-ui/react-icons";
 import cx from "classnames";
 import Head from "next/head";
@@ -82,17 +82,45 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col items-center justify-center flex-1 w-full text-center">
+        {/* <Accordion.Root type="multiple">
+          <Accordion.Item value="item-1">
+            <Accordion.Header>
+              <Accordion.Trigger className="group">
+                <div className="flex items-center">
+                  Item 1
+                  <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+                </div>
+              </Accordion.Trigger>
+            </Accordion.Header>
+            <Accordion.Content>Content 1</Accordion.Content>
+          </Accordion.Item>
+          <Accordion.Item value="item-2">
+            <Accordion.Header>
+              <Accordion.Trigger className="group">
+                <div className="flex items-center">
+                  Item 2
+                  <ChevronDownIcon className="w-5 h-5 ml-2 transform group-state-open:rotate-180" />
+                </div>
+              </Accordion.Trigger>
+            </Accordion.Header>
+            <Accordion.Content>Content 2</Accordion.Content>
+          </Accordion.Item>
+        </Accordion.Root> */}
+
         <div className="relative inline-block text-left">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger
               className={cx(
-                "rdx-state-open:bg-gray-800",
+                "rdx-state-open:bg-gray-800 group",
                 "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               )}
             >
               Dropdown
               <ChevronDownIcon
-                className={cx("w-5 h-5 ml-2 -mr-1 text-white")}
+                className={cx(
+                  "group-rdx-state-open:rotate-180 transform duration-300 ease-in-out",
+                  "w-5 h-5 ml-2 -mr-1 text-white"
+                )}
                 aria-hidden="true"
               />
             </DropdownMenu.Trigger>
