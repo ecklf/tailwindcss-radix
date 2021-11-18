@@ -44,7 +44,7 @@ module.exports = {
 
 ```ts
 require("tailwindcss-radix")({
-  // Default: `"radix`
+  // Default: `radix`
   variantPrefix: "rdx",
   // Default: `false`
   // Enabling cannot be used in combination with `variantPrefix: ""`
