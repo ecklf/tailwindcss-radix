@@ -19,10 +19,16 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
       : `${options.variantPrefix}-`
     : "radix-";
 
-  addUtilities({
-    [`.origin-${variantPrefix}dropdown`]: {
-      "transform-origin": "var(--radix-dropdown-menu-content-transform-origin)",
-    },
+  const transformOrigins = [
+    "dropdown",
+  ];
+
+  transformOrigins.forEach((transformOrigin) => {
+    addUtilities({
+      [`.origin-${variantPrefix}${transformOrigin}`]: {
+        "transform-origin": `var(--radix-${transformOrigin}-content-transform-origin)`,
+      },
+    });
   });
 
   Object.keys(dataAttributes).forEach((attributeName) => {
