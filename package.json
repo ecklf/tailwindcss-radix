@@ -3,10 +3,9 @@
   "version": "1.2.0",
   "description": "TailwindCSS plugin that helps styling radix state",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist/ && tsc",
+    "build": "rimraf dist/ && tsc --removeComments",
     "release": "release-it"
   },
   "repository": {

@@ -1,3 +1,5 @@
+declare module "tailwindcss";
+
 interface Helpers {
   addUtilities(...args: any[]): any;
   addComponents(...args: any[]): any;
@@ -15,8 +17,6 @@ interface PluginOptions {
   variantPrefix?: string;
   skipAttributeNames?: boolean;
 }
-
-declare module "tailwindcss";
 
 declare module "tailwindcss/plugin" {
   const withOptions: (
