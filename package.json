@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist/ && tsc"
+    "build": "rimraf dist/ && tsc",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -30,8 +31,19 @@
   "homepage": "https://github.com/ecklf/tailwindcss-radix#readme",
   "devDependencies": {
     "@types/node": "^16.11.7",
+    "release-it": "^14.11.7",
     "rimraf": "^3.0.2",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.4.4"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}",
+      "requireCleanWorkingDir": false
+    },
+    "github": {
+      "release": true
+    }
   }
 }
