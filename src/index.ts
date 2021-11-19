@@ -20,7 +20,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     : "radix-";
 
   const transformOrigins = [
-    "dropdown",
+    "dropdown-menu",
   ];
 
   transformOrigins.forEach((transformOrigin) => {

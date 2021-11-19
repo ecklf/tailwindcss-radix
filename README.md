@@ -139,7 +139,7 @@ export default App;
 This plugin also generates the following class to transform from the menu content position origin.
 
 ```css
-.origin-radix-dropdown {
+.origin-radix-dropdown-menu {
     transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 }
 ```

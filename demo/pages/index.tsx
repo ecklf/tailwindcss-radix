@@ -12,7 +12,7 @@ import {
   Link2Icon,
   MixerHorizontalIcon,
   PersonIcon,
-  TransparencyGridIcon
+  TransparencyGridIcon,
 } from "@radix-ui/react-icons";
 import cx from "classnames";
 import Head from "next/head";
@@ -205,7 +205,7 @@ export default function Home() {
                 </DropdownMenu.TriggerItem>
                 <DropdownMenu.Content
                   className={cx(
-                    "rdx-side-right:animate-scale-in origin-rdx-dropdown",
+                    "rdx-side-right:animate-scale-in origin-rdx-dropdown-menu",
                     "px-1 py-1 w-full bg-white text-sm rounded-md shadow-md"
                   )}
                 >
