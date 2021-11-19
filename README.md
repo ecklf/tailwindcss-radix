@@ -94,7 +94,7 @@ export default App;
 
 #### Accessing parent state
 
-Sometimes we want to access state in the child of the trigger element. This can be achieved by using the `group` utilities.
+Sometimes we want to access state in the child of the trigger element. This can be achieved by using the `group-*` utilities.
 
 The below example shows how you can apply a conditional transform for a radix Accordion:
 
