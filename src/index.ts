@@ -3,6 +3,7 @@ import plugin from "tailwindcss/plugin";
 const dataAttributes = {
   state: ["open", "close"],
   side: ["top", "bottom", "left", "right"],
+  orientation: ["horizontal", "vertical"],
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
