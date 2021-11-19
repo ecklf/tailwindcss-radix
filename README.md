@@ -47,7 +47,7 @@ require("tailwindcss-radix")({
   // Default: `radix`
   variantPrefix: "rdx",
   // Default: `false`
-  // Enabling cannot be used in combination with `variantPrefix: ""`
+  // Cannot be enabled in combination with `variantPrefix: ""`
   skipAttributeNames: false
 })
 ```
@@ -94,9 +94,9 @@ export default App;
 
 #### Accessing parent state
 
-Sometimes we want to access state in the child of the trigger element. This can be achieved by using the `group-*` utilities.
+Sometimes we want to access state in the child of the trigger element. This can be achieved by using `group-*` utilities.
 
-The below example shows how you can apply a conditional transform for a radix Accordion:
+The below example shows how you can apply a conditional transform for a radix `Accordion`:
 
 ```tsx
 import React from "react";
