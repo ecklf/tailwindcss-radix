@@ -2647,10 +2647,10 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-tailwindcss-radix@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss-radix/-/tailwindcss-radix-1.1.2.tgz#18678288f5a6cb56d9b37e77832f0aa70f6acbd2"
-  integrity sha512-1rE+XJGgJmNFMMqpj7CawLjc2uHIZVX+0Nz5HDqWxWur3PmTNLqF8pFo/sofRZMKi/fQFn1VNU+vGkQKglh3fA==
+tailwindcss-radix@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-radix/-/tailwindcss-radix-1.2.0.tgz#14f1e7184f0e1c6e8d4f2803f79a300a3a9da488"
+  integrity sha512-cxm2mai9H3nqHP7KT1OE5DceQ0gIoyz0tTJZZUeir62UZn544ciN/LfJX3bZxy09xnSuhUgUggWP10KCcpnSLg==
 
 tailwindcss@^2.2.4:
   version "2.2.19"
