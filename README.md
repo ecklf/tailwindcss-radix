@@ -136,11 +136,27 @@ export default App;
 
 ### Animating from origin
 
-This plugin also generates the following class to transform from the menu content position origin.
+This plugin also generates the following `origin-*` utilities to transform from the content position origin.
 
 ```css
 .origin-radix-dropdown-menu {
     transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+
+.origin-radix-hover-card {
+    transform-origin: var(--radix-hover-card-content-transform-origin);
+}
+
+.origin-radix-context-menu {
+    transform-origin: var(--radix-context-menu-content-transform-origin);
+}
+
+.origin-radix-popover {
+    transform-origin: var(--radix-popover-content-transform-origin);
+}
+
+.origin-radix-tooltip {
+    transform-origin: var(--radix-tooltip-content-transform-origin);
 }
 ```
 
