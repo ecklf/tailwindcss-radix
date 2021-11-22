@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 
 const dataAttributes = {
-  state: ["open", "close"],
+  state: ["open", "close", "active"],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
 };
@@ -25,12 +25,14 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   // `--radix-context-menu-content-transform-origin`,
   // `--radix-popover-content-transform-origin`,
   // `--radix-tooltip-content-transform-origin`,
+  // `--radix-tabs-content-transform-origin`,
   const transformOrigins = [
     "dropdown-menu",
     "hover-card",
     "context-menu",
     "popover",
     "tooltip",
+    "tabs",
   ];
 
   transformOrigins.forEach((transformOrigin) => {
