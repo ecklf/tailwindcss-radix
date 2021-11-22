@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 
 const dataAttributes = {
-  state: ["open", "close", "active"],
+  state: ["open", "close", "active", "inactive"],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
 };
