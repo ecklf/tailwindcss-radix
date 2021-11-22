@@ -506,10 +506,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
-"@types/react@^17.0.35":
-  version "17.0.35"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.35.tgz#217164cf830267d56cd1aec09dcf25a541eedd4c"
-  integrity sha512-r3C8/TJuri/SLZiiwwxQoLAoavaczARfT9up9b4Jr65+ErAUX3MIkU0oMOQnrpfgHme8zIqZLX7O5nnjm5Wayw==
+"@types/react@^17.0.36":
+  version "17.0.36"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.36.tgz#0d81e0e2419e6a8e9ba6af5e3a0608e70835d7d1"
+  integrity sha512-CUFUp01OdfbpN/76v4koqgcpcRGT3sYOq3U3N6q0ZVGcyeP40NUdVU+EWe3hs34RNaTefiYyBzOpxBBidCc5zw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -2647,10 +2647,10 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-tailwindcss-radix@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss-radix/-/tailwindcss-radix-1.2.0.tgz#14f1e7184f0e1c6e8d4f2803f79a300a3a9da488"
-  integrity sha512-cxm2mai9H3nqHP7KT1OE5DceQ0gIoyz0tTJZZUeir62UZn544ciN/LfJX3bZxy09xnSuhUgUggWP10KCcpnSLg==
+tailwindcss-radix@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-radix/-/tailwindcss-radix-1.3.0.tgz#3e15df3869a16841fecd9c1aef2b8f719e646647"
+  integrity sha512-on2YQmi3HT+AL0lICSt73YPpeh8v+YcUWxskSstC1tIcTF0WPgk4DLrnDSWuiFASgcROPkRlaEB9hkBpzPFQ9A==
 
 tailwindcss@^2.2.4:
   version "2.2.19"
