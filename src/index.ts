@@ -25,14 +25,12 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   // `--radix-context-menu-content-transform-origin`,
   // `--radix-popover-content-transform-origin`,
   // `--radix-tooltip-content-transform-origin`,
-  // `--radix-tabs-content-transform-origin`,
   const transformOrigins = [
     "dropdown-menu",
     "hover-card",
     "context-menu",
     "popover",
     "tooltip",
-    "tabs",
   ];
 
   transformOrigins.forEach((transformOrigin) => {
