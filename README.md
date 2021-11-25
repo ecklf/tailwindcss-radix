@@ -70,7 +70,7 @@ skipAttributeNames: true
 
 #### Basic usage
 
-This plugin works with CSS attribute selectors. Use the utilities based on the `data-*` attribute added by radix.
+This plugin works with CSS attribute selectors. Use the variants based on the `data-*` attribute added by radix.
 
 ```tsx
 import React from "react";
@@ -94,7 +94,7 @@ export default App;
 
 #### Accessing parent state
 
-Sometimes we want to access state in the child of the trigger element. This can be achieved by using `group-*` utilities.
+Sometimes we want to access state in the child of the trigger element. This can be achieved by adding the `group` class to the parent element and the `group-*` variants on the child element.
 
 The below example shows how you can apply a conditional transform for a radix `Accordion`:
 
