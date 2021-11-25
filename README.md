@@ -3,8 +3,7 @@
 
 # TailwindCSS Radix
 
-Adds utilities and variants for styling Radix UI state
-
+Utilities and variants for styling Radix state
 ## Installation
 
 ### yarn

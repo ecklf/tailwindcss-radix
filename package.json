@@ -1,7 +1,7 @@
 {
   "name": "tailwindcss-radix",
   "version": "1.3.0",
-  "description": "Adds utilities and variants for styling Radix UI state",
+  "description": "Utilities and variants for styling Radix state",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
