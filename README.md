@@ -3,7 +3,7 @@
 
 # TailwindCSS Radix
 
-TailwindCSS plugin that helps styling radix state.
+Adds utilities and variants for styling Radix UI state
 
 ## Installation
 
