@@ -29,11 +29,11 @@
   },
   "homepage": "https://github.com/ecklf/tailwindcss-radix#readme",
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "release-it": "^14.11.7",
+    "@types/node": "^17.0.0",
+    "release-it": "^14.11.8",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^3.0.2",
-    "typescript": "^4.4.4"
+    "tailwindcss": "^3.0.7",
+    "typescript": "^4.5.4"
   },
   "release-it": {
     "git": {

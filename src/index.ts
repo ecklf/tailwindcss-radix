@@ -7,17 +7,21 @@ const dataAttributes = {
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
-  if (options.variantPrefix === "" && options.skipAttributeNames === true) {
+  options = options
+    ? options
+    : {
+        variantPrefix: "radix",
+        skipAttributeNames: false,
+      };
+
+  if (options?.variantPrefix === "" && options?.skipAttributeNames === true) {
     throw new Error(
       "tailwindcss-radix: Cannot use empty `variantPrefix` while `skipAttributeNames` is enabled"
     );
   }
 
-  const variantPrefix = options
-    ? options.variantPrefix === ""
-      ? ""
-      : `${options.variantPrefix}-`
-    : "radix-";
+  const variantPrefix =
+    options.variantPrefix === "" ? "" : `${options.variantPrefix}-`;
 
   // Adds the following transform origin utilities
   // `--radix-dropdown-menu-content-transform-origin`,

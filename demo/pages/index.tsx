@@ -111,14 +111,14 @@ export default function Home() {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger
               className={cx(
-                "rdx-state-open:bg-gray-800 group",
+                "radix-state-open:bg-gray-800 group",
                 "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               )}
             >
               Dropdown
               <ChevronDownIcon
                 className={cx(
-                  "group-rdx-state-open:rotate-180 transform duration-300 ease-in-out",
+                  "group-radix-state-open:rotate-180 transform duration-300 ease-in-out",
                   "w-5 h-5 ml-2 -mr-1 text-white"
                 )}
                 aria-hidden="true"
@@ -129,7 +129,7 @@ export default function Home() {
               align="end"
               sideOffset={10}
               className={cx(
-                " rdx-side-bottom:animate-slide-down rdx-side-top:animate-slide-up",
+                " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
                 "w-56 px-1 py-1 bg-white rounded-lg shadow-md"
               )}
             >
@@ -205,7 +205,7 @@ export default function Home() {
                 </DropdownMenu.TriggerItem>
                 <DropdownMenu.Content
                   className={cx(
-                    "rdx-side-right:animate-scale-in origin-rdx-dropdown-menu",
+                    "radix-side-right:animate-scale-in origin-radix-dropdown-menu",
                     "px-1 py-1 w-full bg-white text-sm rounded-md shadow-md"
                   )}
                 >

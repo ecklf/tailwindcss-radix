@@ -4,3 +4,4 @@ demo
 .vscode
 .gitignore
 tsconfig.json
+.scratch

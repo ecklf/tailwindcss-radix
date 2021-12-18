@@ -30,9 +30,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require("tailwindcss-radix")({
-      variantPrefix: "rdx",
-    }),
-  ],
+  plugins: [require("tailwindcss-radix")()],
 };
