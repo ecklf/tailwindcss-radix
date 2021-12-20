@@ -1,7 +1,16 @@
 import plugin from "tailwindcss/plugin";
 
 const dataAttributes = {
-  state: ["open", "closed", "active", "inactive", "on", "off", "checked", "unchecked"],
+  state: [
+    "open",
+    "closed",
+    "active",
+    "inactive",
+    "on",
+    "off",
+    "checked",
+    "unchecked",
+  ],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
 };
@@ -70,5 +79,31 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
         });
       }
     );
+  });
+
+  // Adds the following height utilities
+  // `--radix-accordion-content-height`,
+  // `--radix-collapsible-content-height`,
+  const heights = ["accordion", "collapsible"];
+
+  heights.forEach((height) => {
+    addUtilities({
+      [`.h-${variantPrefix}${height}`]: {
+        height: `var(--radix-${height}-content-height)`,
+      },
+    });
+  });
+
+  // Adds the following width utilities
+  // `--radix-accordion-content-width`,
+  // `--radix-collapsible-content-width`,
+  const widths = ["accordion", "collapsible"];
+
+  widths.forEach((width) => {
+    addUtilities({
+      [`.w-${variantPrefix}${width}`]: {
+        width: `var(--radix-${width}-content-width)`,
+      },
+    });
   });
 });
