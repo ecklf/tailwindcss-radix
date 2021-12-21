@@ -30,6 +30,7 @@
   "homepage": "https://github.com/ecklf/tailwindcss-radix#readme",
   "devDependencies": {
     "@types/node": "^17.0.0",
+    "prettier": "2.5.1",
     "release-it": "^14.11.8",
     "rimraf": "^3.0.2",
     "tailwindcss": "^3.0.7",
