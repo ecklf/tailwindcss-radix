@@ -1,8 +1,8 @@
+# TailwindCSS Radix
+
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
 [![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
 [![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
-
-# TailwindCSS Radix
 
 Utilities and variants for styling Radix state
 
@@ -71,7 +71,7 @@ skipAttributeNames: true
 
 #### Basic usage
 
-This plugin works with CSS attribute selectors. Use the variants based on the `data-*` attribute added by radix.
+This plugin works with CSS attribute selectors. Use the variants based on the `data-*` attribute added by Radix.
 
 ```tsx
 import React from "react";
@@ -97,7 +97,7 @@ export default App;
 
 Sometimes we want to access state in the child of the trigger element. This can be achieved by adding the `group` class to the parent element and the `group-*` variants on the child element.
 
-The below example shows how you can apply a conditional transform for a radix `Accordion`:
+Example usage of a conditional transform for a Radix `Accordion`:
 
 ```tsx
 import React from "react";
@@ -137,7 +137,7 @@ export default App;
 
 ### Animating from origin
 
-This plugin also generates the following `origin-*` utilities to transform from the content position origin.
+Use the generated `origin-*` utilities to transform from the content position origin.
 
 ```css
 .origin-radix-dropdown-menu {
@@ -163,7 +163,7 @@ This plugin also generates the following `origin-*` utilities to transform from 
 
 ### Animating content size
 
-This plugin also generates the following `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
+Use the generated `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
 
 ```css
 .h-radix-accordion {
@@ -185,10 +185,13 @@ This plugin also generates the following `h-*` and `w-*` utilities to animate th
 
 ## Example
 
-For example used `<Transition/>` component from `@headlessui/react`
+Example usage with the `<Transition/>` component from `@headlessui/react`:
 
 ```tsx
-...
+import { Transition } from '@headlessui/react'
+
+// ...
+
 <Accordion.Content forceMount className="overflow-hidden">
   <Transition
     show={currentItem === "item-1"}
@@ -209,7 +212,8 @@ For example used `<Transition/>` component from `@headlessui/react`
     </p>
   </Transition>
 </Accordion.Content>
-...
+
+// ...
 ```
 
 ## License
