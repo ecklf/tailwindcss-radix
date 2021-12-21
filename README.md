@@ -161,7 +161,7 @@ This plugin also generates the following `origin-*` utilities to transform from 
 }
 ```
 
-### Animating content size
+### Animating content size-content
 
 This plugin also generates the following `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
 
@@ -171,7 +171,7 @@ This plugin also generates the following `h-*` and `w-*` utilities to animate th
 }
 
 .w-radix-accordion {
-  widht: var(--radix-accordion-content-widht);
+  width: var(--radix-accordion-content-width);
 }
 
 .h-radix-collapsible {
@@ -179,8 +179,37 @@ This plugin also generates the following `h-*` and `w-*` utilities to animate th
 }
 
 .w-radix-collapsible {
-  widht: var(--radix-collapsible-content-widht);
+  width: var(--radix-collapsible-content-width);
 }
+```
+
+## Example
+
+For example used `<Transition/>` component from `@headlessui/react`
+
+```tsx
+...
+<Accordion.Content forceMount className="overflow-hidden">
+  <Transition
+    show={currentItem === "item-1"}
+    enter="ease-out duration-300"
+    enterFrom="h-0"
+    enterTo="h-radix-accordion"
+    leave="ease-in duration-300"
+    leaveFrom="h-radix-accordion"
+    leaveTo="h-0"
+  >
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Voluptatum ullam, ratione veniam voluptate nobis sunt laboriosam
+      aperiam harum fugit corrupti alias magnam officiis nihil minima
+      eum excepturi natus similique? Cupiditate reprehenderit, hic sequi
+      modi nemo odit esse quas adipisci perferendis beatae deserunt
+      ducimus itaque molestias quibusdam porro assumenda laudantium id!
+    </p>
+  </Transition>
+</Accordion.Content>
+...
 ```
 
 ## License
