@@ -1,9 +1,11 @@
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
 [![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
 [![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
+
 # TailwindCSS Radix
 
 Utilities and variants for styling Radix state
+
 ## Installation
 
 ### yarn
@@ -33,8 +35,8 @@ module.exports = {
     // ...
   },
   plugins: [
-      // Initialize with default values (see options below)
-      require("tailwindcss-radix")(),
+    // Initialize with default values (see options below)
+    require("tailwindcss-radix")(),
   ],
 };
 ```
@@ -47,8 +49,8 @@ require("tailwindcss-radix")({
   variantPrefix: "rdx",
   // Default: `false`
   // Cannot be enabled in combination with `variantPrefix: ""`
-  skipAttributeNames: false
-})
+  skipAttributeNames: false,
+});
 ```
 
 ```ts
@@ -84,7 +86,7 @@ const App = () => {
       <DropdownMenu.Content>
         <DropdownMenu.Item>Item</DropdownMenu.Item>
       </DropdownMenu.Content>
-    </DropdownMenu.Root>  
+    </DropdownMenu.Root>
   );
 };
 
@@ -126,7 +128,7 @@ const App = () => {
         </Accordion.Header>
         <Accordion.Content>Content 2</Accordion.Content>
       </Accordion.Item>
-    </Accordion.Root> 
+    </Accordion.Root>
   );
 };
 
@@ -139,24 +141,75 @@ This plugin also generates the following `origin-*` utilities to transform from 
 
 ```css
 .origin-radix-dropdown-menu {
-    transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 }
 
 .origin-radix-hover-card {
-    transform-origin: var(--radix-hover-card-content-transform-origin);
+  transform-origin: var(--radix-hover-card-content-transform-origin);
 }
 
 .origin-radix-context-menu {
-    transform-origin: var(--radix-context-menu-content-transform-origin);
+  transform-origin: var(--radix-context-menu-content-transform-origin);
 }
 
 .origin-radix-popover {
-    transform-origin: var(--radix-popover-content-transform-origin);
+  transform-origin: var(--radix-popover-content-transform-origin);
 }
 
 .origin-radix-tooltip {
-    transform-origin: var(--radix-tooltip-content-transform-origin);
+  transform-origin: var(--radix-tooltip-content-transform-origin);
 }
+```
+
+### Animating content size
+
+This plugin also generates the following `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
+
+```css
+.h-radix-accordion {
+  height: var(--radix-accordion-content-height);
+}
+
+.w-radix-accordion {
+  width: var(--radix-accordion-content-width);
+}
+
+.h-radix-collapsible {
+  height: var(--radix-collapsible-content-height);
+}
+
+.w-radix-collapsible {
+  width: var(--radix-collapsible-content-width);
+}
+```
+
+## Example
+
+For example used `<Transition/>` component from `@headlessui/react`
+
+```tsx
+...
+<Accordion.Content forceMount className="overflow-hidden">
+  <Transition
+    show={currentItem === "item-1"}
+    enter="ease-out duration-300"
+    enterFrom="h-0"
+    enterTo="h-radix-accordion"
+    leave="ease-in duration-300"
+    leaveFrom="h-radix-accordion"
+    leaveTo="h-0"
+  >
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Voluptatum ullam, ratione veniam voluptate nobis sunt laboriosam
+      aperiam harum fugit corrupti alias magnam officiis nihil minima
+      eum excepturi natus similique? Cupiditate reprehenderit, hic sequi
+      modi nemo odit esse quas adipisci perferendis beatae deserunt
+      ducimus itaque molestias quibusdam porro assumenda laudantium id!
+    </p>
+  </Transition>
+</Accordion.Content>
+...
 ```
 
 ## License
