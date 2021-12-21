@@ -101,7 +101,7 @@ Example usage of a conditional transform for a Radix `Accordion`:
 
 ```tsx
 import React from "react";
-import * as DropdownMenu from "@radix-ui/react-accordion";
+import * as Accordion from "@radix-ui/react-accordion";
 
 const App = () => {
   return (
@@ -188,32 +188,36 @@ Use the generated `h-*` and `w-*` utilities to animate the size of the content w
 Example usage with the `<Transition/>` component from `@headlessui/react`:
 
 ```tsx
-import { Transition } from '@headlessui/react'
+import React from "react";
+import * as Accordion from "@radix-ui/react-accordion";
+import { Transition } from "@headlessui/react";
 
-// ...
-
-<Accordion.Content forceMount className="overflow-hidden">
-  <Transition
-    show={currentItem === "item-1"}
-    enter="ease-out duration-300"
-    enterFrom="h-0"
-    enterTo="h-radix-accordion"
-    leave="ease-in duration-300"
-    leaveFrom="h-radix-accordion"
-    leaveTo="h-0"
-  >
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Voluptatum ullam, ratione veniam voluptate nobis sunt laboriosam
-      aperiam harum fugit corrupti alias magnam officiis nihil minima
-      eum excepturi natus similique? Cupiditate reprehenderit, hic sequi
-      modi nemo odit esse quas adipisci perferendis beatae deserunt
-      ducimus itaque molestias quibusdam porro assumenda laudantium id!
-    </p>
-  </Transition>
-</Accordion.Content>
-
-// ...
+const App = () => {
+  return (
+    // --snip-
+    <Accordion.Content forceMount className="overflow-hidden">
+      <Transition
+        show={currentItem === "item-1"}
+        enter="ease-out duration-300"
+        enterFrom="h-0"
+        enterTo="h-radix-accordion"
+        leave="ease-in duration-300"
+        leaveFrom="h-radix-accordion"
+        leaveTo="h-0"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          ullam, ratione veniam voluptate nobis sunt laboriosam aperiam harum
+          fugit corrupti alias magnam officiis nihil minima eum excepturi natus
+          similique? Cupiditate reprehenderit, hic sequi modi nemo odit esse
+          quas adipisci perferendis beatae deserunt ducimus itaque molestias
+          quibusdam porro assumenda laudantium id!
+        </p>
+      </Transition>
+    </Accordion.Content>
+    // --snip-
+  );
+};
 ```
 
 ## License
