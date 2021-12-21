@@ -161,7 +161,7 @@ This plugin also generates the following `origin-*` utilities to transform from 
 }
 ```
 
-### Animating content size-content
+### Animating content size
 
 This plugin also generates the following `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
 
