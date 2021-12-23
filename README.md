@@ -29,10 +29,10 @@ Add the plugin to your plugins array:
 ```js
 module.exports = {
   theme: {
-    // ...
+    // --snip--
   },
   variants: {
-    // ...
+    // --snip--
   },
   plugins: [
     // Initialize with default values (see options below)
@@ -183,8 +183,6 @@ Use the generated `h-*` and `w-*` utilities to animate the size of the content w
 }
 ```
 
-## Example
-
 Example usage with the `<Transition/>` component from `@headlessui/react`:
 
 ```tsx
@@ -194,7 +192,7 @@ import { Transition } from "@headlessui/react";
 
 const App = () => {
   return (
-    // --snip-
+    // --snip--
     <Accordion.Content forceMount className="overflow-hidden">
       <Transition
         show={currentItem === "item-1"}
@@ -215,7 +213,7 @@ const App = () => {
         </p>
       </Transition>
     </Accordion.Content>
-    // --snip-
+    // --snip--
   );
 };
 ```
