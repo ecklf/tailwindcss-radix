@@ -15,31 +15,31 @@ const Demo = (props: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="w-full h-screen overflow-y-scroll snap-y">
-        <div className="w-full h-screen p-6 snap-center">
-          <div className="relative flex items-center justify-center w-full h-full shadow-md rounded-xl">
+      <div className="grid grid-cols-1 gap-4 p-4 md:gap-6 md:p-6 lg:grid-cols-2">
+        <div className="w-full h-[500px]">
+          <div className="relative flex justify-center w-full h-full shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10 -translate-y-[9.5rem]">
+            <div className="mt-9">
               <DropdownMenu />
             </div>
           </div>
         </div>
-        <div className="w-full h-screen p-6 snap-center">
-          <div className="relative flex items-center justify-center w-full h-full p-4 overflow-hidden shadow-md rounded-xl">
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <div className="z-10 w-full max-w-sm">
               <Accordion />
             </div>
           </div>
         </div>
-        <div className="w-full h-screen p-6 snap-center">
-          <div className="relative flex items-center justify-center w-full h-full p-4 overflow-hidden shadow-md rounded-xl">
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <Toggle />
           </div>
         </div>
-        <div className="w-full h-screen p-6 snap-center">
-          <div className="relative flex items-center justify-center w-full h-full px-4 overflow-hidden shadow-md rounded-xl">
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <Slider />
           </div>

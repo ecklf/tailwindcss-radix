@@ -92,7 +92,7 @@ const DropdownMenu = (props: Props) => {
           sideOffset={10}
           className={cx(
             " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-            "w-56 px-1.5 py-1 bg-gray-800 rounded-lg shadow-md"
+            "w-48 md:w-56 px-1.5 py-1 bg-gray-800 rounded-lg shadow-md"
           )}
         >
           {generalMenuItems.map(({ label, icon, shortcut }, i) => (
@@ -174,7 +174,7 @@ const DropdownMenu = (props: Props) => {
               {people.map(({ name, url }, i) => (
                 <DropdownMenuPrimitive.Item
                   key={`${name}-${i}`}
-                  className="flex items-center w-32 px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+                  className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none w-28 md:w-32 focus:bg-gray-900 group"
                 >
                   {url ? (
                     <img className="w-6 h-6 mr-2.5 rounded-full" src={url} />
