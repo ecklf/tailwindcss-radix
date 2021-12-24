@@ -1,20 +1,37 @@
 @tailwind base;
 
 :root {
-  @apply antialiased bg-gray-900;
+  @apply antialiased;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    @apply antialiased bg-gray-800;
-  }
+html {
+  @apply bg-white;
+  scrollbar-color: #6b7280 transparent;
+  scrollbar-width: auto;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    @apply antialiased bg-white;
-  }
-} */
+html[class*="dark"] {
+  @apply bg-gray-900;
+  scrollbar-color: #9ca3af transparent;
+  scrollbar-width: auto;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 rounded-full dark:bg-gray-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:hover:bg-gray-300;
+}
 
 @tailwind components;
 @tailwind utilities;
