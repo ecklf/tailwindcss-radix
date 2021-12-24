@@ -71,12 +71,14 @@ const Demo = (props: Props) => {
               />
             </svg>
           </div>
+
           <GitHubButton
             href="https://github.com/ecklf/tailwindcss-radix"
+            aria-label="Star ecklf/tailwindcss-radix on GitHub"
+            data-color-scheme="no-preference: dark; light: light; dark: dark;"
             data-icon="octicon-star"
             data-size="large"
-            data-show-count={true}
-            aria-label="Star ecklf/tailwindcss-radix on GitHub"
+            data-show-count="true"
           >
             Star
           </GitHubButton>
