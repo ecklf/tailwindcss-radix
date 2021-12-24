@@ -3,9 +3,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     extend: {
+      boxShadow: {
+        slider: "0 0 0 5px rgba(0, 0, 0, 0.3)",
+      },
       keyframes: {
         "scale-in": {
           "0%": { opacity: 0, transform: "scale(0)" },

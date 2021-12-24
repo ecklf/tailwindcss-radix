@@ -1,8 +1,25 @@
 @tailwind base;
 
-:root {
-  @apply antialiased;
+html,
+body {
+  height: 100%;
 }
+
+:root {
+  @apply antialiased bg-gray-900;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    @apply antialiased bg-gray-800;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @apply antialiased bg-white;
+  }
+} */
 
 @tailwind components;
 @tailwind utilities;
