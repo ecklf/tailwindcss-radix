@@ -1,7 +1,9 @@
+@import url("https://rsms.me/inter/inter.css");
+
 @tailwind base;
 
 :root {
-  @apply antialiased;
+  @apply antialiased font-display;
 }
 
 html {

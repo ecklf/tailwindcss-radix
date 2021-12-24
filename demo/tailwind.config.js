@@ -5,6 +5,23 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    fontFamily: {
+      display: [
+        "Inter",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        '"Noto Sans"',
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+    },
     extend: {
       boxShadow: {
         slider: "0 0 0 5px rgba(0, 0, 0, 0.3)",
