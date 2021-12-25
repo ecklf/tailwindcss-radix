@@ -8,13 +8,9 @@ Utilities and variants for styling Radix state
 
 ## Installation
 
-### yarn
-
 ```sh
 yarn add tailwindcss-radix
 ```
-
-### npm
 
 ```sh
 npm i tailwindcss-radix
