@@ -38,7 +38,7 @@ const ToggleGroup = (props: Props) => {
     <ToggleGroupPrimitive.Root
       type="multiple"
       aria-label="Font settings"
-      className="w-full h-12 divide-x divide-gray-800 "
+      className="w-full h-12 divide-x divide-gray-800"
     >
       {settings.map(({ value, label, icon }, i) => (
         <ToggleGroupPrimitive.Item
@@ -47,7 +47,7 @@ const ToggleGroup = (props: Props) => {
           aria-label={label}
           className={cx(
             "radix-state-on:dark:bg-gray-900",
-            "p-2 dark:bg-gray-800",
+            "px-2.5 py-2 dark:bg-gray-800",
             "first:rounded-l-md last:rounded-r-md",
             "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
           )}
