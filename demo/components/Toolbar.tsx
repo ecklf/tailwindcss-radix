@@ -67,7 +67,7 @@ const Toolbar = (props: Props) => {
               "radix-state-on:dark:bg-gray-900",
               "px-2.5 py-2 dark:bg-gray-800",
               "first:rounded-l-md last:rounded-r-md",
-              "border-y first:border-x last:border-x border-gray-700 radix-state-on:border-transparent",
+              "border-y first:border-x last:border-x border-gray-600 radix-state-on:border-transparent",
               "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
             )}
           >
@@ -92,18 +92,18 @@ const Toolbar = (props: Props) => {
               "radix-state-on:dark:bg-gray-900",
               "px-2.5 py-2 dark:bg-gray-800",
               "first:rounded-l-md last:rounded-r-md",
-              "border-y first:border-x last:border-x border-gray-700 radix-state-on:border-transparent",
+              "border-y first:border-x last:border-x border-gray-600 radix-state-on:border-transparent",
               "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
             )}
           >
             {React.cloneElement(icon, {
-              className: "w-5 h-5 dark:text-gray-200",
+              className: "w-5 h-5 dark:text-gray-300",
             })}
           </ToolbarPrimitive.ToggleItem>
         ))}
       </ToolbarPrimitive.ToggleGroup>
 
-      <ToolbarPrimitive.Separator className="w-px h-auto mx-4 my-0.5 bg-gray-700" />
+      <ToolbarPrimitive.Separator className="w-px h-auto mx-4 my-0.5 dark:bg-gray-600" />
 
       <span className="flex items-center pr-2">
         <ToolbarPrimitive.Link
