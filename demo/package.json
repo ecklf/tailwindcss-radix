@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@radix-ui/react-accordion": "^0.1.5",
     "@radix-ui/react-alert-dialog": "^0.1.5",

@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { Fragment } from "react";
 import GitHubButton from "react-github-btn";
 import Accordion from "../components/Accordion";
+import AlertDialog from "../components/AlertDialog";
 import DropdownMenu from "../components/DropdownMenu";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
@@ -91,6 +92,15 @@ const Demo = (props: Props) => {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <div className="mt-9">
               <DropdownMenu />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
+            <div className="z-10">
+              <AlertDialog />
             </div>
           </div>
         </div>
