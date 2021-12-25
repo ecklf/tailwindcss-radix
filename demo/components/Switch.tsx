@@ -15,7 +15,7 @@ const Switch = (props: Props) => {
         "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
       )}
     >
-      <span
+      <SwitchPrimitive.Thumb
         className={cx(
           "group-radix-state-checked:translate-x-5",
           "group-radix-state-unchecked:translate-x-0",
