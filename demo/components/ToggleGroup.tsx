@@ -7,13 +7,13 @@ import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import cx from "classnames";
 import React, { ReactElement } from "react";
 
-interface Setting {
+interface ToggleItem {
   value: string;
   label: string;
   icon: ReactElement;
 }
 
-const settings: Setting[] = [
+const settings: ToggleItem[] = [
   {
     value: "bold",
     label: "Font bold",
@@ -35,11 +35,7 @@ interface Props {}
 
 const ToggleGroup = (props: Props) => {
   return (
-    <ToggleGroupPrimitive.Root
-      type="multiple"
-      aria-label="Font settings"
-      className="w-full h-12 divide-x divide-gray-800"
-    >
+    <ToggleGroupPrimitive.Root type="multiple" aria-label="Font settings">
       {settings.map(({ value, label, icon }, i) => (
         <ToggleGroupPrimitive.Item
           key={`group-item-${value}-${label}`}
@@ -49,6 +45,7 @@ const ToggleGroup = (props: Props) => {
             "radix-state-on:dark:bg-gray-900",
             "px-2.5 py-2 dark:bg-gray-800",
             "first:rounded-l-md last:rounded-r-md",
+            "border-y first:border-x last:border-x border-gray-700 radix-state-on:border-transparent",
             "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
           )}
         >
