@@ -103,9 +103,9 @@ const Toolbar = (props: Props) => {
         ))}
       </ToolbarPrimitive.ToggleGroup>
 
-      <ToolbarPrimitive.Separator className="w-px h-auto mx-4 my-0.5 dark:bg-gray-600" />
+      <ToolbarPrimitive.Separator className="hidden xl:flex w-px h-auto mx-4 my-0.5 dark:bg-gray-600" />
 
-      <span className="flex items-center pr-2">
+      <span className="items-center hidden pr-2 xl:flex">
         <ToolbarPrimitive.Link
           className={cx(
             "text-sm text-gray-500 dark:text-gray-400",
