@@ -22,7 +22,7 @@ npm i tailwindcss-radix
 
 ## Usage
 
-You can find the demo dropdown menu inside the `demo` folder.
+You can find example code inside the [demo](https://github.com/ecklf/tailwindcss-radix/tree/main/demo) folder.
 
 Add the plugin to your plugins array:
 
@@ -75,18 +75,18 @@ This plugin works with CSS attribute selectors. Use the variants based on the `d
 
 ```tsx
 import React from "react";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 
 const App = () => {
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="border-black radix-state-open:border-2">
+    <DropdownMenuPrimitive.Root>
+      <DropdownMenuPrimitive.Trigger className="border-black radix-state-open:border-2">
         Trigger
-      </DropdownMenu.Trigger>
-      <DropdownMenu.Content>
-        <DropdownMenu.Item>Item</DropdownMenu.Item>
-      </DropdownMenu.Content>
-    </DropdownMenu.Root>
+      </DropdownMenuPrimitive.Trigger>
+      <DropdownMenuPrimitive.Content>
+        <DropdownMenuPrimitive.Item>Item</DropdownMenuPrimitive.Item>
+      </DropdownMenuPrimitive.Content>
+    </DropdownMenuPrimitive.Root>
   );
 };
 
@@ -101,34 +101,35 @@ Example usage of a conditional transform for a Radix `Accordion`:
 
 ```tsx
 import React from "react";
-import * as Accordion from "@radix-ui/react-accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 
-const App = () => {
+const Accordion = () => {
   return (
-    <Accordion.Root type="multiple">
-      <Accordion.Item value="item-1">
-        <Accordion.Header>
-          <Accordion.Trigger className="group">
+    <AccordionPrimitive.Root type="multiple">
+      <AccordionPrimitive.Item value="item-1">
+        <AccordionPrimitive.Header>
+          <AccordionPrimitive.Trigger className="group">
             <div className="flex items-center">
               Item 1
               <ChevronDownIcon className="w-5 h-5 ml-2 transform group-radix-state-open:rotate-180" />
             </div>
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Content>Content 1</Accordion.Content>
-      </Accordion.Item>
-      <Accordion.Item value="item-2">
-        <Accordion.Header>
-          <Accordion.Trigger className="group">
+          </AccordionPrimitive.Trigger>
+        </AccordionPrimitive.Header>
+        <AccordionPrimitive.Content>Content 1</AccordionPrimitive.Content>
+      </AccordionPrimitive.Item>
+      <AccordionPrimitive.Item value="item-2">
+        <AccordionPrimitive.Header>
+          <AccordionPrimitive.Trigger className="group">
             <div className="flex items-center">
               Item 2
               <ChevronDownIcon className="w-5 h-5 ml-2 transform group-radix-state-open:rotate-180" />
             </div>
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Content>Content 2</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
+          </AccordionPrimitive.Trigger>
+        </AccordionPrimitive.Header>
+        <AccordionPrimitive.Content>Content 2</AccordionPrimitive.Content>
+      </AccordionPrimitive.Item>
+    </AccordionPrimitive.Root>
   );
 };
 
@@ -187,13 +188,13 @@ Example usage with the `<Transition/>` component from `@headlessui/react`:
 
 ```tsx
 import React from "react";
-import * as Accordion from "@radix-ui/react-accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { Transition } from "@headlessui/react";
 
-const App = () => {
+const AnimatedAccordion = () => {
   return (
     // --snip--
-    <Accordion.Content forceMount className="overflow-hidden">
+    <AccordionPrimitive.Content forceMount className="overflow-hidden">
       <Transition
         show={currentItem === "item-1"}
         enter="ease-out duration-300"
@@ -212,7 +213,7 @@ const App = () => {
           quibusdam porro assumenda laudantium id!
         </p>
       </Transition>
-    </Accordion.Content>
+    </AccordionPrimitive.Content>
     // --snip--
   );
 };
