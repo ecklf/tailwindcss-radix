@@ -15,7 +15,7 @@ const AlertDialog = (props: Props) => {
           className={cx(
             "radix-state-open:bg-gray-900 group",
             "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 rounded-md select-none",
-            "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
+            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
           Modal
@@ -46,7 +46,8 @@ const AlertDialog = (props: Props) => {
                 className={cx(
                   "fixed z-50",
                   "w-full max-w-md dark:bg-gray-800 rounded-lg p-4",
-                  "top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
+                  "top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]",
+                  "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               >
                 <AlertDialogPrimitive.Title className="text-sm font-semibold dark:text-white">
@@ -60,7 +61,7 @@ const AlertDialog = (props: Props) => {
                   <AlertDialogPrimitive.Cancel
                     className={cx(
                       "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-gray-300 dark:bg-gray-700 hover:dark:bg-gray-600 rounded-md select-none",
-                      "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
+                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   >
                     Cancel
@@ -68,7 +69,7 @@ const AlertDialog = (props: Props) => {
                   <AlertDialogPrimitive.Action
                     className={cx(
                       "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-white bg-purple-700 hover:bg-purple-600 rounded-md select-none",
-                      "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
+                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   >
                     Confirm
