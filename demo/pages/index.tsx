@@ -5,6 +5,8 @@ import Accordion from "../components/Accordion";
 import DropdownMenu from "../components/DropdownMenu";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
+import Toggle from "../components/Toggle";
+import ToggleGroup from "../components/ToggleGroup";
 
 interface Props {}
 
@@ -92,6 +94,7 @@ const Demo = (props: Props) => {
             </div>
           </div>
         </div>
+
         <div className="w-full h-[500px]">
           <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
@@ -100,16 +103,34 @@ const Demo = (props: Props) => {
             </div>
           </div>
         </div>
+
         <div className="w-full h-[500px]">
           <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <Switch />
           </div>
         </div>
+
         <div className="w-full h-[500px]">
           <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <Slider />
+          </div>
+        </div>
+
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
+            <Toggle />
+          </div>
+        </div>
+
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
+            <div className="z-10">
+              <ToggleGroup />
+            </div>
           </div>
         </div>
       </div>
