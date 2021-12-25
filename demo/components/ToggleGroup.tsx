@@ -42,6 +42,7 @@ const ToggleGroup = (props: Props) => {
     >
       {settings.map(({ value, label, icon }, i) => (
         <ToggleGroupPrimitive.Item
+          key={`group-item-${value}-${label}`}
           value={value}
           aria-label={label}
           className={cx(
