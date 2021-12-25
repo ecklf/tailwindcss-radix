@@ -127,14 +127,14 @@ const DropdownMenu = (props: Props) => {
           <DropdownMenuPrimitive.CheckboxItem
             checked={showUi}
             onCheckedChange={setShowUi}
-            className="flex items-center w-full px-2 py-2 text-xs text-gray-300 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+            className="flex items-center w-full px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
           >
             {showUi ? (
-              <EyeOpenIcon className="w-3.5 h-3.5 mr-2 text-gray-500" />
+              <EyeOpenIcon className="w-3.5 h-3.5 mr-2" />
             ) : (
-              <EyeClosedIcon className="w-3.5 h-3.5 mr-2 text-gray-500" />
+              <EyeClosedIcon className="w-3.5 h-3.5 mr-2" />
             )}
-            <span className="flex-grow">Show UI</span>
+            <span className="flex-grow text-gray-300">Show UI</span>
             <DropdownMenuPrimitive.ItemIndicator>
               <CheckIcon className="w-3.5 h-3.5" />
             </DropdownMenuPrimitive.ItemIndicator>
