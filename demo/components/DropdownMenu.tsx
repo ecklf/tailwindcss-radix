@@ -149,7 +149,7 @@ const DropdownMenu = (props: Props) => {
           {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
             <DropdownMenuPrimitive.Item
               key={`${label}-${i}`}
-              className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 fgroup"
+              className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
             >
               {icon}
               <span className="flex-grow text-gray-300">{label}</span>
