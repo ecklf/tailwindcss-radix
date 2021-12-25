@@ -10,6 +10,8 @@ const dataAttributes = {
     "off",
     "checked",
     "unchecked",
+    "instant-open",
+    "delayed-open",
   ],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
