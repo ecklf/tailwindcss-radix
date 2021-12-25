@@ -9,6 +9,7 @@ import Switch from "../components/Switch";
 import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
+import Tooltip from "../components/Tooltip";
 
 interface Props {}
 
@@ -79,6 +80,7 @@ const Demo = (props: Props) => {
           <GitHubButton
             href="https://github.com/ecklf/tailwindcss-radix"
             aria-label="Star ecklf/tailwindcss-radix on GitHub"
+            // data-color-scheme="no-preference: dark; light: light; dark: dark;"
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"
             data-icon="octicon-star"
             data-size="large"
@@ -152,6 +154,15 @@ const Demo = (props: Props) => {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <div className="z-10">
               <Toolbar />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
+            <div className="z-10">
+              <Tooltip />
             </div>
           </div>
         </div>
