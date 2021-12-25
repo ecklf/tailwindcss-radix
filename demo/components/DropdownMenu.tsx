@@ -16,61 +16,61 @@ import {
 import cx from "classnames";
 import React, { ReactNode, useState } from "react";
 
+interface RadixMenuItem {
+  label: string;
+  shortcut?: string;
+  icon?: ReactNode;
+}
+
+interface User {
+  name: string;
+  url?: string;
+}
+
+const generalMenuItems: RadixMenuItem[] = [
+  {
+    label: "New File",
+    icon: <FileIcon className="w-3.5 h-3.5 mr-2" />,
+    shortcut: "⌘+N",
+  },
+  {
+    label: "Settings",
+    icon: <MixerHorizontalIcon className="w-3.5 h-3.5 mr-2" />,
+    shortcut: "⌘+,",
+  },
+];
+
+const regionToolMenuItems: RadixMenuItem[] = [
+  {
+    label: "Frame",
+    icon: <FrameIcon className="w-3.5 h-3.5 mr-2" />,
+    shortcut: "⌘+F",
+  },
+  {
+    label: "Crop",
+    icon: <CropIcon className="w-3.5 h-3.5 mr-2" />,
+    shortcut: "⌘+S",
+  },
+];
+
+const users: User[] = [
+  {
+    name: "Adam",
+    url: "https://github.com/adamwathan.png",
+  },
+  {
+    name: "Steve",
+    url: "https://github.com/steveschoger.png",
+  },
+  {
+    name: "Robin",
+    url: "https://github.com/robinmalfait.png",
+  },
+];
+
 interface Props {}
 
 const DropdownMenu = (props: Props) => {
-  interface RadixMenuItem {
-    label: string;
-    shortcut?: string;
-    icon?: ReactNode;
-  }
-
-  interface People {
-    name: string;
-    url?: string;
-  }
-
-  const generalMenuItems: RadixMenuItem[] = [
-    {
-      label: "New File",
-      icon: <FileIcon className="w-3.5 h-3.5 mr-2" />,
-      shortcut: "⌘+N",
-    },
-    {
-      label: "Settings",
-      icon: <MixerHorizontalIcon className="w-3.5 h-3.5 mr-2" />,
-      shortcut: "⌘+,",
-    },
-  ];
-
-  const regionToolMenuItems: RadixMenuItem[] = [
-    {
-      label: "Frame",
-      icon: <FrameIcon className="w-3.5 h-3.5 mr-2" />,
-      shortcut: "⌘+F",
-    },
-    {
-      label: "Crop",
-      icon: <CropIcon className="w-3.5 h-3.5 mr-2" />,
-      shortcut: "⌘+S",
-    },
-  ];
-
-  const people: People[] = [
-    {
-      name: "Adam",
-      url: "https://github.com/adamwathan.png",
-    },
-    {
-      name: "Steve",
-      url: "https://github.com/steveschoger.png",
-    },
-    {
-      name: "Robin",
-      url: "https://github.com/robinmalfait.png",
-    },
-  ];
-
   const [showGrid, setShowGrid] = useState(false);
   const [showUi, setShowUi] = useState(false);
 
@@ -171,7 +171,7 @@ const DropdownMenu = (props: Props) => {
                 "px-1 py-1 w-full bg-gray-800 text-xs rounded-md shadow-md"
               )}
             >
-              {people.map(({ name, url }, i) => (
+              {users.map(({ name, url }, i) => (
                 <DropdownMenuPrimitive.Item
                   key={`${name}-${i}`}
                   className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none w-28 md:w-32 focus:bg-gray-900 group"

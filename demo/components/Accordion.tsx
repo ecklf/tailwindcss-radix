@@ -2,12 +2,13 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React from "react";
-interface AccordionItems {
+
+interface AccordionItem {
   header: string;
   content: string;
 }
 
-const items: AccordionItems[] = [
+const items: AccordionItem[] = [
   {
     header: "What is Radix UI?",
     content:
