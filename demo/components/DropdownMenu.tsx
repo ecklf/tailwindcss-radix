@@ -106,7 +106,7 @@ const DropdownMenu = (props: Props) => {
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-600" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
 
           <DropdownMenuPrimitive.CheckboxItem
             checked={showGrid}
@@ -140,7 +140,7 @@ const DropdownMenu = (props: Props) => {
             </DropdownMenuPrimitive.ItemIndicator>
           </DropdownMenuPrimitive.CheckboxItem>
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-600" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
 
           <DropdownMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-200 select-none">
             Region Tools
@@ -157,7 +157,7 @@ const DropdownMenu = (props: Props) => {
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-600" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
 
           <DropdownMenuPrimitive.Root>
             <DropdownMenuPrimitive.TriggerItem className="flex items-center w-full px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group">
