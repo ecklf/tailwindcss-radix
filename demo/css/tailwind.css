@@ -6,6 +6,11 @@
   @apply antialiased font-display;
 }
 
+button {
+  /* Disables tap highlight color on Chrome */
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   @apply bg-white;
   scrollbar-color: #6b7280 transparent;
