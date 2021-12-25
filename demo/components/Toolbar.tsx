@@ -105,13 +105,18 @@ const Toolbar = (props: Props) => {
 
       <ToolbarPrimitive.Separator className="w-px h-auto mx-4 my-0.5 bg-gray-700" />
 
-      <ToolbarPrimitive.Link
-        className="inline-flex self-center pr-2.5 text-sm text-gray-500 dark:text-gray-400"
-        href="https://github.com/ecklf/tailwindcss-radix"
-        target="_blank"
-      >
-        Edited 2 hours ago
-      </ToolbarPrimitive.Link>
+      <span className="flex items-center pr-2">
+        <ToolbarPrimitive.Link
+          className={cx(
+            "text-sm text-gray-500 dark:text-gray-400",
+            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
+          )}
+          href="https://github.com/ecklf/tailwindcss-radix"
+          target="_blank"
+        >
+          Edited 2 hours ago
+        </ToolbarPrimitive.Link>
+      </span>
     </ToolbarPrimitive.Root>
   );
 };
