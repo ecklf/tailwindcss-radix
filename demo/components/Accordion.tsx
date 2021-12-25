@@ -56,7 +56,9 @@ const Accordion = (props: Props) => {
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content className="w-full px-4 pb-3 bg-white rounded-b-lg pt-r1 dark:bg-gray-800">
-            <div className="text-sm text-gray-500">{content}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              {content}
+            </div>
           </AccordionPrimitive.Content>
         </AccordionPrimitive.Item>
       ))}
