@@ -1,3 +1,4 @@
+import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
 import cx from "classnames";
 import React from "react";
@@ -9,19 +10,18 @@ const Toggle = (props: Props) => {
     <TogglePrimitive.Root
       className={cx(
         "group",
-        "radix-state-on:bg-purple-600",
+        "radix-state-on:bg-gray-900",
         "radix-state-off:bg-gray-200 dark:radix-state-off:bg-gray-800",
-        "relative inline-flex flex-shrink-0 h-[24px] w-[44px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200",
+        "relative inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 rounded-md select-none",
         "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
       )}
     >
-      <span
-        className={cx(
-          "group-radix-state-on:translate-x-5",
-          "group-radix-state-off:translate-x-0",
-          "pointer-events-none inline-block h-[20px] w-[20px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200"
-        )}
-      />
+      <StarIcon className="group-radix-state-on:hidden" />
+      <StarFilledIcon className="text-yellow-400 group-radix-state-off:hidden" />
+      <span className="ml-1.5 leading-5 group-radix-state-on:hidden">Star</span>
+      <span className="ml-1.5 leading-5 group-radix-state-off:hidden">
+        Starred
+      </span>
     </TogglePrimitive.Root>
   );
 };
