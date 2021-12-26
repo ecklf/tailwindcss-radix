@@ -4,6 +4,7 @@ import GitHubButton from "react-github-btn";
 import Accordion from "../components/Accordion";
 import AlertDialog from "../components/AlertDialog";
 import AspectRatio from "../components/AspectRatio";
+import Avatar from "../components/Avatar";
 import DropdownMenu from "../components/DropdownMenu";
 import Progress from "../components/Progress";
 import Slider from "../components/Slider";
@@ -185,6 +186,27 @@ const Demo = (props: Props) => {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
             <div className="z-10 w-full max-w-sm">
               <AspectRatio />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-[500px]">
+          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
+
+            <div className="z-10 grid grid-cols-4 gap-6">
+              <Avatar variant={Avatar.variant.Circle} />
+              <Avatar
+                variant={Avatar.variant.Circle}
+                renderInvalidUrls
+                isOnline
+              />
+              <Avatar variant={Avatar.variant.Rounded} />
+              <Avatar
+                variant={Avatar.variant.Rounded}
+                renderInvalidUrls
+                isOnline
+              />
             </div>
           </div>
         </div>
