@@ -75,5 +75,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("tailwindcss-radix")()],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss-radix")()],
 };

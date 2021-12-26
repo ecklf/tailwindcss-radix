@@ -40,6 +40,7 @@
     "tailwindcss-radix": "^1.5.2"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.4.0",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.2.6",
     "eslint": "8.5.0",
