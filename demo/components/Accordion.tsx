@@ -52,7 +52,7 @@ const Accordion = (props: Props) => {
               <span className="text-sm font-medium dark:text-gray-200">
                 {header}
               </span>
-              <ChevronDownIcon className="w-5 h-5 ml-2 duration-300 ease-in-out transform shrink-0 dark:text-gray-200 group-radix-state-open:rotate-180" />
+              <ChevronDownIcon className="w-5 h-5 ml-2 duration-300 ease-in-out transform shrink-0 dark:text-gray-400 group-radix-state-open:rotate-180" />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content className="w-full px-4 pb-3 bg-white rounded-b-lg pt-r1 dark:bg-gray-800">
