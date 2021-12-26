@@ -11,7 +11,8 @@ const Progress = (props: Props) => {
     let timerId: null | NodeJS.Timer = null;
 
     timerId = setInterval(() => {
-      setProgress(Math.ceil((getRandomArbitrary(0, 100) + 1) / 10) * 10);
+      const p = Math.ceil(getRandomArbitrary(0, 100) / 10) * 10;
+      setProgress(p);
     }, 5000);
 
     return () => {
@@ -28,7 +29,7 @@ const Progress = (props: Props) => {
     >
       <ProgressPrimitive.Indicator
         style={{ width: `${progress}%` }}
-        className="h-full duration-300 ease-in-out dark:bg-gray-300"
+        className="h-full duration-300 ease-in-out dark:bg-gray-100"
       />
     </ProgressPrimitive.Root>
   );

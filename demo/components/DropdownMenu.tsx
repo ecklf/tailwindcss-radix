@@ -80,7 +80,7 @@ const DropdownMenu = (props: Props) => {
         <DropdownMenuPrimitive.Trigger
           className={cx(
             "radix-state-open:bg-gray-900 group",
-            "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 rounded-md select-none",
+            "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-100 bg-gray-800 rounded-md select-none",
             "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
           )}
         >

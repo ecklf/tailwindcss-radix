@@ -13,7 +13,7 @@ const AlertDialog = (props: Props) => {
       <AlertDialogPrimitive.Trigger
         className={cx(
           "radix-state-open:bg-gray-900 group",
-          "inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 rounded-md select-none",
+          "inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-100 bg-gray-800 rounded-md select-none",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
@@ -49,7 +49,7 @@ const AlertDialog = (props: Props) => {
                 "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
               )}
             >
-              <AlertDialogPrimitive.Title className="text-sm font-medium dark:text-white">
+              <AlertDialogPrimitive.Title className="text-sm font-medium dark:text-gray-100">
                 Are you absolutely sure?
               </AlertDialogPrimitive.Title>
               <AlertDialogPrimitive.Description className="mt-2 text-sm font-normal dark:text-gray-400">
@@ -59,7 +59,7 @@ const AlertDialog = (props: Props) => {
               <div className="flex justify-end mt-4 space-x-2">
                 <AlertDialogPrimitive.Cancel
                   className={cx(
-                    "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-gray-300 dark:bg-gray-700 hover:dark:bg-gray-600 rounded-md select-none",
+                    "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-gray-100 dark:bg-gray-700 hover:dark:bg-gray-600 rounded-md select-none",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
@@ -67,7 +67,7 @@ const AlertDialog = (props: Props) => {
                 </AlertDialogPrimitive.Cancel>
                 <AlertDialogPrimitive.Action
                   className={cx(
-                    "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-white bg-purple-700 hover:bg-purple-600 rounded-md select-none",
+                    "inline-flex justify-center px-4 py-2 text-sm font-medium dark:text-gray-100 bg-purple-700 hover:bg-purple-600 rounded-md select-none",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >

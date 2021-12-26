@@ -104,14 +104,14 @@ const DemoCard = ({
       <div
         className={cx(
           "relative flex items-center justify-center w-full h-full overflow-hidden shadow-md rounded-xl",
-          "bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
+          "bg-gradient-to-br from-pink-600 to-yellow-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
         )}
       >
         {children}
-        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-3.5 py-2 bg-black/25">
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-3.5 py-2 bg-black/30 dark:bg-black/25">
           <a
             href={`#${id}`}
-            className="text-sm font-medium text-gray-300 select-none"
+            className="text-sm font-medium text-white select-none dark:ext-gray-300"
           >
             {title}
           </a>
@@ -119,7 +119,7 @@ const DemoCard = ({
             href={link}
             rel={"noreferrer"}
             target={"_blank"}
-            className="text-xs font-medium text-gray-300 px-2 py-1.5 bg-white/10 hover:bg-white/20 rounded select-none"
+            className="text-xs font-medium text-white dark:text-gray-100 px-2 py-1.5 bg-white/10 hover:bg-white/20 rounded select-none"
           >
             Code
           </a>
