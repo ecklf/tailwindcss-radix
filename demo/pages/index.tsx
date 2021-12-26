@@ -1,5 +1,6 @@
+import cx from "classnames";
 import Head from "next/head";
-import React, { Fragment } from "react";
+import React, { Fragment, ReactNode } from "react";
 import GitHubButton from "react-github-btn";
 import Accordion from "../components/Accordion";
 import AlertDialog from "../components/AlertDialog";
@@ -85,6 +86,48 @@ const Hero = () => (
   </div>
 );
 
+const DemoCard = ({
+  children,
+  data: { title, link },
+}: {
+  children: ReactNode;
+  data: {
+    title: string;
+    link: string;
+  };
+}) => {
+  const id = title.replace(" ", "_").toLowerCase();
+
+  return (
+    <section id={id} className="w-full h-[550px] scroll-mt-6">
+      <div
+        className={cx(
+          "relative flex items-center justify-center w-full h-full overflow-hidden shadow-md rounded-xl",
+          "bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
+        )}
+      >
+        {children}
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-3.5 py-2 bg-black/25">
+          <a
+            href={`#${id}`}
+            className="text-sm font-medium text-gray-300 select-none"
+          >
+            {title}
+          </a>
+          <a
+            href={link}
+            rel={"noreferrer"}
+            target={"_blank"}
+            className="text-xs font-medium text-gray-300 px-2 py-1.5 bg-white/10 hover:bg-white/20 rounded select-none"
+          >
+            Code
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 interface Props {}
 
 const Demo = (props: Props) => {
@@ -97,128 +140,145 @@ const Demo = (props: Props) => {
       <Hero />
 
       <div className="grid grid-cols-1 gap-4 p-4 md:gap-6 md:p-6 lg:grid-cols-2">
-        <div className="w-full h-[500px]">
-          <div className="relative flex justify-center w-full h-full shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="mt-9">
-              <DropdownMenu />
-            </div>
+        <DemoCard
+          data={{
+            title: "Dropdown Menu",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/DropdownMenu.tsx",
+          }}
+        >
+          <div className="-mt-[22rem]">
+            <DropdownMenu />
           </div>
-        </div>
+        </DemoCard>
 
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10">
-              <AlertDialog />
-            </div>
+        <DemoCard
+          data={{
+            title: "Alert Dialog",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/AlertDialog.tsx",
+          }}
+        >
+          <AlertDialog />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Accordion",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Accordion.tsx",
+          }}
+        >
+          <div className="z-10 w-full max-w-sm">
+            <Accordion />
           </div>
-        </div>
+        </DemoCard>
 
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10 w-full max-w-sm">
-              <Accordion />
-            </div>
+        <DemoCard
+          data={{
+            title: "Switch",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Switch.tsx",
+          }}
+        >
+          <Switch />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Slider",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Slider.tsx",
+          }}
+        >
+          <Slider />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Toggle",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toggle.tsx",
+          }}
+        >
+          <Toggle />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Toggle Group",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/ToggleGroup.tsx",
+          }}
+        >
+          <ToggleGroup />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Toolbar",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toolbar.tsx",
+          }}
+        >
+          <Toolbar />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Tooltip",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Tooltip.tsx",
+          }}
+        >
+          <Tooltip />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Tabs",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Tabs.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <Tabs />
           </div>
-        </div>
+        </DemoCard>
 
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <Switch />
+        <DemoCard
+          data={{
+            title: "Aspect Ratio",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/AspectRatio.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <AspectRatio />
           </div>
-        </div>
+        </DemoCard>
 
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <Slider />
+        <DemoCard
+          data={{
+            title: "Avatar",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Avatar.tsx",
+          }}
+        >
+          <div className="z-10 grid grid-cols-4 gap-6">
+            <Avatar variant={Avatar.variant.Circle} />
+            <Avatar
+              variant={Avatar.variant.Circle}
+              renderInvalidUrls
+              isOnline
+            />
+            <Avatar variant={Avatar.variant.Rounded} />
+            <Avatar
+              variant={Avatar.variant.Rounded}
+              renderInvalidUrls
+              isOnline
+            />
           </div>
-        </div>
+        </DemoCard>
 
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <Toggle />
+        <DemoCard
+          data={{
+            title: "Progress",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Progress.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <Progress />
           </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10">
-              <ToggleGroup />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10">
-              <Toolbar />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10">
-              <Tooltip />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10 w-full max-w-sm">
-              <Tabs />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10 w-full max-w-sm">
-              <AspectRatio />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-
-            <div className="z-10 grid grid-cols-4 gap-6">
-              <Avatar variant={Avatar.variant.Circle} />
-              <Avatar
-                variant={Avatar.variant.Circle}
-                renderInvalidUrls
-                isOnline
-              />
-              <Avatar variant={Avatar.variant.Rounded} />
-              <Avatar
-                variant={Avatar.variant.Rounded}
-                renderInvalidUrls
-                isOnline
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full h-[500px]">
-          <div className="relative flex items-center justify-center w-full h-full px-6 overflow-hidden shadow-md rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-pink-600 via-fuchsia-800 to-purple-600 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800" />
-            <div className="z-10 flex flex-col items-center w-full max-w-sm space-y-4">
-              <Progress />
-            </div>
-          </div>
-        </div>
+        </DemoCard>
       </div>
     </Fragment>
   );

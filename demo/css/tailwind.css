@@ -3,7 +3,7 @@
 @tailwind base;
 
 :root {
-  @apply antialiased font-display;
+  @apply antialiased font-display scroll-smooth;
 }
 
 button {

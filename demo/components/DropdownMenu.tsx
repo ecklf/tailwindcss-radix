@@ -84,12 +84,12 @@ const DropdownMenu = (props: Props) => {
             "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
           )}
         >
-          Actions
+          Menu
         </DropdownMenuPrimitive.Trigger>
 
         <DropdownMenuPrimitive.Content
           align="end"
-          sideOffset={10}
+          sideOffset={5}
           className={cx(
             " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
             "w-48 md:w-56 px-1.5 py-1 bg-gray-800 rounded-lg shadow-md"
