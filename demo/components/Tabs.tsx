@@ -36,14 +36,15 @@ const Tabs = (props: Props) => {
             key={`tab-trigger-${value}`}
             value={value}
             className={cx(
+              "group",
               "first:rounded-tl-lg last:rounded-tr-lg",
               "border-b first:border-r last:border-l border-gray-600",
-              "radix-state-active:border-b-purple-700",
+              "dark:radix-state-active:border-b-purple-100 dark:radix-state-active:bg-gray-900",
               "flex-1 px-3 py-2.5",
               "focus:outline-none focus:z-10 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
-            <span className="text-sm font-medium dark:text-gray-300">
+            <span className="text-sm font-medium dark:text-gray-300 dark:group-radix-state-active:text-purple-100">
               {title}
             </span>
           </TabsPrimitive.Trigger>
