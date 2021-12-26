@@ -97,7 +97,7 @@ const Toolbar = (props: Props) => {
             )}
           >
             {React.cloneElement(icon, {
-              className: "w-5 h-5 dark:text-gray-300",
+              className: "w-5 h-5 dark:text-gray-100",
             })}
           </ToolbarPrimitive.ToggleItem>
         ))}

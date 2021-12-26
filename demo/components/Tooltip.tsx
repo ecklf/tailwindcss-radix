@@ -28,7 +28,7 @@ const Tooltip = (props: Props) => {
           )}
         >
           <TooltipPrimitive.Arrow className="fill-current dark:text-gray-800" />
-          <span className="block text-xs dark:text-gray-300">
+          <span className="block text-xs dark:text-gray-100">
             Sorry, but our princess is in another castle
           </span>
         </TooltipPrimitive.Content>
