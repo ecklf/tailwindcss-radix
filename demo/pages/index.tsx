@@ -6,6 +6,7 @@ import Accordion from "../components/Accordion";
 import AlertDialog from "../components/AlertDialog";
 import AspectRatio from "../components/AspectRatio";
 import Avatar from "../components/Avatar";
+import Checkbox from "../components/Checkbox";
 import DropdownMenu from "../components/DropdownMenu";
 import Progress from "../components/Progress";
 import Slider from "../components/Slider";
@@ -168,6 +169,17 @@ const Demo = (props: Props) => {
         >
           <div className="z-10 w-full max-w-sm">
             <Accordion />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Checkbox",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Checkbox.tsx",
+          }}
+        >
+          <div className="max-w-sm">
+            <Checkbox />
           </div>
         </DemoCard>
 
