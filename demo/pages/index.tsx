@@ -108,7 +108,7 @@ const DemoCard = ({
         )}
       >
         {children}
-        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-3.5 py-2 bg-black/30 dark:bg-black/25">
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-2.5 bg-black/30 dark:bg-black/25">
           <a
             href={`#${id}`}
             className="text-sm font-medium text-white select-none dark:ext-gray-300"
