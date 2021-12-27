@@ -13,7 +13,7 @@ const Slider = (props: Props) => {
       aria-label="value"
       className="relative flex items-center w-64 h-5 touch-none"
     >
-      <SliderPrimitive.Track className="relative w-full h-1 bg-white border border-purple-600 rounded-full dark:border-transparent grow dark:bg-gray-800">
+      <SliderPrimitive.Track className="relative w-full h-1 bg-white rounded-full grow dark:bg-gray-800">
         <SliderPrimitive.Range className="absolute h-full bg-purple-600 rounded-full dark:bg-white" />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
