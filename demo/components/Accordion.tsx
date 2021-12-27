@@ -49,14 +49,14 @@ const Accordion = (props: Props) => {
                 "inline-flex items-center justify-between w-full px-4 py-2 text-left bg-white dark:bg-gray-800"
               )}
             >
-              <span className="text-sm font-medium dark:text-gray-100">
+              <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {header}
               </span>
-              <ChevronDownIcon className="w-5 h-5 ml-2 duration-300 ease-in-out transform shrink-0 dark:text-gray-400 group-radix-state-open:rotate-180" />
+              <ChevronDownIcon className="w-5 h-5 ml-2 text-gray-700 duration-300 ease-in-out transform shrink-0 dark:text-gray-400 group-radix-state-open:rotate-180" />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content className="w-full px-4 pb-3 bg-white rounded-b-lg pt-r1 dark:bg-gray-800">
-            <div className="text-sm text-gray-500 dark:text-gray-400">
+            <div className="text-sm text-gray-700 dark:text-gray-400">
               {content}
             </div>
           </AccordionPrimitive.Content>
