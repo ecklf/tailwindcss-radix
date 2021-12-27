@@ -10,8 +10,10 @@ const Tooltip = (props: Props) => {
       <TooltipPrimitive.Root>
         <TooltipPrimitive.Trigger
           className={cx(
-            "radix-state-instant-open:bg-gray-900 radix-state-delayed-open:bg-gray-900 group",
-            "inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-100 bg-gray-800 rounded-md select-none",
+            "group",
+            "radix-state-instant-open:bg-gray-100 radix-state-delayed-open:bg-gray-100 dark:radix-state-instant-open:bg-gray-900 dark:radix-state-delayed-open:bg-gray-900",
+            "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
+            "text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800",
             "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
           )}
         >
@@ -24,11 +26,12 @@ const Tooltip = (props: Props) => {
             "radix-side-right:animate-slide-left-fade",
             "radix-side-bottom:animate-slide-up-fade",
             "radix-side-left:animate-slide-right-fade",
-            "dark:bg-gray-800 px-4 py-2 rounded-md"
+            "px-4 py-2 rounded-md",
+            "bg-white dark:bg-gray-800"
           )}
         >
-          <TooltipPrimitive.Arrow className="fill-current dark:text-gray-800" />
-          <span className="block text-xs dark:text-gray-100">
+          <TooltipPrimitive.Arrow className="text-white fill-current dark:text-gray-800" />
+          <span className="block text-xs text-gray-900 dark:text-gray-100">
             Sorry, but our princess is in another castle
           </span>
         </TooltipPrimitive.Content>
