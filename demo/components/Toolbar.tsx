@@ -56,7 +56,7 @@ interface Props {}
 
 const Toolbar = (props: Props) => {
   return (
-    <ToolbarPrimitive.Root className="flex px-2.5 py-2 space-x-4 bg-gray-800 rounded-lg">
+    <ToolbarPrimitive.Root className="flex px-2.5 py-2 space-x-4 bg-white dark:bg-gray-800 rounded-lg">
       <ToolbarPrimitive.ToggleGroup type="multiple" aria-label="Font settings">
         {fontSettings.map(({ value, label, icon }, i) => (
           <ToolbarPrimitive.ToggleItem
@@ -64,15 +64,15 @@ const Toolbar = (props: Props) => {
             value={value}
             aria-label={label}
             className={cx(
-              "radix-state-on:dark:bg-gray-900",
-              "px-2.5 py-2 dark:bg-gray-800",
-              "first:rounded-l-md last:rounded-r-md",
-              "border-y first:border-x last:border-x border-gray-600 radix-state-on:border-transparent",
+              "radix-state-on:bg-gray-100 dark:radix-state-on:bg-gray-900",
+              "bg-white dark:bg-gray-800",
+              "px-2.5 py-2 first:rounded-l-md last:rounded-r-md border-y first:border-x last:border-x",
+              "border-gray-200 dark:border-gray-600 radix-state-on:border-transparent",
               "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
             )}
           >
             {React.cloneElement(icon, {
-              className: "w-5 h-5 dark:text-gray-200",
+              className: "w-5 h-5 text-gray-900 dark:text-gray-100",
             })}
           </ToolbarPrimitive.ToggleItem>
         ))}
@@ -89,15 +89,15 @@ const Toolbar = (props: Props) => {
             value={value}
             aria-label={label}
             className={cx(
-              "radix-state-on:dark:bg-gray-900",
-              "px-2.5 py-2 dark:bg-gray-800",
-              "first:rounded-l-md last:rounded-r-md",
-              "border-y first:border-x last:border-x border-gray-600 radix-state-on:border-transparent",
+              "radix-state-on:bg-gray-100 dark:radix-state-on:bg-gray-900",
+              "bg-white dark:bg-gray-800",
+              "px-2.5 py-2 first:rounded-l-md last:rounded-r-md border-y first:border-x last:border-x",
+              "border-gray-200 dark:border-gray-600 radix-state-on:border-transparent",
               "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
             )}
           >
             {React.cloneElement(icon, {
-              className: "w-5 h-5 dark:text-gray-100",
+              className: "w-5 h-5 text-gray-900 dark:text-gray-100",
             })}
           </ToolbarPrimitive.ToggleItem>
         ))}
