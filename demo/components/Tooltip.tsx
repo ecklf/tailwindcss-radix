@@ -14,7 +14,7 @@ const Tooltip = (props: Props) => {
             "radix-state-instant-open:bg-gray-100 radix-state-delayed-open:bg-gray-100 dark:radix-state-instant-open:bg-gray-900 dark:radix-state-delayed-open:bg-gray-900",
             "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
             "text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800",
-            "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
+            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
           Hover me

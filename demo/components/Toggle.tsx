@@ -16,7 +16,7 @@ const Toggle = (props: Props) => {
         "group radix-state-on:bg-gray-100 dark:radix-state-on:bg-gray-900",
         "inline-flex justify-center items-center px-4 py-2 text-sm font-medium rounded-md select-none",
         "bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-800",
-        "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
+        "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
       )}
     >
       {starred ? <StarFilledIcon className="text-yellow-400" /> : <StarIcon />}
