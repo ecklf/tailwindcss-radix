@@ -19,7 +19,7 @@ const Switch = (props: Props) => {
         className={cx(
           "group-radix-state-checked:translate-x-5",
           "group-radix-state-unchecked:translate-x-0",
-          "pointer-events-none inline-block h-[20px] w-[20px] rounded-full bg-gray-100 shadow-lg transform ring-0 transition ease-in-out duration-200"
+          "pointer-events-none inline-block h-[20px] w-[20px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200"
         )}
       />
     </SwitchPrimitive.Root>
