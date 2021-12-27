@@ -29,7 +29,7 @@ const Tabs = (props: Props) => {
   return (
     <TabsPrimitive.Root defaultValue="tab1">
       <TabsPrimitive.List
-        className={cx("flex w-full rounded-t-lg dark:bg-gray-800")}
+        className={cx("flex w-full rounded-t-lg bg-white dark:bg-gray-800")}
       >
         {tabs.map(({ title, value }) => (
           <TabsPrimitive.Trigger
@@ -38,13 +38,19 @@ const Tabs = (props: Props) => {
             className={cx(
               "group",
               "first:rounded-tl-lg last:rounded-tr-lg",
-              "border-b first:border-r last:border-l border-gray-600",
-              "dark:radix-state-active:border-b-gray-100 dark:radix-state-active:bg-gray-900",
+              "border-b first:border-r last:border-l",
+              "border-gray-300 dark:border-gray-600",
+              "radix-state-active:border-b-gray-900 radix-state-inactive:bg-gray-100 dark:radix-state-inactive:bg-gray-800 dark:radix-state-active:border-b-gray-100 dark:radix-state-active:bg-gray-900",
               "flex-1 px-3 py-2.5",
               "focus:outline-none focus:z-10 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
-            <span className="text-sm font-medium dark:text-gray-100 dark:group-radix-state-active:text-gray-100">
+            <span
+              className={cx(
+                "text-sm font-medium",
+                "text-gray-900 dark:text-gray-100"
+              )}
+            >
               {title}
             </span>
           </TabsPrimitive.Trigger>
@@ -54,9 +60,9 @@ const Tabs = (props: Props) => {
         <TabsPrimitive.Content
           key={`tab-content-${value}`}
           value={value}
-          className={cx("px-6 py-4 rounded-b-lg dark:bg-gray-800")}
+          className={cx("px-6 py-4 rounded-b-lg bg-white dark:bg-gray-800")}
         >
-          <span className="text-sm dark:text-gray-100">
+          <span className="text-sm text-gray-700 dark:text-gray-100">
             {
               {
                 tab1: "Your inbox is empty",
