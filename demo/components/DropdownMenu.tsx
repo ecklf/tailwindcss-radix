@@ -79,8 +79,9 @@ const DropdownMenu = (props: Props) => {
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger
           className={cx(
-            "radix-state-open:bg-gray-900 group",
-            "inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-100 bg-gray-800 rounded-md select-none",
+            "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
+            "inline-flex justify-center w-full px-4 py-2 text-sm font-medium rounded-md select-none",
+            "bg-white text-gray-700 dark:text-gray-100 dark:bg-gray-800",
             "focus:outline-none focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75"
           )}
         >
@@ -92,33 +93,44 @@ const DropdownMenu = (props: Props) => {
           sideOffset={5}
           className={cx(
             " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-            "w-48 md:w-56 px-1.5 py-1 bg-gray-800 rounded-lg shadow-md"
+            "w-48 md:w-56 px-1.5 py-1 rounded-lg shadow-md",
+            "bg-white dark:bg-gray-800"
           )}
         >
           {generalMenuItems.map(({ label, icon, shortcut }, i) => (
             <DropdownMenuPrimitive.Item
               key={`${label}-${i}`}
-              className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+              className={cx(
+                "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              )}
             >
               {icon}
-              <span className="flex-grow text-gray-300">{label}</span>
+              <span className="flex-grow text-gray-700 dark:text-gray-300">
+                {label}
+              </span>
               {shortcut && <span className="text-xs">{shortcut}</span>}
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
           <DropdownMenuPrimitive.CheckboxItem
             checked={showGrid}
             onCheckedChange={setShowGrid}
-            className="flex items-center w-full px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+            className={cx(
+              "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+            )}
           >
             {showGrid ? (
               <GridIcon className="w-4 h-4 mr-2" />
             ) : (
-              <TransparencyGridIcon className="w-3.5 h-3.5 mr-2 text-gray-300" />
+              <TransparencyGridIcon className="w-3.5 h-3.5 mr-2 text-gray-700 dark:text-gray-300" />
             )}
-            <span className="flex-grow text-gray-300">Show Grid</span>
+            <span className="flex-grow text-gray-700 dark:text-gray-300">
+              Show Grid
+            </span>
             <DropdownMenuPrimitive.ItemIndicator>
               <CheckIcon className="w-3.5 h-3.5" />
             </DropdownMenuPrimitive.ItemIndicator>
@@ -127,61 +139,84 @@ const DropdownMenu = (props: Props) => {
           <DropdownMenuPrimitive.CheckboxItem
             checked={showUi}
             onCheckedChange={setShowUi}
-            className="flex items-center w-full px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+            className={cx(
+              "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+            )}
           >
             {showUi ? (
               <EyeOpenIcon className="w-3.5 h-3.5 mr-2" />
             ) : (
               <EyeClosedIcon className="w-3.5 h-3.5 mr-2" />
             )}
-            <span className="flex-grow text-gray-300">Show UI</span>
+            <span className="flex-grow text-gray-700 dark:text-gray-300">
+              Show UI
+            </span>
             <DropdownMenuPrimitive.ItemIndicator>
               <CheckIcon className="w-3.5 h-3.5" />
             </DropdownMenuPrimitive.ItemIndicator>
           </DropdownMenuPrimitive.CheckboxItem>
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
-          <DropdownMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-200 select-none">
+          <DropdownMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-700 select-none dark:text-gray-200">
             Region Tools
           </DropdownMenuPrimitive.Label>
 
           {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
             <DropdownMenuPrimitive.Item
               key={`${label}-${i}`}
-              className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group"
+              className={cx(
+                "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              )}
             >
               {icon}
-              <span className="flex-grow text-gray-300">{label}</span>
+              <span className="flex-grow text-gray-700 dark:text-gray-300">
+                {label}
+              </span>
               {shortcut && <span className="text-xs">{shortcut}</span>}
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
           <DropdownMenuPrimitive.Root>
-            <DropdownMenuPrimitive.TriggerItem className="flex items-center w-full px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none focus:bg-gray-900 group">
+            <DropdownMenuPrimitive.TriggerItem
+              className={cx(
+                "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              )}
+            >
               <Link2Icon className="w-3.5 h-3.5 mr-2" />
-              <span className="flex-grow text-gray-300">Share</span>
+              <span className="flex-grow text-gray-700 dark:text-gray-300">
+                Share
+              </span>
               <CaretRightIcon className="w-3.5 h-3.5" />
             </DropdownMenuPrimitive.TriggerItem>
             <DropdownMenuPrimitive.Content
               className={cx(
                 "radix-side-right:animate-scale-in origin-radix-dropdown-menu",
-                "px-1 py-1 w-full bg-gray-800 text-xs rounded-md shadow-md"
+                "px-1 py-1 w-full text-xs rounded-md shadow-md",
+                "bg-white dark:bg-gray-800"
               )}
             >
               {users.map(({ name, url }, i) => (
                 <DropdownMenuPrimitive.Item
                   key={`${name}-${i}`}
-                  className="flex items-center px-2 py-2 text-xs text-gray-500 rounded-md outline-none cursor-default select-none w-28 md:w-32 focus:bg-gray-900 group"
+                  className={cx(
+                    "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none w-28 md:w-32",
+                    "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                  )}
                 >
                   {url ? (
                     <img className="w-6 h-6 mr-2.5 rounded-full" src={url} />
                   ) : (
                     <PersonIcon className="w-6 h-6 mr-2.5" />
                   )}
-                  <span className="text-gray-300">{name}</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {name}
+                  </span>
                 </DropdownMenuPrimitive.Item>
               ))}
             </DropdownMenuPrimitive.Content>
