@@ -81,8 +81,7 @@ const Hero = () => {
         <GitHubButton
           href="https://github.com/ecklf/tailwindcss-radix"
           aria-label="Star ecklf/tailwindcss-radix on GitHub"
-          // data-color-scheme="dark"
-          data-color-scheme={isDark ? "dark" : "light"}
+          data-color-scheme="dark"
           data-icon="octicon-star"
           data-size="large"
           data-show-count="true"

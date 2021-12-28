@@ -9,7 +9,7 @@ import {
   SunIcon,
 } from "@radix-ui/react-icons";
 import cx from "classnames";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
 interface RadixMenuItem {
   label: string;
@@ -65,24 +65,75 @@ const users: User[] = [
 
 interface Props {}
 
+const themes = [
+  {
+    key: "light",
+    label: "Light",
+    icon: <SunIcon />,
+  },
+  {
+    key: "dark",
+    label: "Dark",
+    icon: <MoonIcon />,
+  },
+
+  {
+    key: "system",
+    label: "System",
+    icon: <Half2Icon />,
+  },
+];
+
 const ThemeSwitcher = (props: Props) => {
-  const [selectedTheme, setSelectedTheme] = useState<
-    "light" | "dark" | "system"
-  >("system");
+  const [preferredTheme, setPreferredTheme] = useState<null | string>(null);
+
+  useEffect(() => {
+    try {
+      let found = localStorage.getItem("theme");
+      setPreferredTheme(found);
+    } catch (error) {}
+  }, []);
+
+  useEffect(() => {
+    const prefersDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateTheme = (e: MediaQueryListEvent) => {
+      setPreferredTheme("system");
+    };
+    prefersDarkQuery.addEventListener("change", updateTheme);
+
+    return () => {
+      prefersDarkQuery.removeEventListener("change", updateTheme);
+    };
+  }, []);
 
   return (
     <div className="relative inline-block text-left">
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger
           className={cx(
-            //     "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-            "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
+            "inline-flex justify-center px-3 py-2 text-sm font-medium rounded-md select-none",
             "text-gray-900 bg-white hover:bg-gray-50 dark:text-gray-100 dark:bg-gray-700 hover:dark:bg-gray-600",
             "border border-gray-300 dark:border-transparent",
             "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
-          Theme
+          {(function () {
+            switch (preferredTheme) {
+              case "light":
+                return (
+                  <SunIcon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                );
+              case "dark":
+                return (
+                  <MoonIcon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                );
+              default:
+                return (
+                  <Half2Icon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                );
+            }
+          })()}
+          {/* {isDark ? "dark" : "light"} */}
         </DropdownMenuPrimitive.Trigger>
 
         <DropdownMenuPrimitive.Content
@@ -94,24 +145,7 @@ const ThemeSwitcher = (props: Props) => {
             "bg-gray-50 dark:bg-gray-700"
           )}
         >
-          {[
-            {
-              key: "light",
-              label: "Light",
-              icon: <SunIcon />,
-            },
-            {
-              key: "dark",
-              label: "Dark",
-              icon: <MoonIcon />,
-            },
-
-            {
-              key: "system",
-              label: "System",
-              icon: <Half2Icon />,
-            },
-          ].map(({ key, label, icon }, i) => {
+          {themes.map(({ key, label, icon }, i) => {
             return (
               <DropdownMenuPrimitive.Item
                 key={`theme-${i}`}
@@ -121,6 +155,7 @@ const ThemeSwitcher = (props: Props) => {
                 )}
                 onClick={() => {
                   (window as any).__setPreferredTheme(key);
+                  setPreferredTheme(key);
                 }}
               >
                 {React.cloneElement(icon, {
