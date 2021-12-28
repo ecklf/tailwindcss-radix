@@ -9,6 +9,7 @@ import Checkbox from "../components/Checkbox";
 import Collapsible from "../components/Collapsible";
 import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
+import Popover from "../components/Popover";
 import Progress from "../components/Progress";
 import DemoCard from "../components/shared/DemoCard";
 import ThemeSwitcher from "../components/shared/ThemeSwitcher";
@@ -113,6 +114,16 @@ const Demo = (props: Props) => {
           }}
         >
           <DropdownMenu />
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Popover",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Popover.tsx",
+          }}
+        >
+          <Popover />
         </DemoCard>
 
         <DemoCard
