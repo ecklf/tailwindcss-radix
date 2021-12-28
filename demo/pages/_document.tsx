@@ -8,9 +8,11 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="dark">
+      <Html>
         <Head>
           <meta name="theme-color" content="#111827" />
+          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+          <script src="/static/theme.js"></script>
         </Head>
         <body>
           <Main />

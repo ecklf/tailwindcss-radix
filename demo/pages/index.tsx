@@ -11,6 +11,7 @@ import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
 import Progress from "../components/Progress";
 import DemoCard from "../components/shared/DemoCard";
+import ThemeSwitcher from "../components/shared/ThemeSwitcher";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
 import Tabs from "../components/Tabs";
@@ -18,18 +19,10 @@ import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
 import Tooltip from "../components/Tooltip";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const Hero = () => {
-  const [colorScheme, setColorScheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setColorScheme(
-        document.documentElement.classList.contains("dark") ? "dark" : "light"
-      );
-    }
-  }, []);
-
+  const isDark = useDarkMode();
   return (
     <div className="inline-flex flex-col items-center w-full mt-8 space-y-4 justify-self-center">
       <svg
@@ -88,8 +81,8 @@ const Hero = () => {
         <GitHubButton
           href="https://github.com/ecklf/tailwindcss-radix"
           aria-label="Star ecklf/tailwindcss-radix on GitHub"
-          // data-color-scheme="no-preference: dark; light: light; dark: dark;"
-          data-color-scheme={colorScheme}
+          // data-color-scheme="dark"
+          data-color-scheme={isDark ? "dark" : "light"}
           data-icon="octicon-star"
           data-size="large"
           data-show-count="true"
@@ -97,50 +90,9 @@ const Hero = () => {
           Star
         </GitHubButton>
       </div>
+
+      <ThemeSwitcher />
     </div>
-  );
-};
-
-const DemoCard = ({
-  children,
-  data: { title, link },
-}: {
-  children: ReactNode;
-  data: {
-    title: string;
-    link: string;
-  };
-}) => {
-  const id = title.replace(" ", "_").toLowerCase();
-
-  return (
-    <section id={id} className="w-full h-[550px] scroll-mt-6">
-      <div
-        className={cx(
-          "relative flex items-center justify-center w-full h-full overflow-hidden shadow-md rounded-xl p-4",
-          "bg-gradient-to-br from-pink-300 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
-          // "bg-gradient-to-br from-pink-300 via-fuchsia-200 to-purple-300 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
-        )}
-      >
-        {children}
-        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-2.5 bg-black/50 dark:bg-black/30">
-          <a
-            href={`#${id}`}
-            className="text-sm font-medium text-white select-none dark:ext-gray-300"
-          >
-            {title}
-          </a>
-          <a
-            href={link}
-            rel={"noreferrer"}
-            target={"_blank"}
-            className="text-xs font-medium text-white dark:text-gray-100 px-2 py-1.5 bg-white/25 hover:bg-white/30 rounded select-none"
-          >
-            Code
-          </a>
-        </div>
-      </div>
-    </section>
   );
 };
 
