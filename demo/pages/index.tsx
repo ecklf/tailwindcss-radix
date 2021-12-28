@@ -19,10 +19,8 @@ import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
 import Tooltip from "../components/Tooltip";
-import { useDarkMode } from "../hooks/useDarkMode";
 
 const Hero = () => {
-  const isDark = useDarkMode();
   return (
     <div className="inline-flex flex-col items-center w-full mt-8 space-y-4 justify-self-center">
       <svg

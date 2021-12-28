@@ -6,11 +6,6 @@
   @apply antialiased font-display scroll-smooth;
 }
 
-button {
-  /* Disables tap highlight color on Chrome */
-  -webkit-tap-highlight-color: transparent;
-}
-
 html {
   @apply bg-white;
   scrollbar-color: #00000080 transparent;
@@ -38,6 +33,11 @@ html[class*="dark"] {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-black/60 dark:hover:bg-white/80;
+}
+
+button {
+  /* Disables tap highlight color on Chrome */
+  -webkit-tap-highlight-color: transparent;
 }
 
 @tailwind components;

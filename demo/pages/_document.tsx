@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -11,8 +12,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="theme-color" content="#111827" />
-          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-          <script src="/static/theme.js"></script>
+          <script src="/static/theme.js" />
         </Head>
         <body>
           <Main />
