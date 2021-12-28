@@ -1,14 +1,16 @@
-import cx from "classnames";
 import Head from "next/head";
-import React, { Fragment, ReactNode, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import GitHubButton from "react-github-btn";
 import Accordion from "../components/Accordion";
 import AlertDialog from "../components/AlertDialog";
 import AspectRatio from "../components/AspectRatio";
 import Avatar from "../components/Avatar";
 import Checkbox from "../components/Checkbox";
+import Collapsible from "../components/Collapsible";
+import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
 import Progress from "../components/Progress";
+import DemoCard from "../components/shared/DemoCard";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
 import Tabs from "../components/Tabs";
@@ -155,14 +157,22 @@ const Demo = (props: Props) => {
 
       <div className="grid grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
         <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
           data={{
             title: "Dropdown Menu",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/DropdownMenu.tsx",
           }}
         >
-          <div className="-mt-[22rem]">
-            <DropdownMenu />
-          </div>
+          <DropdownMenu />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Dialog",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Dialog.tsx",
+          }}
+        >
+          <Dialog />
         </DemoCard>
 
         <DemoCard
@@ -175,13 +185,26 @@ const Demo = (props: Props) => {
         </DemoCard>
 
         <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
           data={{
             title: "Accordion",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Accordion.tsx",
           }}
         >
-          <div className="z-10 w-full max-w-sm">
+          <div className="max-w-sm">
             <Accordion />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Collapsible",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Collapsible.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <Collapsible />
           </div>
         </DemoCard>
 

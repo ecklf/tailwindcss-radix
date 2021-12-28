@@ -13,13 +13,13 @@ button {
 
 html {
   @apply bg-white;
-  scrollbar-color: #6b7280 transparent;
+  scrollbar-color: #00000080 transparent;
   scrollbar-width: auto;
 }
 
 html[class*="dark"] {
   @apply bg-gray-900;
-  scrollbar-color: #9ca3af transparent;
+  scrollbar-color: #ffffffb3 transparent;
   scrollbar-width: auto;
 }
 
@@ -33,11 +33,11 @@ html[class*="dark"] {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-500 rounded-full dark:bg-gray-400;
+  @apply rounded-full bg-black/50 dark:bg-white/70;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:hover:bg-gray-300;
+  @apply bg-black/60 dark:hover:bg-white/80;
 }
 
 @tailwind components;
