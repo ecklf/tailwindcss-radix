@@ -74,7 +74,7 @@ const Dialog = (props: Props) => {
                   autoComplete="given-name"
                   className={cx(
                     "block w-full mt-1 rounded-md",
-                    "text-sm text-gray-900 placeholder:text-gray-700 dark:text-gray-400 dark:placeholder:text-gray-600",
+                    "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                     "dark:bg-gray-800 border border-gray-400 dark:border-gray-700 focus-visible:border-transparent",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
@@ -94,7 +94,7 @@ const Dialog = (props: Props) => {
                   autoComplete="family-name"
                   className={cx(
                     "block w-full mt-1 rounded-md",
-                    "text-sm text-gray-900 placeholder:text-gray-700 dark:text-gray-400 dark:placeholder:text-gray-600",
+                    "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                     "dark:bg-gray-800 border border-gray-400 dark:border-gray-700 focus-visible:border-transparent",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
