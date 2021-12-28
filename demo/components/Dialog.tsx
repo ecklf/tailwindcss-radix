@@ -117,7 +117,7 @@ const Dialog = (props: Props) => {
 
             <DialogPrimitive.Close
               className={cx(
-                "absolute inline-flex items-center justify-center top-3 right-3 p-1 rounded-full",
+                "absolute inline-flex items-center justify-center top-3.5 right-3.5 p-1 rounded-full",
                 "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
               )}
             >
