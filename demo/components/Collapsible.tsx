@@ -14,7 +14,7 @@ const Collapsible = (props: Props) => {
         className={cx(
           "group w-full flex items-center justify-between px-4 py-2 text-left rounded-md text-sm font-medium select-none",
           "text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800",
-          "focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-30 dark:focus-visible:ring-purple-500 dark:focus-visible:ring-opacity-75"
+          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
         <div>My Playlists</div>
