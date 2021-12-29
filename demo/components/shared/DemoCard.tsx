@@ -27,7 +27,7 @@ const DemoCard = ({
     <section id={id} className="w-full h-[550px] scroll-mt-6 overflow-y-auto">
       <div
         className={cx(
-          "relative flex w-full h-full overflow-hidden shadow-md rounded-xl p-4",
+          "relative flex w-full h-full shadow-md rounded-xl p-4",
           // "bg-gradient-to-br from-pink-300 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
           // "bg-gradient-to-br from-pink-400 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
           "bg-gradient-to-br from-pink-300 via-fuchsia-200 to-purple-300 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
