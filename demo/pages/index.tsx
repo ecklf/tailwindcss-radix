@@ -9,6 +9,7 @@ import Checkbox from "../components/Checkbox";
 import Collapsible from "../components/Collapsible";
 import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
+import HoverCard from "../components/HoverCard";
 import Popover from "../components/Popover";
 import Progress from "../components/Progress";
 import DemoCard from "../components/shared/DemoCard";
@@ -142,6 +143,16 @@ const Demo = (props: Props) => {
           }}
         >
           <AlertDialog />
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Hover Card",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/HoverCard.tsx",
+          }}
+        >
+          <HoverCard />
         </DemoCard>
 
         <DemoCard
