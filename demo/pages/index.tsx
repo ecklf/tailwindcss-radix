@@ -185,7 +185,7 @@ const Demo = (props: Props) => {
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Checkbox.tsx",
           }}
         >
-          <div className="max-w-sm p-4 bg-white rounded-md dark:bg-gray-800">
+          <div className="max-w-sm p-3 bg-white rounded-md dark:bg-gray-800">
             <Checkbox />
           </div>
         </DemoCard>
