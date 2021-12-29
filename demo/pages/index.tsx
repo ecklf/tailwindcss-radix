@@ -208,7 +208,7 @@ const Demo = (props: Props) => {
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/RadioGroup.tsx",
           }}
         >
-          <div className="flex items-center justify-center px-6 py-4 bg-white rounded-md dark:bg-gray-800">
+          <div className="flex items-center justify-center py-6 bg-white rounded-md px-14 dark:bg-gray-800">
             <RadioGroup />
           </div>
         </DemoCard>

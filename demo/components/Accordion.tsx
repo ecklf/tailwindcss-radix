@@ -31,7 +31,7 @@ const Accordion = (props: Props) => {
   return (
     <AccordionPrimitive.Root
       type="single"
-      //   type="multiple"
+      defaultValue="item-1"
       className={cx("space-y-4")}
     >
       {items.map(({ header, content }, i) => (

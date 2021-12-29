@@ -6,7 +6,7 @@ import React from "react";
 interface Props {}
 
 const Collapsible = (props: Props) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(true);
 
   return (
     <CollapsiblePrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
