@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import React, { Fragment } from "react";
 import GitHubButton from "react-github-btn";
@@ -103,9 +104,35 @@ const Demo = (props: Props) => {
   return (
     <Fragment>
       <Head>
-        <title>TailwindCSS Radix</title>
+        <title>Tailwind CSS Radix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NextSeo
+        title="Tailwind CSS Radix"
+        description="Utilities and variants for styling Radix state"
+        canonical={process.env.NEXT_PUBLIC_URL}
+        openGraph={{
+          url: process.env.NEXT_PUBLIC_URL,
+          title: "Tailwind CSS Radix",
+          description: "Utilities and variants for styling Radix state",
+          images: [
+            {
+              url: `${process.env.NEXT_PUBLIC_URL}/static/og.png`,
+              width: 1200,
+              height: 675,
+              alt: "Tailwind CSS Radix",
+              type: "image/png",
+            },
+          ],
+        }}
+        twitter={{
+          handle: "@ecklflorentin",
+          site: "@ecklf",
+          cardType: "summary_large_image",
+        }}
+      />
+
       <Hero />
 
       <div className="grid grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
