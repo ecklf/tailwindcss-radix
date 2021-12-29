@@ -1,4 +1,4 @@
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import {
   CaretRightIcon,
   CheckIcon,
@@ -70,27 +70,20 @@ const users: User[] = [
 
 interface Props {}
 
-const DropdownMenu = (props: Props) => {
+const ContextMenu = (props: Props) => {
   const [showGrid, setShowGrid] = useState(false);
   const [showUi, setShowUi] = useState(false);
 
   return (
-    <div className="relative inline-block text-left">
-      <DropdownMenuPrimitive.Root>
-        <DropdownMenuPrimitive.Trigger
-          className={cx(
-            "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-            "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
-            "bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-800",
-            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-          )}
-        >
-          Click
-        </DropdownMenuPrimitive.Trigger>
+    <div>
+      <ContextMenuPrimitive.Root>
+        <ContextMenuPrimitive.Trigger className="inline-flex items-center justify-center px-3 py-4 bg-white border-2 border-gray-500 border-dashed rounded-md w-36 dark:bg-gray-800 dark:border-gray-300">
+          <span className="text-sm font-medium text-gray-900 select-none dark:text-gray-100">
+            Right Click
+          </span>
+        </ContextMenuPrimitive.Trigger>
 
-        <DropdownMenuPrimitive.Content
-          align="end"
-          sideOffset={5}
+        <ContextMenuPrimitive.Content
           className={cx(
             " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
             "w-48 md:w-56 px-1.5 py-1 rounded-lg shadow-md",
@@ -98,7 +91,7 @@ const DropdownMenu = (props: Props) => {
           )}
         >
           {generalMenuItems.map(({ label, icon, shortcut }, i) => (
-            <DropdownMenuPrimitive.Item
+            <ContextMenuPrimitive.Item
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
@@ -110,12 +103,12 @@ const DropdownMenu = (props: Props) => {
                 {label}
               </span>
               {shortcut && <span className="text-xs">{shortcut}</span>}
-            </DropdownMenuPrimitive.Item>
+            </ContextMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <ContextMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
-          <DropdownMenuPrimitive.CheckboxItem
+          <ContextMenuPrimitive.CheckboxItem
             checked={showGrid}
             onCheckedChange={setShowGrid}
             className={cx(
@@ -131,12 +124,12 @@ const DropdownMenu = (props: Props) => {
             <span className="flex-grow text-gray-700 dark:text-gray-300">
               Show Grid
             </span>
-            <DropdownMenuPrimitive.ItemIndicator>
+            <ContextMenuPrimitive.ItemIndicator>
               <CheckIcon className="w-3.5 h-3.5" />
-            </DropdownMenuPrimitive.ItemIndicator>
-          </DropdownMenuPrimitive.CheckboxItem>
+            </ContextMenuPrimitive.ItemIndicator>
+          </ContextMenuPrimitive.CheckboxItem>
 
-          <DropdownMenuPrimitive.CheckboxItem
+          <ContextMenuPrimitive.CheckboxItem
             checked={showUi}
             onCheckedChange={setShowUi}
             className={cx(
@@ -152,19 +145,19 @@ const DropdownMenu = (props: Props) => {
             <span className="flex-grow text-gray-700 dark:text-gray-300">
               Show UI
             </span>
-            <DropdownMenuPrimitive.ItemIndicator>
+            <ContextMenuPrimitive.ItemIndicator>
               <CheckIcon className="w-3.5 h-3.5" />
-            </DropdownMenuPrimitive.ItemIndicator>
-          </DropdownMenuPrimitive.CheckboxItem>
+            </ContextMenuPrimitive.ItemIndicator>
+          </ContextMenuPrimitive.CheckboxItem>
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <ContextMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
-          <DropdownMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-700 select-none dark:text-gray-200">
+          <ContextMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-700 select-none dark:text-gray-200">
             Region Tools
-          </DropdownMenuPrimitive.Label>
+          </ContextMenuPrimitive.Label>
 
           {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
-            <DropdownMenuPrimitive.Item
+            <ContextMenuPrimitive.Item
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
@@ -176,13 +169,13 @@ const DropdownMenu = (props: Props) => {
                 {label}
               </span>
               {shortcut && <span className="text-xs">{shortcut}</span>}
-            </DropdownMenuPrimitive.Item>
+            </ContextMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <ContextMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
 
-          <DropdownMenuPrimitive.Root>
-            <DropdownMenuPrimitive.TriggerItem
+          <ContextMenuPrimitive.Root>
+            <ContextMenuPrimitive.TriggerItem
               className={cx(
                 "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
                 "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
@@ -193,8 +186,8 @@ const DropdownMenu = (props: Props) => {
                 Share
               </span>
               <CaretRightIcon className="w-3.5 h-3.5" />
-            </DropdownMenuPrimitive.TriggerItem>
-            <DropdownMenuPrimitive.Content
+            </ContextMenuPrimitive.TriggerItem>
+            <ContextMenuPrimitive.Content
               className={cx(
                 "radix-side-right:animate-scale-in origin-radix-dropdown-menu",
                 "px-1 py-1 w-full text-xs rounded-md shadow-md",
@@ -202,7 +195,7 @@ const DropdownMenu = (props: Props) => {
               )}
             >
               {users.map(({ name, url }, i) => (
-                <DropdownMenuPrimitive.Item
+                <ContextMenuPrimitive.Item
                   key={`${name}-${i}`}
                   className={cx(
                     "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none w-28 md:w-32",
@@ -217,14 +210,14 @@ const DropdownMenu = (props: Props) => {
                   <span className="text-gray-700 dark:text-gray-300">
                     {name}
                   </span>
-                </DropdownMenuPrimitive.Item>
+                </ContextMenuPrimitive.Item>
               ))}
-            </DropdownMenuPrimitive.Content>
-          </DropdownMenuPrimitive.Root>
-        </DropdownMenuPrimitive.Content>
-      </DropdownMenuPrimitive.Root>
+            </ContextMenuPrimitive.Content>
+          </ContextMenuPrimitive.Root>
+        </ContextMenuPrimitive.Content>
+      </ContextMenuPrimitive.Root>
     </div>
   );
 };
 
-export default DropdownMenu;
+export default ContextMenu;

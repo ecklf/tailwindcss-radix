@@ -18,7 +18,7 @@ const AlertDialog = (props: Props) => {
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
-        Alert Dialog
+        Click
       </AlertDialogPrimitive.Trigger>
       <Transition.Root show={isOpen}>
         <Transition.Child

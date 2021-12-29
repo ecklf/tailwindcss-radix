@@ -7,11 +7,13 @@ import AspectRatio from "../components/AspectRatio";
 import Avatar from "../components/Avatar";
 import Checkbox from "../components/Checkbox";
 import Collapsible from "../components/Collapsible";
+import ContextMenu from "../components/ContextMenu";
 import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
 import HoverCard from "../components/HoverCard";
 import Popover from "../components/Popover";
 import Progress from "../components/Progress";
+import RadioGroup from "../components/RadioGroup";
 import DemoCard from "../components/shared/DemoCard";
 import ThemeSwitcher from "../components/shared/ThemeSwitcher";
 import Slider from "../components/Slider";
@@ -120,11 +122,11 @@ const Demo = (props: Props) => {
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Popover",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Popover.tsx",
+            title: "Context Menu",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/ContextMenu.tsx",
           }}
         >
-          <Popover />
+          <ContextMenu />
         </DemoCard>
 
         <DemoCard
@@ -148,23 +150,21 @@ const Demo = (props: Props) => {
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Hover Card",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/HoverCard.tsx",
+            title: "Popover",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Popover.tsx",
           }}
         >
-          <HoverCard />
+          <Popover />
         </DemoCard>
 
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Accordion",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Accordion.tsx",
+            title: "Hover Card",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/HoverCard.tsx",
           }}
         >
-          <div className="max-w-sm">
-            <Accordion />
-          </div>
+          <HoverCard />
         </DemoCard>
 
         <DemoCard
@@ -180,6 +180,18 @@ const Demo = (props: Props) => {
         </DemoCard>
 
         <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Accordion",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Accordion.tsx",
+          }}
+        >
+          <div className="max-w-sm">
+            <Accordion />
+          </div>
+        </DemoCard>
+
+        <DemoCard
           data={{
             title: "Checkbox",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Checkbox.tsx",
@@ -187,6 +199,17 @@ const Demo = (props: Props) => {
         >
           <div className="max-w-sm p-3 bg-white rounded-md dark:bg-gray-800">
             <Checkbox />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Radio Group",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/RadioGroup.tsx",
+          }}
+        >
+          <div className="flex items-center justify-center px-6 py-4 bg-white rounded-md dark:bg-gray-800">
+            <RadioGroup />
           </div>
         </DemoCard>
 
@@ -237,32 +260,12 @@ const Demo = (props: Props) => {
 
         <DemoCard
           data={{
-            title: "Tooltip",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Tooltip.tsx",
-          }}
-        >
-          <Tooltip />
-        </DemoCard>
-
-        <DemoCard
-          data={{
             title: "Tabs",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Tabs.tsx",
           }}
         >
           <div className="w-full max-w-sm">
             <Tabs />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Aspect Ratio",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/AspectRatio.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <AspectRatio />
           </div>
         </DemoCard>
 
@@ -286,6 +289,26 @@ const Demo = (props: Props) => {
               isOnline
             />
           </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Aspect Ratio",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/AspectRatio.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <AspectRatio />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Tooltip",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Tooltip.tsx",
+          }}
+        >
+          <Tooltip />
         </DemoCard>
 
         <DemoCard

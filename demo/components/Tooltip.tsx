@@ -17,7 +17,7 @@ const Tooltip = (props: Props) => {
             "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
-          Hover me
+          Hover
         </TooltipPrimitive.Trigger>
         <TooltipPrimitive.Content
           sideOffset={4}

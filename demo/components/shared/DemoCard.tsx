@@ -24,7 +24,7 @@ const DemoCard = ({
   const id = title.replace(" ", "_").toLowerCase();
 
   return (
-    <section id={id} className="w-full h-[550px] scroll-mt-6">
+    <section id={id} className="w-full h-[550px] scroll-mt-6 overflow-y-auto">
       <div
         className={cx(
           "relative flex w-full h-full overflow-hidden shadow-md rounded-xl p-4",
