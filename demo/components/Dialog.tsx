@@ -31,7 +31,10 @@ const Dialog = (props: Props) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <DialogPrimitive.Overlay className="fixed inset-0 z-20 bg-black/50" />
+          <DialogPrimitive.Overlay
+            forceMount
+            className="fixed inset-0 z-20 bg-black/50"
+          />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -43,6 +46,7 @@ const Dialog = (props: Props) => {
           leaveTo="opacity-0 scale-95"
         >
           <DialogPrimitive.Content
+            forceMount
             className={cx(
               "fixed z-50",
               "w-[95vw] md:w-full max-w-md rounded-lg p-4",
