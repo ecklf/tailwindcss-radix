@@ -3,6 +3,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React, { Fragment, useState } from "react";
+import Button from "./shared/Button";
 
 interface Props {}
 
@@ -11,15 +12,8 @@ const Dialog = (props: Props) => {
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DialogPrimitive.Trigger
-        className={cx(
-          "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-          "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
-          "bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-800",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-        )}
-      >
-        Click
+      <DialogPrimitive.Trigger asChild>
+        <Button>Click</Button>
       </DialogPrimitive.Trigger>
       <Transition.Root show={isOpen}>
         <Transition.Child

@@ -78,7 +78,7 @@ const ContextMenu = (props: Props) => {
     <div>
       <ContextMenuPrimitive.Root>
         <ContextMenuPrimitive.Trigger className="inline-flex items-center justify-center px-3 py-4 bg-white border-2 border-gray-500 border-dashed rounded-md w-36 dark:bg-gray-800 dark:border-gray-300">
-          <span className="text-sm font-medium text-gray-900 select-none dark:text-gray-100">
+          <span className="text-sm font-medium text-gray-700 select-none dark:text-gray-100">
             Right Click
           </span>
         </ContextMenuPrimitive.Trigger>
@@ -95,7 +95,7 @@ const ContextMenu = (props: Props) => {
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {icon}
@@ -113,7 +113,7 @@ const ContextMenu = (props: Props) => {
             onCheckedChange={setShowGrid}
             className={cx(
               "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showGrid ? (
@@ -134,7 +134,7 @@ const ContextMenu = (props: Props) => {
             onCheckedChange={setShowUi}
             className={cx(
               "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showUi ? (
@@ -161,7 +161,7 @@ const ContextMenu = (props: Props) => {
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {icon}
@@ -178,7 +178,7 @@ const ContextMenu = (props: Props) => {
             <ContextMenuPrimitive.TriggerItem
               className={cx(
                 "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               <Link2Icon className="w-3.5 h-3.5 mr-2" />
@@ -199,7 +199,7 @@ const ContextMenu = (props: Props) => {
                   key={`${name}-${i}`}
                   className={cx(
                     "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none w-28 md:w-32",
-                    "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                    "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                   )}
                 >
                   {url ? (

@@ -58,7 +58,7 @@ const HoverCard = (props: Props) => {
               Tailwind CSS
             </h3>
 
-            <p className="mt-2 text-sm font-normal text-gray-700 dark:text-gray-400">
+            <p className="mt-1 text-sm font-normal text-gray-700 dark:text-gray-400">
               A utility-first CSS framework for rapidly building custom user
               interfaces.
             </p>

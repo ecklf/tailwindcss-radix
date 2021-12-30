@@ -40,7 +40,7 @@ const Tabs = (props: Props) => {
               "first:rounded-tl-lg last:rounded-tr-lg",
               "border-b first:border-r last:border-l",
               "border-gray-300 dark:border-gray-600",
-              "radix-state-active:border-b-gray-900 radix-state-inactive:bg-gray-100 focus-visible:radix-state-active:border-b-transparent dark:radix-state-inactive:bg-gray-800 dark:radix-state-active:border-b-gray-100 focus-visible:dark:radix-state-active:border-b-transparent dark:radix-state-active:bg-gray-900",
+              "radix-state-active:border-b-gray-700 radix-state-inactive:bg-gray-50 focus-visible:radix-state-active:border-b-transparent dark:radix-state-inactive:bg-gray-800 dark:radix-state-active:border-b-gray-100 focus-visible:dark:radix-state-active:border-b-transparent dark:radix-state-active:bg-gray-900",
               "flex-1 px-3 py-2.5",
               "focus:radix-state-active:border-b-red",
               "focus:outline-none focus:z-10 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
@@ -49,7 +49,7 @@ const Tabs = (props: Props) => {
             <span
               className={cx(
                 "text-sm font-medium",
-                "text-gray-900 dark:text-gray-100"
+                "text-gray-700 dark:text-gray-100"
               )}
             >
               {title}

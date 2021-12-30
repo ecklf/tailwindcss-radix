@@ -42,15 +42,15 @@ const ToggleGroup = (props: Props) => {
           value={value}
           aria-label={label}
           className={cx(
-            "radix-state-on:bg-gray-100 dark:radix-state-on:bg-gray-900",
+            "group radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
             "bg-white dark:bg-gray-800",
             "px-2.5 py-2 first:rounded-l-md last:rounded-r-md border-y first:border-x last:border-x",
-            "border-gray-200 dark:border-gray-600 radix-state-on:border-transparent",
+            "border-gray-200 dark:border-gray-600 radix-state-on:border-transparent dark:radix-state-on:border-transparent",
             "focus:relative focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:z-20"
           )}
         >
           {React.cloneElement(icon, {
-            className: "w-5 h-5 text-gray-900 dark:text-gray-100",
+            className: "w-5 h-5 text-gray-700 dark:text-gray-100",
           })}
         </ToggleGroupPrimitive.Item>
       ))}

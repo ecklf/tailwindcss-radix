@@ -15,6 +15,7 @@ import {
 } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React, { ReactNode, useState } from "react";
+import Button from "./shared/Button";
 
 interface RadixMenuItem {
   label: string;
@@ -77,15 +78,8 @@ const DropdownMenu = (props: Props) => {
   return (
     <div className="relative inline-block text-left">
       <DropdownMenuPrimitive.Root>
-        <DropdownMenuPrimitive.Trigger
-          className={cx(
-            "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-            "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
-            "bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-800",
-            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-          )}
-        >
-          Click
+        <DropdownMenuPrimitive.Trigger asChild>
+          <Button>Click</Button>
         </DropdownMenuPrimitive.Trigger>
 
         <DropdownMenuPrimitive.Content
@@ -102,7 +96,7 @@ const DropdownMenu = (props: Props) => {
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {icon}
@@ -120,7 +114,7 @@ const DropdownMenu = (props: Props) => {
             onCheckedChange={setShowGrid}
             className={cx(
               "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showGrid ? (
@@ -141,7 +135,7 @@ const DropdownMenu = (props: Props) => {
             onCheckedChange={setShowUi}
             className={cx(
               "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-              "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+              "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showUi ? (
@@ -168,7 +162,7 @@ const DropdownMenu = (props: Props) => {
               key={`${label}-${i}`}
               className={cx(
                 "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {icon}
@@ -185,7 +179,7 @@ const DropdownMenu = (props: Props) => {
             <DropdownMenuPrimitive.TriggerItem
               className={cx(
                 "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
-                "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               <Link2Icon className="w-3.5 h-3.5 mr-2" />
@@ -206,7 +200,7 @@ const DropdownMenu = (props: Props) => {
                   key={`${name}-${i}`}
                   className={cx(
                     "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none w-28 md:w-32",
-                    "text-gray-400 focus:bg-gray-100 dark:text-gray-500 dark:focus:bg-gray-900"
+                    "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                   )}
                 >
                   {url ? (

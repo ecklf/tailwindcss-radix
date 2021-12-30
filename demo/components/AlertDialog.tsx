@@ -2,6 +2,7 @@ import { Transition } from "@headlessui/react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import cx from "classnames";
 import React, { Fragment, useState } from "react";
+import Button from "./shared/Button";
 
 interface Props {}
 
@@ -10,15 +11,8 @@ const AlertDialog = (props: Props) => {
 
   return (
     <AlertDialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
-      <AlertDialogPrimitive.Trigger
-        className={cx(
-          "group radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-          "inline-flex justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
-          "bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-800",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
-        )}
-      >
-        Click
+      <AlertDialogPrimitive.Trigger asChild>
+        <Button>Click</Button>
       </AlertDialogPrimitive.Trigger>
       <Transition.Root show={isOpen}>
         <Transition.Child

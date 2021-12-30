@@ -9,12 +9,15 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
       ref={ref}
       {...props}
       className={cx(
-        "inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-md select-none",
-        "focus:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-opacity-30 dark:focus-visible:ring-purple-500 dark:focus-visible:ring-opacity-75",
+        "inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md select-none",
+        "bg-white text-gray-700 dark:text-gray-100 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900",
+        "hover:bg-gray-50",
+        "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
         // Register all radix states
         "group",
-        "radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
-        "radix-state-on:bg-gray-100 dark:radix-state-off:bg-gray-900"
+        "radix-state-open:bg-gray-50 dark:radix-state-open:bg-gray-900",
+        "radix-state-on:bg-gray-50 dark:radix-state-off:bg-gray-900",
+        "radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50"
       )}
     >
       {children}
