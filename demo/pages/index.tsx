@@ -135,7 +135,7 @@ const Demo = (props: Props) => {
 
       <Hero />
 
-      <div className="grid grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
+      <div className="grid w-full grid-cols-1 gap-4 px-4 py-8 mx-auto max-w-screen-2xl md:gap-6 md:px-6 lg:grid-cols-2">
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
