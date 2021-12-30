@@ -25,8 +25,8 @@ const RadioGroup = (props: Props) => {
                 type="radio"
                 className={cx(
                   // Setting the background in dark properly requires a workaround (see css/tailwind.css)
-                  "w-4 h-4 text-purple-600 bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-700",
-                  "focus:outline-none focus:ring-transparent focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                  "w-4 h-4 text-purple-600 bg-gray-100 dark:bg-gray-900 border border-transparent",
+                  "focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               />
               <label
