@@ -13,10 +13,10 @@ const RadioGroup = (props: Props) => {
   return (
     <form>
       <fieldset>
-        <legend className="text-sm font-medium text-gray-900 dark:text-gray-100">
+        <legend className="text-sm font-medium leading-4 text-gray-900 dark:text-gray-100">
           Choose your starter
         </legend>
-        <div className="mt-4 space-y-4">
+        <div className="mt-3 space-y-3">
           {starters.map((pokemon) => (
             <div key={pokemon.id} className="flex items-center">
               <input
