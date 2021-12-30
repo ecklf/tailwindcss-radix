@@ -1,10 +1,20 @@
-# TailwindCSS Radix
+<p align="center">
+  <a align='center' href="https://tailwindcss-radix.vercel.app">
+    <img width="967" height="auto" src="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.png" />
+  </a>
+</p>
 
-[![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
-[![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
-[![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
+<p align="center">
+  Utilities and variants for styling Radix state
+</p>
 
-Utilities and variants for styling Radix state
+<div align="center">
+
+  <a href="https://tailwindcss.com">![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)</a>
+  <a href="https://www.npmjs.com/package/tailwindcss-radix">![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)</a>
+  <a href="https://www.npmjs.com/package/tailwindcss-radix">![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)</a>
+
+</div>
 
 ## Installation
 
@@ -16,9 +26,11 @@ yarn add tailwindcss-radix
 npm i tailwindcss-radix
 ```
 
-## Usage
+## Demo
 
-You can find example code inside the [demo](https://github.com/ecklf/tailwindcss-radix/tree/main/demo) folder.
+Click on the banner to check out the demo components. You can find the code inside the [demo](https://github.com/ecklf/tailwindcss-radix/tree/main/demo) folder.
+
+## Usage
 
 Add the plugin to your plugins array:
 
