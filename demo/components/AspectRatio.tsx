@@ -12,7 +12,7 @@ const AspectRatio = (props: Props) => {
         className="relative w-full h-full overflow-hidden rounded-lg shadow-md group"
       >
         <div className="absolute inset-0 z-10 flex items-center justify-center">
-          <h3 className="text-4xl font-black text-transparent uppercase duration-300 ease-in-out select-none bg-clip-text bg-gradient-to-r group-hover:opacity-0 from-green-400 to-blue-500">
+          <h3 className="text-3xl font-black text-transparent uppercase duration-300 ease-in-out select-none sm:text-4xl bg-clip-text bg-gradient-to-r group-hover:opacity-0 from-green-400 to-blue-500">
             Vancouver
           </h3>
         </div>

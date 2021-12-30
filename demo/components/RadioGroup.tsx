@@ -17,23 +17,23 @@ const RadioGroup = (props: Props) => {
           Choose your starter
         </legend>
         <div className="mt-4 space-y-4">
-          {starters.map((notificationMethod) => (
-            <div key={notificationMethod.id} className="flex items-center">
+          {starters.map((pokemon) => (
+            <div key={pokemon.id} className="flex items-center">
               <input
-                id={notificationMethod.id}
+                id={pokemon.id}
                 name="notification-method"
                 type="radio"
-                defaultChecked={notificationMethod.id === "email"}
                 className={cx(
-                  "w-4 h-4 text-purple-600 bg-gray-100 dark:bg-gray-900 border-gray-400 dark:border-gray-700",
+                  // Setting the background in dark properly requires a workaround (see css/tailwind.css)
+                  "w-4 h-4 text-purple-600 bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-700",
                   "focus:outline-none focus:ring-transparent focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               />
               <label
-                htmlFor={notificationMethod.id}
+                htmlFor={pokemon.id}
                 className="block ml-3 text-sm font-medium text-gray-700 dark:text-gray-400"
               >
-                {notificationMethod.title}
+                {pokemon.title}
               </label>
             </div>
           ))}

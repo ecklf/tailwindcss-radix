@@ -40,5 +40,11 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Input darkmode fix for checkbox / radio */
+.dark [type="checkbox"]:checked,
+.dark [type="radio"]:checked {
+  background-color: currentColor;
+}
+
 @tailwind components;
 @tailwind utilities;
