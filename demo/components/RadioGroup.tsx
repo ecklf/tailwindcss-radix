@@ -31,7 +31,7 @@ const RadioGroup = (props: Props) => {
               />
               <label
                 htmlFor={pokemon.id}
-                className="block ml-3 text-sm font-medium text-gray-700 dark:text-gray-400"
+                className="block ml-2 text-sm font-medium text-gray-700 dark:text-gray-400"
               >
                 {pokemon.title}
               </label>
