@@ -1,7 +1,7 @@
 <p align="center">
   <a align='center' href="https://tailwindcss-radix.vercel.app">
     <picture>
-      <source srcset="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.webp">
+      <source type="image/webp" srcset="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.webp">
       <img width="967" height="auto" src="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.png" />
     </picture>
   </a>
