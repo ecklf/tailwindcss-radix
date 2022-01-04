@@ -1,6 +1,8 @@
 import plugin from "tailwindcss/plugin";
 
-const dataAttributes = {
+const dataAttributes = ["disabled"];
+
+const namedDataAttributes = {
   state: [
     "open",
     "closed",
@@ -56,31 +58,48 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     });
   });
 
-  Object.keys(dataAttributes).forEach((attributeName) => {
-    dataAttributes[attributeName as keyof typeof dataAttributes].forEach(
-      (attributeValue) => {
-        let variantName = options.skipAttributeNames
-          ? `${variantPrefix}${attributeValue}`
-          : `${variantPrefix}${attributeName}-${attributeValue}`;
-        let selector = `data-${attributeName}="${attributeValue}"`;
+  dataAttributes.forEach((attributeValue) => {
+    let variantName = `${variantPrefix}${attributeValue}`;
+    let selector = `data-${attributeValue}`;
 
-        addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
-          modifySelectors(({ className }: { className: string }) => {
-            return `.${e(
-              `${variantName}${separator}${className}`
-            )}[${selector}]`;
-          });
-        });
+    addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }: { className: string }) => {
+        return `.${e(`${variantName}${separator}${className}`)}[${selector}]`;
+      });
+    });
 
-        addVariant(`group-${variantName}`, ({ modifySelectors, separator }) => {
-          modifySelectors(({ className }: { className: string }) => {
-            return `.group[${selector}] .${e(
-              `group-${variantName}${separator}${className}`
-            )}`;
-          });
+    addVariant(`group-${variantName}`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }: { className: string }) => {
+        return `.group[${selector}] .${e(
+          `group-${variantName}${separator}${className}`
+        )}`;
+      });
+    });
+  });
+
+  Object.keys(namedDataAttributes).forEach((attributeName) => {
+    namedDataAttributes[
+      attributeName as keyof typeof namedDataAttributes
+    ].forEach((attributeValue) => {
+      let variantName = options.skipAttributeNames
+        ? `${variantPrefix}${attributeValue}`
+        : `${variantPrefix}${attributeName}-${attributeValue}`;
+      let selector = `data-${attributeName}="${attributeValue}"`;
+
+      addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }: { className: string }) => {
+          return `.${e(`${variantName}${separator}${className}`)}[${selector}]`;
         });
-      }
-    );
+      });
+
+      addVariant(`group-${variantName}`, ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }: { className: string }) => {
+          return `.group[${selector}] .${e(
+            `group-${variantName}${separator}${className}`
+          )}`;
+        });
+      });
+    });
   });
 
   // Adds the following height utilities
