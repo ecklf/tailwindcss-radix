@@ -147,7 +147,31 @@ const Accordion = () => {
 export default App;
 ```
 
-### Animating from origin
+#### Disabled state
+
+Use the generated `disabled` variant.
+
+```tsx
+import React from "react";
+import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
+
+const ContextMenu = () => {
+  return (
+    // --snip--
+    <ContextMenuPrimitive.Item
+      disabled
+      className="radix-disabled:opacity-50 radix-disabled:cursor-not-allowed"
+    >
+      Item
+    </ContextMenuPrimitive.Item>
+    // --snip--
+  );
+};
+```
+
+### Animation
+
+#### Origin position
 
 Use the generated `origin-*` utilities to transform from the content position origin.
 
@@ -173,7 +197,7 @@ Use the generated `origin-*` utilities to transform from the content position or
 }
 ```
 
-### Animating content size
+#### Content size
 
 Use the generated `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
 
