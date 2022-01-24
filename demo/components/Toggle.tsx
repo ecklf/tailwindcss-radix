@@ -16,7 +16,7 @@ const Toggle = (props: Props) => {
     >
       <Button>
         {starred ? (
-          <StarFilledIcon className="w-4 h-4 text-yellow-400" />
+          <StarFilledIcon className="h-4 w-4 text-yellow-400" />
         ) : (
           <StarIcon />
         )}

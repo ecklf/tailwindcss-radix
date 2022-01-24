@@ -31,12 +31,12 @@ interface User {
 const generalMenuItems: RadixMenuItem[] = [
   {
     label: "New File",
-    icon: <FileIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+N",
   },
   {
     label: "Settings",
-    icon: <MixerHorizontalIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <MixerHorizontalIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+,",
   },
 ];
@@ -44,12 +44,12 @@ const generalMenuItems: RadixMenuItem[] = [
 const regionToolMenuItems: RadixMenuItem[] = [
   {
     label: "Frame",
-    icon: <FrameIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+F",
   },
   {
     label: "Crop",
-    icon: <CropIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <CropIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+S",
   },
 ];
@@ -86,8 +86,8 @@ const DropdownMenu = (props: Props) => {
           align="end"
           sideOffset={5}
           className={cx(
-            " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-            "w-48 md:w-56 px-1.5 py-1 rounded-lg shadow-md",
+            " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+            "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
             "bg-white dark:bg-gray-800"
           )}
         >
@@ -95,7 +95,7 @@ const DropdownMenu = (props: Props) => {
             <DropdownMenuPrimitive.Item
               key={`${label}-${i}`}
               className={cx(
-                "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
@@ -107,26 +107,26 @@ const DropdownMenu = (props: Props) => {
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
           <DropdownMenuPrimitive.CheckboxItem
             checked={showGrid}
             onCheckedChange={setShowGrid}
             className={cx(
-              "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+              "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
               "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showGrid ? (
-              <GridIcon className="w-4 h-4 mr-2" />
+              <GridIcon className="mr-2 h-4 w-4" />
             ) : (
-              <TransparencyGridIcon className="w-3.5 h-3.5 mr-2 text-gray-700 dark:text-gray-300" />
+              <TransparencyGridIcon className="mr-2 h-3.5 w-3.5 text-gray-700 dark:text-gray-300" />
             )}
             <span className="flex-grow text-gray-700 dark:text-gray-300">
               Show Grid
             </span>
             <DropdownMenuPrimitive.ItemIndicator>
-              <CheckIcon className="w-3.5 h-3.5" />
+              <CheckIcon className="h-3.5 w-3.5" />
             </DropdownMenuPrimitive.ItemIndicator>
           </DropdownMenuPrimitive.CheckboxItem>
 
@@ -134,26 +134,26 @@ const DropdownMenu = (props: Props) => {
             checked={showUi}
             onCheckedChange={setShowUi}
             className={cx(
-              "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+              "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
               "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
             )}
           >
             {showUi ? (
-              <EyeOpenIcon className="w-3.5 h-3.5 mr-2" />
+              <EyeOpenIcon className="mr-2 h-3.5 w-3.5" />
             ) : (
-              <EyeClosedIcon className="w-3.5 h-3.5 mr-2" />
+              <EyeClosedIcon className="mr-2 h-3.5 w-3.5" />
             )}
             <span className="flex-grow text-gray-700 dark:text-gray-300">
               Show UI
             </span>
             <DropdownMenuPrimitive.ItemIndicator>
-              <CheckIcon className="w-3.5 h-3.5" />
+              <CheckIcon className="h-3.5 w-3.5" />
             </DropdownMenuPrimitive.ItemIndicator>
           </DropdownMenuPrimitive.CheckboxItem>
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
-          <DropdownMenuPrimitive.Label className="px-2 py-2 text-xs text-gray-700 select-none dark:text-gray-200">
+          <DropdownMenuPrimitive.Label className="select-none px-2 py-2 text-xs text-gray-700 dark:text-gray-200">
             Region Tools
           </DropdownMenuPrimitive.Label>
 
@@ -161,7 +161,7 @@ const DropdownMenu = (props: Props) => {
             <DropdownMenuPrimitive.Item
               key={`${label}-${i}`}
               className={cx(
-                "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
@@ -173,25 +173,25 @@ const DropdownMenu = (props: Props) => {
             </DropdownMenuPrimitive.Item>
           ))}
 
-          <DropdownMenuPrimitive.Separator className="h-px my-1 bg-gray-200 dark:bg-gray-700" />
+          <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200 dark:bg-gray-700" />
 
           <DropdownMenuPrimitive.Root>
             <DropdownMenuPrimitive.TriggerItem
               className={cx(
-                "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
-              <Link2Icon className="w-3.5 h-3.5 mr-2" />
+              <Link2Icon className="mr-2 h-3.5 w-3.5" />
               <span className="flex-grow text-gray-700 dark:text-gray-300">
                 Share
               </span>
-              <CaretRightIcon className="w-3.5 h-3.5" />
+              <CaretRightIcon className="h-3.5 w-3.5" />
             </DropdownMenuPrimitive.TriggerItem>
             <DropdownMenuPrimitive.Content
               className={cx(
-                "radix-side-right:animate-scale-in origin-radix-dropdown-menu",
-                "px-1 py-1 w-full text-xs rounded-md shadow-md",
+                "origin-radix-dropdown-menu radix-side-right:animate-scale-in",
+                "w-full rounded-md px-1 py-1 text-xs shadow-md",
                 "bg-white dark:bg-gray-800"
               )}
             >
@@ -199,14 +199,14 @@ const DropdownMenu = (props: Props) => {
                 <DropdownMenuPrimitive.Item
                   key={`${name}-${i}`}
                   className={cx(
-                    "flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none w-28 md:w-32",
+                    "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none md:w-32",
                     "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                   )}
                 >
                   {url ? (
-                    <img className="w-6 h-6 mr-2.5 rounded-full" src={url} />
+                    <img className="mr-2.5 h-6 w-6 rounded-full" src={url} />
                   ) : (
-                    <PersonIcon className="w-6 h-6 mr-2.5" />
+                    <PersonIcon className="mr-2.5 h-6 w-6" />
                   )}
                   <span className="text-gray-700 dark:text-gray-300">
                     {name}

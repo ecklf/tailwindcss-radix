@@ -13,19 +13,19 @@ const Checkbox = (props: Props) => {
         id="c1"
         defaultChecked
         className={cx(
-          "flex items-center justify-center w-5 h-5 rounded",
+          "flex h-5 w-5 items-center justify-center rounded",
           "radix-state-checked:bg-purple-600 radix-state-unchecked:bg-gray-100 dark:radix-state-unchecked:bg-gray-900",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
         <CheckboxPrimitive.Indicator>
-          <CheckIcon className="self-center w-4 h-4 text-white" />
+          <CheckIcon className="h-4 w-4 self-center text-white" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
 
       <LabelPrimitive.Label
         htmlFor="c1"
-        className="ml-3 text-sm font-medium text-gray-900 select-none dark:text-gray-100"
+        className="ml-3 select-none text-sm font-medium text-gray-900 dark:text-gray-100"
       >
         Accept terms and conditions
       </LabelPrimitive.Label>

@@ -11,14 +11,14 @@ const Slider = (props: Props) => {
       max={100}
       step={1}
       aria-label="value"
-      className="relative flex items-center w-64 h-5 touch-none"
+      className="relative flex h-5 w-64 touch-none items-center"
     >
-      <SliderPrimitive.Track className="relative w-full h-1 bg-white rounded-full grow dark:bg-gray-800">
-        <SliderPrimitive.Range className="absolute h-full bg-purple-600 rounded-full dark:bg-white" />
+      <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-white dark:bg-gray-800">
+        <SliderPrimitive.Range className="absolute h-full rounded-full bg-purple-600 dark:bg-white" />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
         className={cx(
-          "block w-5 h-5 rounded-full bg-purple-600 dark:bg-white",
+          "block h-5 w-5 rounded-full bg-purple-600 dark:bg-white",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       />

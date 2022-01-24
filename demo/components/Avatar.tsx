@@ -31,13 +31,13 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
       {urls.map((src, i) => (
         <AvatarPrimitive.Root
           key={`avatar-${i}-{src}`}
-          className="relative inline-flex w-10 h-10"
+          className="relative inline-flex h-10 w-10"
         >
           <AvatarPrimitive.Image
             src={src}
             alt="Avatar"
             className={cx(
-              "object-cover w-full h-full",
+              "h-full w-full object-cover",
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
@@ -47,7 +47,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
           {isOnline && (
             <div
               className={cx(
-                "absolute bottom-0 right-0 w-2 h-2",
+                "absolute bottom-0 right-0 h-2 w-2",
                 {
                   [Variant.Circle]: "-translate-x-1/2 -translate-y-1/2",
                   [Variant.Rounded]: "",
@@ -59,7 +59,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
           )}
           <AvatarPrimitive.Fallback
             className={cx(
-              "w-full h-full flex items-center justify-center bg-white dark:bg-gray-800",
+              "flex h-full w-full items-center justify-center bg-white dark:bg-gray-800",
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
@@ -67,7 +67,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
             )}
             delayMs={600}
           >
-            <span className="text-sm font-medium text-gray-700 uppercase dark:text-gray-400">
+            <span className="text-sm font-medium uppercase text-gray-700 dark:text-gray-400">
               {getRandomInitials()}
             </span>
           </AvatarPrimitive.Fallback>

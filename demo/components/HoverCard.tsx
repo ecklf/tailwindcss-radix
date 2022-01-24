@@ -4,7 +4,7 @@ import React from "react";
 
 const TailwindLogo = () => (
   <svg
-    className="w-7 h-7 shrink-0"
+    className="h-7 w-7 shrink-0"
     viewBox="0 0 99 59"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ const HoverCard = (props: Props) => {
       <HoverCardPrimitive.Trigger asChild>
         <div
           className={cx(
-            "inline-flex items-center justify-center w-12 h-12 p-2.5 bg-white dark:bg-gray-900 rounded-full"
+            "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2.5 dark:bg-gray-900"
           )}
         >
           <TailwindLogo />
@@ -34,18 +34,18 @@ const HoverCard = (props: Props) => {
         align="center"
         sideOffset={4}
         className={cx(
-          " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-          "md:w-full max-w-md rounded-lg p-4",
+          " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+          "max-w-md rounded-lg p-4 md:w-full",
           "bg-white dark:bg-gray-800",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
-        <HoverCardPrimitive.Arrow className="text-white fill-current dark:text-gray-800" />
+        <HoverCardPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
 
-        <div className="flex w-full h-full space-x-4">
+        <div className="flex h-full w-full space-x-4">
           <div
             className={cx(
-              "flex shrink-0 items-center justify-center w-12 h-12 p-2.5 bg-gray-100 dark:bg-gray-900 rounded-full"
+              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100 p-2.5 dark:bg-gray-900"
             )}
           >
             <TailwindLogo />

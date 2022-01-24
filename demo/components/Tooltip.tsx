@@ -19,11 +19,11 @@ const Tooltip = (props: Props) => {
             "radix-side-right:animate-slide-left-fade",
             "radix-side-bottom:animate-slide-up-fade",
             "radix-side-left:animate-slide-right-fade",
-            "inline-flex items-center px-4 py-2.5 rounded-md",
+            "inline-flex items-center rounded-md px-4 py-2.5",
             "bg-white dark:bg-gray-800"
           )}
         >
-          <TooltipPrimitive.Arrow className="text-white fill-current dark:text-gray-800" />
+          <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
           <span className="block text-xs leading-none text-gray-700 dark:text-gray-100">
             Sorry, but our princess is in another castle
           </span>

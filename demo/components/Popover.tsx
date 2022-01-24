@@ -40,12 +40,12 @@ const Popover = (props: Props) => {
           align="center"
           sideOffset={4}
           className={cx(
-            "radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-            "w-48 md:w-56 p-4 rounded-lg shadow-md",
+            "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+            "w-48 rounded-lg p-4 shadow-md md:w-56",
             "bg-white dark:bg-gray-800"
           )}
         >
-          <PopoverPrimitive.Arrow className="text-white fill-current dark:text-gray-800" />
+          <PopoverPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
           <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100">
             Dimensions
           </h3>
@@ -60,7 +60,7 @@ const Popover = (props: Props) => {
                   {/* <legend>Choose your favorite monster</legend> */}
                   <label
                     htmlFor={id}
-                    className="text-xs font-medium text-gray-700 grow dark:text-gray-400 shrink-0"
+                    className="shrink-0 grow text-xs font-medium text-gray-700 dark:text-gray-400"
                   >
                     {label}
                   </label>
@@ -72,7 +72,7 @@ const Popover = (props: Props) => {
                     className={cx(
                       "block w-1/2 rounded-md",
                       "text-xs text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
-                      "dark:bg-gray-800 border border-gray-400 dark:border-gray-700 focus-visible:border-transparent",
+                      "border border-gray-400 focus-visible:border-transparent dark:border-gray-700 dark:bg-gray-800",
                       "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   />
@@ -83,11 +83,11 @@ const Popover = (props: Props) => {
 
           <PopoverPrimitive.Close
             className={cx(
-              "absolute inline-flex items-center justify-center top-3.5 right-3.5 p-1 rounded-full",
+              "absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1",
               "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
-            <Cross1Icon className="w-4 h-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />
+            <Cross1Icon className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />
           </PopoverPrimitive.Close>
         </PopoverPrimitive.Content>
       </PopoverPrimitive.Root>

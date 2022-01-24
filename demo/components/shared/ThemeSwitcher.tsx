@@ -25,12 +25,12 @@ interface User {
 const generalMenuItems: RadixMenuItem[] = [
   {
     label: "New File",
-    icon: <FileIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+N",
   },
   {
     label: "Settings",
-    icon: <MixerHorizontalIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <MixerHorizontalIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+,",
   },
 ];
@@ -38,12 +38,12 @@ const generalMenuItems: RadixMenuItem[] = [
 const regionToolMenuItems: RadixMenuItem[] = [
   {
     label: "Frame",
-    icon: <FrameIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+F",
   },
   {
     label: "Crop",
-    icon: <CropIcon className="w-3.5 h-3.5 mr-2" />,
+    icon: <CropIcon className="mr-2 h-3.5 w-3.5" />,
     shortcut: "⌘+S",
   },
 ];
@@ -111,8 +111,8 @@ const ThemeSwitcher = (props: Props) => {
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger
           className={cx(
-            "inline-flex justify-center px-2.5 py-2 text-sm font-medium rounded-md select-none",
-            "text-gray-900 bg-white hover:bg-gray-50 dark:text-gray-100 dark:bg-gray-700 hover:dark:bg-gray-600",
+            "inline-flex select-none justify-center rounded-md px-2.5 py-2 text-sm font-medium",
+            "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-100 hover:dark:bg-gray-600",
             "border border-gray-300 dark:border-transparent",
             "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
@@ -121,15 +121,15 @@ const ThemeSwitcher = (props: Props) => {
             switch (preferredTheme) {
               case "light":
                 return (
-                  <SunIcon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <SunIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 );
               case "dark":
                 return (
-                  <MoonIcon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <MoonIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 );
               default:
                 return (
-                  <Half2Icon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <Half2Icon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 );
             }
           })()}
@@ -140,8 +140,8 @@ const ThemeSwitcher = (props: Props) => {
           align="end"
           sideOffset={5}
           className={cx(
-            " radix-side-bottom:animate-slide-down radix-side-top:animate-slide-up",
-            "w-48 md:w-56 px-1.5 py-1 rounded-lg shadow-md",
+            " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+            "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
             "bg-gray-50 dark:bg-gray-700"
           )}
         >
@@ -150,7 +150,7 @@ const ThemeSwitcher = (props: Props) => {
               <DropdownMenuPrimitive.Item
                 key={`theme-${i}`}
                 className={cx(
-                  "flex items-center w-full px-2 py-2 text-xs rounded-md outline-none cursor-default select-none",
+                  "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-800"
                 )}
                 onClick={() => {

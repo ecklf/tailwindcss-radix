@@ -27,10 +27,10 @@ import Tooltip from "../components/Tooltip";
 
 const Hero = () => {
   return (
-    <div className="inline-flex flex-col items-center w-full mt-8 space-y-4 justify-self-center">
+    <div className="mt-8 inline-flex w-full flex-col items-center space-y-4 justify-self-center">
       <svg
         viewBox="0 0 248 31"
-        className="w-auto h-4 text-gray-900 dark:text-white"
+        className="h-4 w-auto text-gray-900 dark:text-white"
       >
         <path
           fillRule="evenodd"
@@ -48,7 +48,7 @@ const Hero = () => {
       <div className="flex space-x-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="self-center w-auto h-3.5 text-gray-900 dark:text-white"
+          className="h-3.5 w-auto self-center text-gray-900 dark:text-white"
           viewBox="0 0 25 25"
           fill="none"
           style={{
@@ -62,7 +62,7 @@ const Hero = () => {
         </svg>
 
         <svg
-          className="self-center w-auto h-3.5 text-gray-900 dark:text-white"
+          className="h-3.5 w-auto self-center text-gray-900 dark:text-white"
           viewBox="0 0 56 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ const Demo = (props: Props) => {
 
       <Hero />
 
-      <div className="grid w-full grid-cols-1 gap-4 px-4 py-8 mx-auto max-w-screen-2xl md:gap-6 md:px-6 lg:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
@@ -224,7 +224,7 @@ const Demo = (props: Props) => {
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Checkbox.tsx",
           }}
         >
-          <div className="max-w-sm p-3 bg-white rounded-md dark:bg-gray-800">
+          <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
             <Checkbox />
           </div>
         </DemoCard>
@@ -235,7 +235,7 @@ const Demo = (props: Props) => {
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/RadioGroup.tsx",
           }}
         >
-          <div className="flex items-center justify-center px-4 py-3 bg-white rounded-md dark:bg-gray-800">
+          <div className="flex items-center justify-center rounded-md bg-white px-4 py-3 dark:bg-gray-800">
             <RadioGroup />
           </div>
         </DemoCard>
