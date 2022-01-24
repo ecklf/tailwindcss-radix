@@ -120,7 +120,7 @@ const Demo = (props: Props) => {
             {
               url: `${process.env.NEXT_PUBLIC_URL}/static/og.png`,
               width: 1200,
-              height: 675,
+              height: 630,
               alt: "Tailwind CSS Radix",
               type: "image/png",
             },
