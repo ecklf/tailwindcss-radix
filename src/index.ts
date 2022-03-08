@@ -17,6 +17,8 @@ const namedDataAttributes = {
   ],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
+  motion: ["from-start", "to-start", "from-end", "to-end"],
+  swipe: ["start", "move", "cancel", "end"],
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
