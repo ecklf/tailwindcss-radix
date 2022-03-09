@@ -104,28 +104,43 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     });
   });
 
-  // Adds the following height utilities
-  // `--radix-accordion-content-height`,
-  // `--radix-collapsible-content-height`,
-  const componentContentHeights = ["accordion", "collapsible"];
+  // Adds the following [width|height] utilities
+  // `--radix-accordion-content-[width|height]`,
+  // `--radix-collapsible-content-[width|height]`,
+  // `--radix-navigation-menu-viewport-[width|height]`,
+  const dimensionAttributes = [
+    "accordion-content",
+    "collapsible-content",
+    "navigation-menu-viewport",
+  ];
 
-  componentContentHeights.forEach((component) => {
+  dimensionAttributes.forEach((component) => {
+    addUtilities({
+      [`.w-${variantPrefix}${component}`]: {
+        width: `var(--radix-${component}-width)`,
+      },
+    });
     addUtilities({
       [`.h-${variantPrefix}${component}`]: {
-        height: `var(--radix-${component}-content-height)`,
+        height: `var(--radix-${component}-height)`,
       },
     });
   });
 
-  // Adds the following width utilities
-  // `--radix-accordion-content-width`,
-  // `--radix-collapsible-content-width`,
-  const componentContentWidths = ["accordion", "collapsible"];
+  // Adds the following [width|height] utilities
+  // `--radix-toast-swipe-move-[x|y]`,
+  // `--radix-toast-swipe-end-[x|y]`,
+  const tooltipAttributes = ["radix-toast-swipe-move", "radix-toast-swipe-end"];
 
-  componentContentWidths.forEach((component) => {
+  tooltipAttributes.forEach((component) => {
     addUtilities({
       [`.w-${variantPrefix}${component}`]: {
-        width: `var(--radix-${component}-content-width)`,
+        width: `var(--radix-${component}-x)`,
+      },
+    });
+    addUtilities({
+      [`.h-${variantPrefix}${component}`]: {
+        height: `var(--radix-${component}-y)`,
       },
     });
   });
