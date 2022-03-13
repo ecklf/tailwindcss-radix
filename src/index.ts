@@ -127,19 +127,19 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     });
   });
 
-  // Adds the following [width|height] utilities
+  // Adds the following [x|y] utilities
   // `--radix-toast-swipe-move-[x|y]`,
   // `--radix-toast-swipe-end-[x|y]`,
   const tooltipAttributes = ["radix-toast-swipe-move", "radix-toast-swipe-end"];
 
   tooltipAttributes.forEach((component) => {
     addUtilities({
-      [`.w-${variantPrefix}${component}`]: {
+      [`.${variantPrefix}${component}-x`]: {
         width: `var(--radix-${component}-x)`,
       },
     });
     addUtilities({
-      [`.h-${variantPrefix}${component}`]: {
+      [`.${variantPrefix}${component}-y`]: {
         height: `var(--radix-${component}-y)`,
       },
     });
