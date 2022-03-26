@@ -14,6 +14,8 @@ const namedDataAttributes = {
     "unchecked",
     "instant-open",
     "delayed-open",
+    "visible",
+    "hidden",
   ],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
