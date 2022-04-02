@@ -57,6 +57,39 @@ module.exports = {
           "0%": { opacity: 0, transform: "translateX(2px)" },
           "100%": { opacity: 1, transform: "translateX(0)" },
         },
+        // Navigation menu
+        "enter-from-right": {
+          "0%": { transform: "translateX(200px)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
+        },
+        "enter-from-left": {
+          from: { transform: "translateX(-200px)", opacity: 0 },
+          to: { transform: "translateX(0)", opacity: 1 },
+        },
+        "exit-to-right": {
+          from: { transform: "translateX(0)", opacity: 1 },
+          to: { transform: "translateX(200px)", opacity: 0 },
+        },
+        "exit-to-left": {
+          from: { transform: "translateX(0)", opacity: 1 },
+          to: { transform: "translateX(-200px)", opacity: 0 },
+        },
+        "scale-in-content": {
+          from: { transform: "rotateX(-30deg) scale(0.9)", opacity: 0 },
+          to: { transform: "rotateX(0deg) scale(1)", opacity: 1 },
+        },
+        "scale-out-content": {
+          from: { transform: "rotateX(0deg) scale(1)", opacity: 1 },
+          to: { transform: "rotateX(-10deg) scale(0.95)", opacity: 0 },
+        },
+        "fade-in": {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        "fade-out": {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
       },
       animation: {
         // Dropdown menu
@@ -69,6 +102,15 @@ module.exports = {
           "slide-right-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-down-fade": "slide-down-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-left-fade": "slide-left-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        // Navigation menu
+        "enter-from-right": "enter-from-right 0.25s ease",
+        "enter-from-left": "enter-from-left 0.25s ease",
+        "exit-to-right": "exit-to-right 0.25s ease",
+        "exit-to-left": "exit-to-left 0.25s ease",
+        "scale-in-content": "scale-in-content 0.2s ease",
+        "scale-out-content": "scale-out-content 0.2s ease",
+        "fade-in": "fade-in 0.2s ease",
+        "fade-out": "fade-out 0.2s ease",
       },
     },
   },
