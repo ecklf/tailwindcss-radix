@@ -24,6 +24,8 @@ import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
 import Tooltip from "../components/Tooltip";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import cx from "classnames";
 
 const Hero = () => {
   return (
@@ -136,6 +138,126 @@ const Demo = (props: Props) => {
       <Hero />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "NEW",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/DropdownMenu.tsx",
+          }}
+        >
+          <div>
+            <NavigationMenuPrimitive.Root className="relative">
+              <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white px-2 py-1.5">
+                <NavigationMenuPrimitive.Item>
+                  <NavigationMenuPrimitive.Trigger
+                    className={cx(
+                      "px-3 py-2 text-sm rounded-md hover:bg-gray-200",
+                      "text-sm font-medium",
+                      "text-gray-700 dark:text-gray-100"
+                    )}
+                  >
+                    Trigger 1
+                  </NavigationMenuPrimitive.Trigger>
+
+                  <NavigationMenuPrimitive.Content
+                    className={cx(
+                      "absolute w-full top-0 left-0 bg-white rounded-lg p-5",
+                      "radix-motion-from-start:animate-enter-from-left",
+                      "radix-motion-from-end:animate-enter-from-right",
+                      "radix-motion-to-start:animate-exit-to-left",
+                      "radix-motion-to-end:animate-exit-to-right"
+                    )}
+                  >
+                    <div className="">Content 1</div>
+                    <NavigationMenuPrimitive.Link />
+                  </NavigationMenuPrimitive.Content>
+                </NavigationMenuPrimitive.Item>
+
+                <NavigationMenuPrimitive.Item>
+                  <NavigationMenuPrimitive.Trigger
+                    className={cx(
+                      "px-3 py-2 text-sm rounded-md hover:bg-gray-200",
+                      "text-sm font-medium",
+                      "text-gray-700 dark:text-gray-100"
+                    )}
+                  >
+                    Trigger 2
+                  </NavigationMenuPrimitive.Trigger>
+
+                  <NavigationMenuPrimitive.Content
+                    className={cx(
+                      "absolute w-full top-0 left-0 bg-white rounded-lg p-5",
+                      "radix-motion-from-start:animate-enter-from-left",
+                      "radix-motion-from-end:animate-enter-from-right",
+                      "radix-motion-to-start:animate-exit-to-left",
+                      "radix-motion-to-end:animate-exit-to-right"
+                    )}
+                  >
+                    <div className="">Content 2</div>
+                    <NavigationMenuPrimitive.Link />
+                  </NavigationMenuPrimitive.Content>
+                </NavigationMenuPrimitive.Item>
+
+                <NavigationMenuPrimitive.Item
+                  className={cx(
+                    "px-3 py-2 text-sm rounded-md hover:bg-gray-200",
+                    "text-sm font-medium",
+                    "text-gray-700 dark:text-gray-100"
+                  )}
+                >
+                  <NavigationMenuPrimitive.Link href="https://github.com/ecklf/tailwindcss-radix/stargazers">
+                    GitHub
+                  </NavigationMenuPrimitive.Link>
+                </NavigationMenuPrimitive.Item>
+
+                <NavigationMenuPrimitive.Indicator
+                  style={{
+                    transition: "width, transform 250ms ease",
+                  }}
+                  className={cx(
+                    "radix-state-visible:animate-fade-in",
+                    "radix-state-hidden:animate-fade-out",
+                    "top-[100%] flex items-end justify-center h-2 overflow-hidden"
+                  )}
+                >
+                  <div className="top-1 relative bg-white w-2 h-2 rotate-45" />
+                </NavigationMenuPrimitive.Indicator>
+              </NavigationMenuPrimitive.List>
+
+              <div
+                className={cx(
+                  "absolute flex justify-center",
+                  "w-[150%] left-[-25%] top-[100%]"
+                )}
+                style={{
+                  perspective: "2000px",
+                }}
+              >
+                <NavigationMenuPrimitive.Viewport
+                  className={cx(
+                    "relative w-full",
+                    "radix-state-open:animate-scale-in-content",
+                    "radix-state-closed:animate-scale-out-content"
+                  )}
+                  style={{
+                    transition: "width, height, 300ms ease",
+                    position: "relative",
+                    transformOrigin: "top center",
+                    marginTop: 8,
+                    backgroundColor: "white",
+                    borderRadius: 6,
+                    overflow: "hidden",
+                    boxShadow:
+                      "hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px",
+                    width: "100%",
+                    height: "var(--radix-navigation-menu-viewport-height)",
+                  }}
+                />
+              </div>
+            </NavigationMenuPrimitive.Root>
+          </div>
+        </DemoCard>
+
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
