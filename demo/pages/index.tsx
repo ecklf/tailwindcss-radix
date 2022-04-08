@@ -151,7 +151,7 @@ const Demo = (props: Props) => {
                 <NavigationMenuPrimitive.Item>
                   <NavigationMenuPrimitive.Trigger
                     className={cx(
-                      "px-3 py-2 text-sm rounded-md hover:bg-gray-200",
+                      "px-3 py-2 text-sm rounded-md hover:bg-gray-100",
                       "text-sm font-medium",
                       "text-gray-700 dark:text-gray-100"
                     )}
@@ -161,14 +161,25 @@ const Demo = (props: Props) => {
 
                   <NavigationMenuPrimitive.Content
                     className={cx(
-                      "absolute w-full top-0 left-0 bg-white rounded-lg p-5",
+                      "absolute w-auto top-0 left-0 rounded-lg",
                       "radix-motion-from-start:animate-enter-from-left",
                       "radix-motion-from-end:animate-enter-from-right",
                       "radix-motion-to-start:animate-exit-to-left",
                       "radix-motion-to-end:animate-exit-to-right"
                     )}
                   >
-                    <div className="">Content 1</div>
+                    <div className="w-[350px] p-5">
+                      <div className="h-12 bg-white">Content 4</div>
+                    </div>
+                    {/* <div className="w-[500px] grid grid-cols-4 gap-4">
+                      <div className="col-span-1 w-full bg-gray-900 h-64 p-4 rounded-md">
+                        <div className="w-full bg-sky-400 h-12 rounded-md"></div>
+                      </div>
+
+                      <div className="col-span-3 w-full bg-gray-900 h-64 p-4 rounded-md">
+                        <div className="w-full bg-sky-400 h-12 rounded-md"></div>
+                      </div>
+                    </div> */}
                     <NavigationMenuPrimitive.Link />
                   </NavigationMenuPrimitive.Content>
                 </NavigationMenuPrimitive.Item>
@@ -176,7 +187,7 @@ const Demo = (props: Props) => {
                 <NavigationMenuPrimitive.Item>
                   <NavigationMenuPrimitive.Trigger
                     className={cx(
-                      "px-3 py-2 text-sm rounded-md hover:bg-gray-200",
+                      "px-3 py-2 text-sm rounded-md hover:bg-gray-100",
                       "text-sm font-medium",
                       "text-gray-700 dark:text-gray-100"
                     )}
@@ -186,14 +197,14 @@ const Demo = (props: Props) => {
 
                   <NavigationMenuPrimitive.Content
                     className={cx(
-                      "absolute w-full top-0 left-0 bg-white rounded-lg p-5",
+                      "absolute w-auto top-0 left-0 rounded-lg",
                       "radix-motion-from-start:animate-enter-from-left",
                       "radix-motion-from-end:animate-enter-from-right",
                       "radix-motion-to-start:animate-exit-to-left",
                       "radix-motion-to-end:animate-exit-to-right"
                     )}
                   >
-                    <div className="">Content 2</div>
+                    <div className="w-[280px] p-5">Content 2</div>
                     <NavigationMenuPrimitive.Link />
                   </NavigationMenuPrimitive.Content>
                 </NavigationMenuPrimitive.Item>
@@ -205,7 +216,7 @@ const Demo = (props: Props) => {
                     "text-gray-700 dark:text-gray-100"
                   )}
                 >
-                  <NavigationMenuPrimitive.Link href="https://github.com/ecklf/tailwindcss-radix/stargazers">
+                  <NavigationMenuPrimitive.Link href="https://github.com/ecklf/tailwindcss-radix">
                     GitHub
                   </NavigationMenuPrimitive.Link>
                 </NavigationMenuPrimitive.Item>
@@ -227,7 +238,7 @@ const Demo = (props: Props) => {
               <div
                 className={cx(
                   "absolute flex justify-center",
-                  "w-[150%] left-[-25%] top-[100%]"
+                  "w-[140%] left-[-20%] top-[100%]"
                 )}
                 style={{
                   perspective: "2000px",
@@ -235,22 +246,16 @@ const Demo = (props: Props) => {
               >
                 <NavigationMenuPrimitive.Viewport
                   className={cx(
-                    "relative w-full",
+                    "relative",
+                    "w-radix-navigation-menu-viewport",
+                    "h-radix-navigation-menu-viewport",
                     "radix-state-open:animate-scale-in-content",
-                    "radix-state-closed:animate-scale-out-content"
+                    "radix-state-closed:animate-scale-out-content",
+                    "mt-2 shadow-lg rounded-md overflow-hidden bg-white"
                   )}
                   style={{
                     transition: "width, height, 300ms ease",
-                    position: "relative",
                     transformOrigin: "top center",
-                    marginTop: 8,
-                    backgroundColor: "white",
-                    borderRadius: 6,
-                    overflow: "hidden",
-                    boxShadow:
-                      "hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px",
-                    width: "100%",
-                    height: "var(--radix-navigation-menu-viewport-height)",
                   }}
                 />
               </div>
