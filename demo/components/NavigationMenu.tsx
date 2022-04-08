@@ -7,7 +7,7 @@ type Props = {};
 const NavigationMenu = (props: Props) => {
   return (
     <NavigationMenuPrimitive.Root className="relative">
-      <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white dark:bg-gray-800 px-2 py-1.5">
+      <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white dark:bg-gray-800 p-2">
         <NavigationMenuPrimitive.Item>
           <NavigationMenuPrimitive.Trigger
             className={cx(
