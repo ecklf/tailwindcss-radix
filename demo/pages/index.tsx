@@ -16,6 +16,7 @@ import NavigationMenu from "../components/NavigationMenu";
 import Popover from "../components/Popover";
 import Progress from "../components/Progress";
 import RadioGroup from "../components/RadioGroup";
+import Select from "../components/Select";
 import DemoCard from "../components/shared/DemoCard";
 import ThemeSwitcher from "../components/shared/ThemeSwitcher";
 import Slider from "../components/Slider";
@@ -148,6 +149,16 @@ const Demo = (props: Props) => {
           <div>
             <NavigationMenu />
           </div>
+        </DemoCard>
+
+        <DemoCard
+          isNew
+          data={{
+            title: "Select",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Select.tsx",
+          }}
+        >
+          <Select />
         </DemoCard>
 
         <DemoCard
