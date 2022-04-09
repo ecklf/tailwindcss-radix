@@ -22,6 +22,7 @@ import ThemeSwitcher from "../components/shared/ThemeSwitcher";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
 import Tabs from "../components/Tabs";
+import Toast from "../components/Toast";
 import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
@@ -138,6 +139,19 @@ const Demo = (props: Props) => {
       <Hero />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
+        <DemoCard
+          isNew
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Toast",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toast.tsx",
+          }}
+        >
+          <div>
+            <Toast />
+          </div>
+        </DemoCard>
+
         <DemoCard
           isNew
           variant={DemoCard.variant.JustifyCenter}
