@@ -45,7 +45,7 @@ const HoverCard = (props: Props) => {
         <div className="flex h-full w-full space-x-4">
           <div
             className={cx(
-              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100 p-2.5 dark:bg-gray-900"
+              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900"
             )}
           >
             <TailwindLogo />

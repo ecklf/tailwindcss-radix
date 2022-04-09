@@ -12,14 +12,17 @@ import ContextMenu from "../components/ContextMenu";
 import Dialog from "../components/Dialog";
 import DropdownMenu from "../components/DropdownMenu";
 import HoverCard from "../components/HoverCard";
+import NavigationMenu from "../components/NavigationMenu";
 import Popover from "../components/Popover";
 import Progress from "../components/Progress";
 import RadioGroup from "../components/RadioGroup";
+import Select from "../components/Select";
 import DemoCard from "../components/shared/DemoCard";
 import ThemeSwitcher from "../components/shared/ThemeSwitcher";
 import Slider from "../components/Slider";
 import Switch from "../components/Switch";
 import Tabs from "../components/Tabs";
+import Toast from "../components/Toast";
 import Toggle from "../components/Toggle";
 import ToggleGroup from "../components/ToggleGroup";
 import Toolbar from "../components/Toolbar";
@@ -136,6 +139,42 @@ const Demo = (props: Props) => {
       <Hero />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
+        <DemoCard
+          isNew
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Navigation Menu",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/NavigationMenu.tsx",
+          }}
+        >
+          <div>
+            <NavigationMenu />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          isNew
+          data={{
+            title: "Select",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Select.tsx",
+          }}
+        >
+          <Select />
+        </DemoCard>
+
+        <DemoCard
+          isNew
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Toast",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toast.tsx",
+          }}
+        >
+          <div>
+            <Toast />
+          </div>
+        </DemoCard>
+
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{

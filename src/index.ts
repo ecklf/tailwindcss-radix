@@ -14,9 +14,13 @@ const namedDataAttributes = {
     "unchecked",
     "instant-open",
     "delayed-open",
+    "visible",
+    "hidden",
   ],
   side: ["top", "bottom", "left", "right"],
   orientation: ["horizontal", "vertical"],
+  motion: ["from-start", "to-start", "from-end", "to-end"],
+  swipe: ["start", "move", "cancel", "end"],
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
@@ -24,14 +28,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     ? options
     : {
         variantPrefix: "radix",
-        skipAttributeNames: false,
       };
-
-  if (options?.variantPrefix === "" && options?.skipAttributeNames === true) {
-    throw new Error(
-      "tailwindcss-radix: Cannot use empty `variantPrefix` while `skipAttributeNames` is enabled"
-    );
-  }
 
   const variantPrefix =
     options.variantPrefix === "" ? "" : `${options.variantPrefix}-`;
@@ -81,9 +78,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     namedDataAttributes[
       attributeName as keyof typeof namedDataAttributes
     ].forEach((attributeValue) => {
-      let variantName = options.skipAttributeNames
-        ? `${variantPrefix}${attributeValue}`
-        : `${variantPrefix}${attributeName}-${attributeValue}`;
+      let variantName = `${variantPrefix}${attributeName}-${attributeValue}`;
       let selector = `data-${attributeName}="${attributeValue}"`;
 
       addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
@@ -102,28 +97,43 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     });
   });
 
-  // Adds the following height utilities
-  // `--radix-accordion-content-height`,
-  // `--radix-collapsible-content-height`,
-  const componentContentHeights = ["accordion", "collapsible"];
+  // Adds the following [width|height] utilities
+  // `--radix-accordion-content-[width|height]`,
+  // `--radix-collapsible-content-[width|height]`,
+  // `--radix-navigation-menu-viewport-[width|height]`,
+  const dimensionAttributes = [
+    "accordion-content",
+    "collapsible-content",
+    "navigation-menu-viewport",
+  ];
 
-  componentContentHeights.forEach((component) => {
+  dimensionAttributes.forEach((component) => {
+    addUtilities({
+      [`.w-${variantPrefix}${component}`]: {
+        width: `var(--radix-${component}-width)`,
+      },
+    });
     addUtilities({
       [`.h-${variantPrefix}${component}`]: {
-        height: `var(--radix-${component}-content-height)`,
+        height: `var(--radix-${component}-height)`,
       },
     });
   });
 
-  // Adds the following width utilities
-  // `--radix-accordion-content-width`,
-  // `--radix-collapsible-content-width`,
-  const componentContentWidths = ["accordion", "collapsible"];
+  // Adds the following [x|y] utilities
+  // `--radix-toast-swipe-move-[x|y]`,
+  // `--radix-toast-swipe-end-[x|y]`,
+  const tooltipAttributes = ["toast-swipe-move", "toast-swipe-end"];
 
-  componentContentWidths.forEach((component) => {
+  tooltipAttributes.forEach((component) => {
     addUtilities({
-      [`.w-${variantPrefix}${component}`]: {
-        width: `var(--radix-${component}-content-width)`,
+      [`.${variantPrefix}${component}-x`]: {
+        width: `var(--radix-${component}-x)`,
+      },
+    });
+    addUtilities({
+      [`.${variantPrefix}${component}-y`]: {
+        height: `var(--radix-${component}-y)`,
       },
     });
   });
