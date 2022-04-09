@@ -143,19 +143,6 @@ const Demo = (props: Props) => {
           isNew
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Toast",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toast.tsx",
-          }}
-        >
-          <div>
-            <Toast />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          isNew
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
             title: "Navigation Menu",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/NavigationMenu.tsx",
           }}
@@ -173,6 +160,19 @@ const Demo = (props: Props) => {
           }}
         >
           <Select />
+        </DemoCard>
+
+        <DemoCard
+          isNew
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Toast",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/Toast.tsx",
+          }}
+        >
+          <div>
+            <Toast />
+          </div>
         </DemoCard>
 
         <DemoCard
