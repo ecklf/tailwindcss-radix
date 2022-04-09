@@ -1,11 +1,13 @@
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import cx from "classnames";
+import { useRouter } from "next/router";
 import React from "react";
 import Button from "./shared/Button";
 
 type Props = {};
 
 const Toast = (props: Props) => {
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -40,7 +42,7 @@ const Toast = (props: Props) => {
       >
         <div className="flex">
           <div className="w-0 flex-1 flex items-center pl-5 py-4">
-            <div className="w-full">
+            <div className="w-full radix">
               <ToastPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 Pull Request Review
               </ToastPrimitive.Title>
@@ -56,6 +58,10 @@ const Toast = (props: Props) => {
                 <ToastPrimitive.Action
                   altText="view now"
                   className="w-full border border-transparent rounded-lg px-3 py-2 flex items-center justify-center text-sm font-medium text-purple-600 dark:text-purple-500 hover:bg-gray-50 dark:hover:bg-gray-900 focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("https://github.com");
+                  }}
                 >
                   Review
                 </ToastPrimitive.Action>
