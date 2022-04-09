@@ -58,24 +58,15 @@ module.exports = {
 require("tailwindcss-radix")({
   // Default: `radix`
   variantPrefix: "rdx",
-  // Default: `false`
-  // Cannot be enabled in combination with `variantPrefix: ""`
-  skipAttributeNames: false,
 });
 ```
 
 ```ts
 // Example 1: Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
 variantPrefix: "rdx",
-skipAttributeNames: false
 
 // Example 2: Generates `[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
 variantPrefix: "",
-skipAttributeNames: false
-
-// Example 3: Generates `rdx-*` utilities for `data-[state/side/orientation]="*"`
-variantPrefix: "rdx",
-skipAttributeNames: true
 ```
 
 ### Styling state

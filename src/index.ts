@@ -28,14 +28,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     ? options
     : {
         variantPrefix: "radix",
-        skipAttributeNames: false,
       };
-
-  if (options?.variantPrefix === "" && options?.skipAttributeNames === true) {
-    throw new Error(
-      "tailwindcss-radix: Cannot use empty `variantPrefix` while `skipAttributeNames` is enabled"
-    );
-  }
 
   const variantPrefix =
     options.variantPrefix === "" ? "" : `${options.variantPrefix}-`;
@@ -85,9 +78,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     namedDataAttributes[
       attributeName as keyof typeof namedDataAttributes
     ].forEach((attributeValue) => {
-      let variantName = options.skipAttributeNames
-        ? `${variantPrefix}${attributeValue}`
-        : `${variantPrefix}${attributeName}-${attributeValue}`;
+      let variantName = `${variantPrefix}${attributeName}-${attributeValue}`;
       let selector = `data-${attributeName}="${attributeValue}"`;
 
       addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
