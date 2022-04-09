@@ -22,12 +22,16 @@
 ## Installation
 
 ```sh
-yarn add tailwindcss-radix
+npm i tailwindcss-radix
 ```
 
 ```sh
-npm i tailwindcss-radix
+yarn add tailwindcss-radix
 ```
+
+## Migrate from v1
+
+To prevent a possible future name clashing `skipAttributeNames` has been removed. Please update the class names accordingly.
 
 ## Demo
 
