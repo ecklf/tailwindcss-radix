@@ -128,12 +128,12 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   tooltipAttributes.forEach((component) => {
     addUtilities({
       [`.${variantPrefix}${component}-x`]: {
-        width: `var(--radix-${component}-x)`,
+        transform: `translateX(var(--radix-${component}-x))`,
       },
     });
     addUtilities({
       [`.${variantPrefix}${component}-y`]: {
-        height: `var(--radix-${component}-y)`,
+        transform: `translateY(var(--radix-${component}-y))`,
       },
     });
   });
