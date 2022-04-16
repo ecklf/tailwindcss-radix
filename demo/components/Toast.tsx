@@ -33,7 +33,7 @@ const Toast = (props: Props) => {
           "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
           "radix-state-closed:animate-toast-hide",
           "radix-swipe-end:animate-toast-swipe-out",
-          "radix-swipe-move:translate-x-[var(--radix-toast-swipe-move-x)]",
+          "radix-toast-swipe-move-x",
           "radix-swipe-cancel:translate-x-0 radix-swipe-cancel:duration-200 radix-swipe-cancel:ease-[ease]",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
