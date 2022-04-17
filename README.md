@@ -31,7 +31,7 @@ yarn add tailwindcss-radix
 
 ## Migrate from v1
 
-To prevent a possible future name clashing `skipAttributeNames` has been removed. Please update the class names accordingly.
+To prevent a possible future name clashing the `skipAttributeNames` option has been removed. In case you used this option, please update the class names accordingly.
 
 ## Demo
 
