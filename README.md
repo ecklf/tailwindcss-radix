@@ -249,6 +249,29 @@ const AnimatedAccordion = () => {
 };
 ```
 
+#### Toast swiping
+
+Use the generated `[prefix]-toast-swipe-move-[x|y]` and `[prefix]-toast-swipe-end-[x|y]` utilities to animate swipe gestures.
+
+```css
+/* With default prefix `radix` */
+.radix-toast-swipe-move-x {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+.radix-toast-swipe-move-y {
+  transform: translateY(var(--radix-toast-swipe-move-y));
+}
+
+.radix-toast-swipe-end-x {
+  transform: translateX(var(--radix-toast-swipe-move-x));
+}
+
+.radix-toast-swipe-end-y {
+  transform: translateY(var(--radix-toast-swipe-move-y));
+}
+```
+
 ## License
 
 MIT
