@@ -8,7 +8,7 @@
     "lint": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && tsc --removeComments",
-    "release": "release-it"
+    "release": "npm run build && release-it"
   },
   "repository": {
     "type": "git",
