@@ -264,11 +264,11 @@ Use the generated `[prefix]-toast-swipe-move-[x|y]` and `[prefix]-toast-swipe-en
 }
 
 .radix-toast-swipe-end-x {
-  transform: translateX(var(--radix-toast-swipe-move-x));
+  transform: translateX(var(--radix-toast-swipe-end-x));
 }
 
 .radix-toast-swipe-end-y {
-  transform: translateY(var(--radix-toast-swipe-move-y));
+  transform: translateY(var(--radix-toast-swipe-end-y));
 }
 ```
 
