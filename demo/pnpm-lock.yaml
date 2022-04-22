@@ -46,7 +46,7 @@ specifiers:
   react-dom: ^17.0.2
   react-github-btn: ^1.2.2
   tailwindcss: ^3.0.24
-  tailwindcss-radix: ^2.0.0
+  tailwindcss-radix: ^2.1.0
   typescript: ^4.6.3
 
 dependencies:
@@ -97,7 +97,7 @@ devDependencies:
   prettier: 2.6.2
   prettier-plugin-tailwindcss: 0.1.10_prettier@2.6.2
   tailwindcss: 3.0.24
-  tailwindcss-radix: 2.0.0
+  tailwindcss-radix: 2.1.0
   typescript: 4.6.3
 
 packages:
@@ -3911,8 +3911,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss-radix/2.0.0:
-    resolution: {integrity: sha512-OLEEfQ2qeUdQU+fJ9wQf5A7/eIYn8oKIfHzPBDImHQ/QxR7digIpTCEwJWO0qy0r0kH+0nJaS4pZHeYG9W5Neg==}
+  /tailwindcss-radix/2.1.0:
+    resolution: {integrity: sha512-OAwUUPJ6e30k+5UgGGeqhVSHHazUpoTZFXb6aRMHixgzs4p+MVoboHbsAJ/yQntGIzkq1+vBkbiWJhXrJ2SJsA==}
     dev: true
 
   /tailwindcss/3.0.24:
