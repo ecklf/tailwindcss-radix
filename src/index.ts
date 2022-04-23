@@ -31,7 +31,11 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
       };
 
   const variantPrefix =
-    options.variantPrefix === "" ? "" : `${options.variantPrefix}-`;
+    options.variantPrefix === "" ||
+    (typeof options.variantPrefix === "boolean" &&
+      options.variantPrefix === false)
+      ? ""
+      : `${options.variantPrefix}-`;
 
   // Adds the following transform origin utilities
   // `--radix-dropdown-menu-content-transform-origin`,
