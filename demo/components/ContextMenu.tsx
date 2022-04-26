@@ -189,7 +189,7 @@ const ContextMenu = (props: Props) => {
             </ContextMenuPrimitive.TriggerItem>
             <ContextMenuPrimitive.Content
               className={cx(
-                "origin-radix-dropdown-menu radix-side-right:animate-scale-in",
+                "origin-radix-context-menu radix-side-right:animate-scale-in",
                 "w-full rounded-md px-1 py-1 text-xs shadow-md",
                 "bg-white dark:bg-gray-800"
               )}
