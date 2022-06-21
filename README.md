@@ -101,7 +101,7 @@ export default App;
 
 #### Accessing parent state
 
-Sometimes we want to access state in the child of the trigger element. This can be achieved by adding the `group` class to the parent element and the `group-*` variants on the child element.
+When you need to style an element based on the state of a parent element, mark the parent with the `group` class and style the target with `group-radix-*` modifiers.
 
 Example usage of a conditional transform for a Radix `Accordion`:
 
@@ -136,6 +136,36 @@ const Accordion = () => {
         <AccordionPrimitive.Content>Content 2</AccordionPrimitive.Content>
       </AccordionPrimitive.Item>
     </AccordionPrimitive.Root>
+  );
+};
+
+export default App;
+```
+
+#### Accessing sibling state
+
+When you need to style an element based on the state of a sibling element, mark the sibiling with the `peer` class and style the target with `peer-radix-*` modifiers.
+
+Example usage of a conditional icon color for a sibiling of a Radix `Checkbox`:
+
+```tsx
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { CheckIcon, TargetIcon } from "@radix-ui/react-icons";
+import React from "react";
+
+interface Props {}
+
+const App = (props: Props) => {
+  return (
+    <>
+      <CheckboxPrimitive.Root id="c1" defaultChecked className="peer h-5 w-5">
+        <CheckboxPrimitive.Indicator>
+          <CheckIcon />
+        </CheckboxPrimitive.Indicator>
+      </CheckboxPrimitive.Root>
+
+      <TargetIcon className="text-red-500 peer-radix-state-checked:text-green-500" />
+    </>
   );
 };
 
