@@ -76,6 +76,14 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
         )}`;
       });
     });
+
+    addVariant(`peer-${variantName}`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }: { className: string }) => {
+        return `.peer[${selector}] ~ .${e(
+          `peer-${variantName}${separator}${className}`
+        )}`;
+      });
+    });
   });
 
   Object.keys(namedDataAttributes).forEach((attributeName) => {
@@ -95,6 +103,14 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
         modifySelectors(({ className }: { className: string }) => {
           return `.group[${selector}] .${e(
             `group-${variantName}${separator}${className}`
+          )}`;
+        });
+      });
+
+      addVariant(`peer-${variantName}`, ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }: { className: string }) => {
+          return `.peer[${selector}] ~ .${e(
+            `peer-${variantName}${separator}${className}`
           )}`;
         });
       });
