@@ -244,41 +244,6 @@ Use the generated `h-*` and `w-*` utilities to animate the size of the content w
 }
 ```
 
-Example usage with the `<Transition/>` component from `@headlessui/react`:
-
-```tsx
-import React from "react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Transition } from "@headlessui/react";
-
-const AnimatedAccordion = () => {
-  return (
-    // --snip--
-    <AccordionPrimitive.Content forceMount className="overflow-hidden">
-      <Transition
-        show={currentItem === "item-1"}
-        enter="ease-out duration-300"
-        enterFrom="h-0"
-        enterTo="h-radix-accordion"
-        leave="ease-in duration-300"
-        leaveFrom="h-radix-accordion"
-        leaveTo="h-0"
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          ullam, ratione veniam voluptate nobis sunt laboriosam aperiam harum
-          fugit corrupti alias magnam officiis nihil minima eum excepturi natus
-          similique? Cupiditate reprehenderit, hic sequi modi nemo odit esse
-          quas adipisci perferendis beatae deserunt ducimus itaque molestias
-          quibusdam porro assumenda laudantium id!
-        </p>
-      </Transition>
-    </AccordionPrimitive.Content>
-    // --snip--
-  );
-};
-```
-
 #### Toast swiping
 
 Use the generated `translate-*` utilities to animate swipe gestures.
