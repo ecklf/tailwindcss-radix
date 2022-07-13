@@ -1,5 +1,6 @@
 import cx from "classnames";
 import React from "react";
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
 interface Props {}
 
@@ -12,23 +13,32 @@ const starters = [
 const RadioGroup = (props: Props) => {
   return (
     <form>
-      <fieldset>
-        <legend className="text-sm font-medium leading-4 text-gray-900 dark:text-gray-100">
-          Choose your starter
-        </legend>
+      <legend className="text-sm font-medium leading-4 text-gray-900 dark:text-gray-100">
+        Choose your starter
+      </legend>
+      <RadioGroupPrimitive.Root
+        defaultValue="default"
+        aria-label="Pokemon starters"
+      >
         <div className="mt-3 space-y-3">
           {starters.map((pokemon) => (
             <div key={pokemon.id} className="flex items-center">
-              <input
+              <RadioGroupPrimitive.Item
                 id={pokemon.id}
-                name="notification-method"
-                type="radio"
+                value={pokemon.title}
                 className={cx(
+                  "peer relative w-4 h-4 rounded-full",
                   // Setting the background in dark properly requires a workaround (see css/tailwind.css)
-                  "h-4 w-4 border border-transparent bg-gray-100 text-purple-600 dark:bg-gray-900",
+                  "border border-transparent text-white",
+                  "radix-state-checked:bg-purple-600",
+                  "radix-state-unchecked:bg-gray-100 dark:radix-state-unchecked:bg-gray-900",
                   "focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800"
                 )}
-              />
+              >
+                <RadioGroupPrimitive.Indicator className="absolute inset-0 flex items-center justify-center leading-0">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                </RadioGroupPrimitive.Indicator>
+              </RadioGroupPrimitive.Item>
               <label
                 htmlFor={pokemon.id}
                 className="ml-2 block text-sm font-medium text-gray-700 dark:text-gray-400"
@@ -38,7 +48,7 @@ const RadioGroup = (props: Props) => {
             </div>
           ))}
         </div>
-      </fieldset>
+      </RadioGroupPrimitive.Root>
     </form>
   );
 };
