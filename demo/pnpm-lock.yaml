@@ -31,6 +31,7 @@ specifiers:
   '@radix-ui/react-toolbar': ^1.0.0
   '@radix-ui/react-tooltip': ^1.0.0
   '@tailwindcss/forms': ^0.5.2
+  '@types/node': ^18.0.6
   '@types/react': ^18.0.15
   autoprefixer: ^10.4.7
   classnames: ^2.3.1
@@ -89,6 +90,7 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.6
+  '@types/node': 18.0.6
   '@types/react': 18.0.15
   autoprefixer: 10.4.7_postcss@8.4.14
   eslint: 8.20.0
@@ -1207,6 +1209,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
     dev: true
 
   /@types/prop-types/15.7.5:
