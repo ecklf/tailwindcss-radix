@@ -96,7 +96,7 @@ const ThemeSwitcher = (props: Props) => {
 
   useEffect(() => {
     const prefersDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const updateTheme = (e: MediaQueryListEvent) => {
+    const updateTheme = (_e: MediaQueryListEvent) => {
       setPreferredTheme("system");
     };
     prefersDarkQuery.addEventListener("change", updateTheme);
@@ -136,38 +136,40 @@ const ThemeSwitcher = (props: Props) => {
           {/* {isDark ? "dark" : "light"} */}
         </DropdownMenuPrimitive.Trigger>
 
-        <DropdownMenuPrimitive.Content
-          align="end"
-          sideOffset={5}
-          className={cx(
-            " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-            "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
-            "bg-gray-50 dark:bg-gray-700"
-          )}
-        >
-          {themes.map(({ key, label, icon }, i) => {
-            return (
-              <DropdownMenuPrimitive.Item
-                key={`theme-${i}`}
-                className={cx(
-                  "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                  "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-800"
-                )}
-                onClick={() => {
-                  (window as any).__setPreferredTheme(key);
-                  setPreferredTheme(key);
-                }}
-              >
-                {React.cloneElement(icon, {
-                  className: "w-5 h-5 mr-2 text-gray-700 dark:text-gray-300",
-                })}
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
-                  {label}
-                </span>
-              </DropdownMenuPrimitive.Item>
-            );
-          })}
-        </DropdownMenuPrimitive.Content>
+        <DropdownMenuPrimitive.Portal>
+          <DropdownMenuPrimitive.Content
+            align="end"
+            sideOffset={5}
+            className={cx(
+              " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+              "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
+              "bg-gray-50 dark:bg-gray-700"
+            )}
+          >
+            {themes.map(({ key, label, icon }, i) => {
+              return (
+                <DropdownMenuPrimitive.Item
+                  key={`theme-${i}`}
+                  className={cx(
+                    "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                    "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-800"
+                  )}
+                  onClick={() => {
+                    (window as any).__setPreferredTheme(key);
+                    setPreferredTheme(key);
+                  }}
+                >
+                  {React.cloneElement(icon, {
+                    className: "w-5 h-5 mr-2 text-gray-700 dark:text-gray-300",
+                  })}
+                  <span className="flex-grow text-gray-700 dark:text-gray-300">
+                    {label}
+                  </span>
+                </DropdownMenuPrimitive.Item>
+              );
+            })}
+          </DropdownMenuPrimitive.Content>
+        </DropdownMenuPrimitive.Portal>
       </DropdownMenuPrimitive.Root>
     </div>
   );
