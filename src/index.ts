@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-const dataAttributes = ["disabled"];
+const dataAttributes = ["disabled", "highlighted"];
 
 const namedDataAttributes = {
   state: [
