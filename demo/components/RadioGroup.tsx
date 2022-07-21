@@ -11,14 +11,17 @@ const starters = [
 ];
 
 const RadioGroup = (props: Props) => {
+  const [value, setValue] = React.useState(starters[0].title);
+
   return (
     <form>
       <legend className="text-sm font-medium leading-4 text-gray-900 dark:text-gray-100">
         Choose your starter
       </legend>
       <RadioGroupPrimitive.Root
-        defaultValue="default"
         aria-label="Pokemon starters"
+        defaultValue={"Bulbasaur"}
+        onValueChange={setValue}
       >
         <div className="mt-3 space-y-3">
           {starters.map((pokemon) => (
