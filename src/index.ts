@@ -1,26 +1,26 @@
 import plugin from "tailwindcss/plugin";
 
-const dataAttributes = ["disabled", "highlighted"];
+const dataAttributes = ["disabled", "highlighted", "placeholder"];
 
 const namedDataAttributes = {
   state: [
-    "open",
-    "closed",
     "active",
-    "inactive",
-    "on",
-    "off",
     "checked",
-    "unchecked",
-    "instant-open",
+    "closed",
     "delayed-open",
-    "visible",
     "hidden",
+    "inactive",
+    "instant-open",
+    "off",
+    "on",
+    "open",
+    "unchecked",
+    "visible",
   ],
-  side: ["top", "bottom", "left", "right"],
+  side: ["bottom", "left", "right", "top"],
   orientation: ["horizontal", "vertical"],
-  motion: ["from-start", "to-start", "from-end", "to-end"],
-  swipe: ["start", "move", "cancel", "end"],
+  motion: ["from-end", "from-start", "to-end", "to-start"],
+  swipe: ["cancel", "end", "move", "start"],
 };
 
 export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
@@ -38,15 +38,15 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
       : `${options.variantPrefix}-`;
 
   // Adds the following transform origin utilities
+  // `--radix-context-menu-content-transform-origin`,
   // `--radix-dropdown-menu-content-transform-origin`,
   // `--radix-hover-card-content-transform-origin `,
-  // `--radix-context-menu-content-transform-origin`,
   // `--radix-popover-content-transform-origin`,
   // `--radix-tooltip-content-transform-origin`,
   const transformOrigins = [
+    "context-menu",
     "dropdown-menu",
     "hover-card",
-    "context-menu",
     "popover",
     "tooltip",
   ];
@@ -141,9 +141,9 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   });
 
   // Adds the following [x|y] utilities
-  // `--radix-toast-swipe-move-[x|y]`,
   // `--radix-toast-swipe-end-[x|y]`,
-  const tooltipAttributes = ["toast-swipe-move", "toast-swipe-end"];
+  // `--radix-toast-swipe-move-[x|y]`,
+  const tooltipAttributes = ["toast-swipe-end", "toast-swipe-move"];
 
   tooltipAttributes.forEach((component) => {
     addUtilities({
