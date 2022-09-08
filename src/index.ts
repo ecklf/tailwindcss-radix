@@ -10,6 +10,7 @@ const namedDataAttributes = {
     "delayed-open",
     "hidden",
     "inactive",
+    "indeterminate",
     "instant-open",
     "off",
     "on",
