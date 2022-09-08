@@ -47,7 +47,7 @@ specifiers:
   react-dom: ^18.2.0
   react-github-btn: ^1.3.0
   tailwindcss: ^3.1.8
-  tailwindcss-radix: ^2.5.0
+  tailwindcss-radix: ^2.6.0
   typescript: ^4.7.4
 
 dependencies:
@@ -86,7 +86,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-github-btn: 1.3.0
-  tailwindcss-radix: 2.5.0
+  tailwindcss-radix: 2.6.0
 
 devDependencies:
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.8
@@ -3154,8 +3154,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss-radix/2.5.0:
-    resolution: {integrity: sha512-vPIvolTmb0L6DlvIKBJRVGo+gB7ZU2jZbO8EpZw/5gBSTHx6PezRgQhR68kOuteh3F1q2PV3oBQgaIN4FxVmrw==}
+  /tailwindcss-radix/2.6.0:
+    resolution: {integrity: sha512-32gv65ommaEMPKRS9yPmbvc6QcV+LsAqtSe1RFindBctVpS6+SbmkfcdecW/zgRvHW7KeAgl3iyzq2ZmRqsdZQ==}
     dev: false
 
   /tailwindcss/3.1.8:
