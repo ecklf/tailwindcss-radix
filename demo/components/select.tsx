@@ -6,7 +6,7 @@ import {
 import * as SelectPrimitive from "@radix-ui/react-select";
 import cx from "classnames";
 import React from "react";
-import Button from "../components/shared/Button";
+import Button from "./shared/button";
 
 type Props = {};
 

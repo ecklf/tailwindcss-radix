@@ -15,7 +15,7 @@ import {
 } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React, { ReactNode, useState } from "react";
-import Button from "./shared/Button";
+import Button from "./shared/button";
 
 interface RadixMenuItem {
   label: string;

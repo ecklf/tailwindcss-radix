@@ -1,7 +1,7 @@
 import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
 import * as TogglePrimitive from "@radix-ui/react-toggle";
 import React, { useState } from "react";
-import Button from "./shared/Button";
+import Button from "./shared/button";
 
 interface Props {}
 

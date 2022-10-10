@@ -1,7 +1,7 @@
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import cx from "classnames";
 import React from "react";
-import Button from "./shared/Button";
+import Button from "./shared/button";
 
 interface Props {}
 

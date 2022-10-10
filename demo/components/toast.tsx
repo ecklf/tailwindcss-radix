@@ -1,7 +1,7 @@
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import cx from "classnames";
 import React from "react";
-import Button from "./shared/Button";
+import Button from "./shared/button";
 
 type Props = {};
 
