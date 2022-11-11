@@ -33,6 +33,7 @@ specifiers:
   '@tailwindcss/forms': ^0.5.2
   '@types/node': ^18.7.1
   '@types/react': ^18.0.17
+  '@vercel/analytics': ^0.1.4
   autoprefixer: ^10.4.8
   classnames: ^2.3.1
   eslint: 8.21.0
@@ -80,6 +81,7 @@ dependencies:
   '@radix-ui/react-toggle-group': 1.0.0_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-toolbar': 1.0.0_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-tooltip': 1.0.0_zxljzmqdrxwnuenbkrz77w74uy
+  '@vercel/analytics': 0.1.4_react@18.2.0
   classnames: 2.3.1
   next: 12.2.4_biqbaboplfbrettd7655fr4n2y
   next-seo: 5.5.0_vyccxgqxcnj5vudpssiumaxlme
@@ -1293,6 +1295,14 @@ packages:
       '@typescript-eslint/types': 5.33.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.4_react@18.2.0:
+    resolution: {integrity: sha512-6xI1kozfgigwmDTQCrtj+m0yQnzhLGa/l0yE8BjTbUQ2vF9b88CEXF3dXjZl48ESfjssCur3FkK3jOwZm4emrw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
