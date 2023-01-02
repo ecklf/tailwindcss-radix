@@ -103,10 +103,16 @@ module.exports = {
           "0%": { transform: `translateY(calc(100% + 1rem))` },
           "100%": { transform: "translateY(0)" },
         },
-        "toast-swipe-out": {
+        "toast-swipe-out-x": {
           "0%": { transform: "translateX(var(--radix-toast-swipe-end-x))" },
           "100%": {
             transform: `translateX(calc(100% + 1rem))`,
+          },
+        },
+        "toast-swipe-out-y": {
+          "0%": { transform: "translateY(var(--radix-toast-swipe-end-y))" },
+          "100%": {
+            transform: `translateY(calc(100% + 1rem))`,
           },
         },
       },
@@ -136,7 +142,8 @@ module.exports = {
           "toast-slide-in-right 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         "toast-slide-in-bottom":
           "toast-slide-in-bottom 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "toast-swipe-out": "toast-swipe-out 100ms ease-out forwards",
+        "toast-swipe-out-x": "toast-swipe-out-x 100ms ease-out forwards",
+        "toast-swipe-out-y": "toast-swipe-out-y 100ms ease-out forwards",
       },
     },
   },
