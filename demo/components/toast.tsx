@@ -1,15 +1,17 @@
 import * as ToastPrimitive from "@radix-ui/react-toast";
 import cx from "classnames";
 import React from "react";
+import { useMediaQuery } from "../hooks/use-media-query";
 import Button from "./shared/button";
 
 type Props = {};
 
 const Toast = (props: Props) => {
   const [open, setOpen] = React.useState(false);
+  const isMd = useMediaQuery("(min-width: 768px)");
 
   return (
-    <ToastPrimitive.Provider>
+    <ToastPrimitive.Provider swipeDirection={isMd ? "right" : "down"}>
       <Button
         onClick={() => {
           if (open) {
@@ -32,8 +34,10 @@ const Toast = (props: Props) => {
           "bg-white dark:bg-gray-800",
           "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
           "radix-state-closed:animate-toast-hide",
-          "radix-swipe-end:animate-toast-swipe-out",
-          "translate-x-radix-toast-swipe-move-x",
+          "radix-swipe-direction-right:radix-swipe-end:animate-toast-swipe-out-x",
+          "radix-swipe-direction-right:translate-x-radix-toast-swipe-move-x",
+          "radix-swipe-direction-down:radix-swipe-end:animate-toast-swipe-out-y",
+          "radix-swipe-direction-down:translate-y-radix-toast-swipe-move-y",
           "radix-swipe-cancel:translate-x-0 radix-swipe-cancel:duration-200 radix-swipe-cancel:ease-[ease]",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
