@@ -12,6 +12,7 @@ import ContextMenu from "../components/context-menu";
 import Dialog from "../components/dialog";
 import DropdownMenu from "../components/dropdown-menu";
 import HoverCard from "../components/hover-card";
+import Menubar from "../components/menubar";
 import NavigationMenu from "../components/navigation-menu";
 import Popover from "../components/popover";
 import Progress from "../components/progress";
@@ -101,9 +102,7 @@ const Hero = () => {
   );
 };
 
-interface Props {}
-
-const Demo = (props: Props) => {
+const Demo = () => {
   return (
     <Fragment>
       <Head>
@@ -140,49 +139,80 @@ const Demo = (props: Props) => {
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
         <DemoCard
-          isNew
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Navigation Menu",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/navigation-menu.tsx",
+            title: "Accordion",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/accordion.tsx",
           }}
         >
-          <div>
-            <NavigationMenu />
+          <div className="max-w-sm">
+            <Accordion />
           </div>
         </DemoCard>
 
         <DemoCard
-          isNew
           data={{
-            title: "Select",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/select.tsx",
+            title: "Alert Dialog",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/alert-dialog.tsx",
           }}
         >
-          <Select />
+          <AlertDialog />
         </DemoCard>
 
         <DemoCard
-          isNew
-          variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Toast",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toast.tsx",
+            title: "Aspect Ratio",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/aspect-ratio.tsx",
           }}
         >
-          <div>
-            <Toast />
+          <div className="w-full max-w-sm">
+            <AspectRatio />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Avatar",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/avatar.tsx",
+          }}
+        >
+          <div className="z-10 grid grid-cols-4 gap-6">
+            <Avatar variant={Avatar.variant.Circle} />
+            <Avatar
+              variant={Avatar.variant.Circle}
+              renderInvalidUrls
+              isOnline
+            />
+            <Avatar variant={Avatar.variant.Rounded} />
+            <Avatar
+              variant={Avatar.variant.Rounded}
+              renderInvalidUrls
+              isOnline
+            />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Checkbox",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/checkbox.tsx",
+          }}
+        >
+          <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
+            <Checkbox />
           </div>
         </DemoCard>
 
         <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Dropdown Menu",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/dropdown-menu.tsx",
+            title: "Collapsible",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/collapsible.tsx",
           }}
         >
-          <DropdownMenu />
+          <div className="w-full max-w-sm">
+            <Collapsible />
+          </div>
         </DemoCard>
 
         <DemoCard
@@ -205,22 +235,13 @@ const Demo = (props: Props) => {
         </DemoCard>
 
         <DemoCard
-          data={{
-            title: "Alert Dialog",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/alert-dialog.tsx",
-          }}
-        >
-          <AlertDialog />
-        </DemoCard>
-
-        <DemoCard
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Popover",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/popover.tsx",
+            title: "Dropdown Menu",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/dropdown-menu.tsx",
           }}
         >
-          <Popover />
+          <DropdownMenu />
         </DemoCard>
 
         <DemoCard
@@ -234,37 +255,48 @@ const Demo = (props: Props) => {
         </DemoCard>
 
         <DemoCard
+          isNew
           variant={DemoCard.variant.JustifyCenter}
           data={{
-            title: "Collapsible",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/collapsible.tsx",
+            title: "Menubar",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/menubar.tsx",
+          }}
+        >
+          <div>
+            <Menubar />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Navigation Menu",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/navigation-menu.tsx",
+          }}
+        >
+          <div>
+            <NavigationMenu />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Popover",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/popover.tsx",
+          }}
+        >
+          <Popover />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Progress",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/progress.tsx",
           }}
         >
           <div className="w-full max-w-sm">
-            <Collapsible />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Accordion",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/accordion.tsx",
-          }}
-        >
-          <div className="max-w-sm">
-            <Accordion />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Checkbox",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/checkbox.tsx",
-          }}
-        >
-          <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
-            <Checkbox />
+            <Progress />
           </div>
         </DemoCard>
 
@@ -281,11 +313,11 @@ const Demo = (props: Props) => {
 
         <DemoCard
           data={{
-            title: "Switch",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/switch.tsx",
+            title: "Select",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/select.tsx",
           }}
         >
-          <Switch />
+          <Select />
         </DemoCard>
 
         <DemoCard
@@ -295,6 +327,38 @@ const Demo = (props: Props) => {
           }}
         >
           <Slider />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Switch",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/switch.tsx",
+          }}
+        >
+          <Switch />
+        </DemoCard>
+
+        <DemoCard
+          data={{
+            title: "Tabs",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/tabs.tsx",
+          }}
+        >
+          <div className="w-full max-w-sm">
+            <Tabs />
+          </div>
+        </DemoCard>
+
+        <DemoCard
+          variant={DemoCard.variant.JustifyCenter}
+          data={{
+            title: "Toast",
+            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toast.tsx",
+          }}
+        >
+          <div>
+            <Toast />
+          </div>
         </DemoCard>
 
         <DemoCard
@@ -326,66 +390,11 @@ const Demo = (props: Props) => {
 
         <DemoCard
           data={{
-            title: "Tabs",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/tabs.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <Tabs />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Avatar",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/avatar.tsx",
-          }}
-        >
-          <div className="z-10 grid grid-cols-4 gap-6">
-            <Avatar variant={Avatar.variant.Circle} />
-            <Avatar
-              variant={Avatar.variant.Circle}
-              renderInvalidUrls
-              isOnline
-            />
-            <Avatar variant={Avatar.variant.Rounded} />
-            <Avatar
-              variant={Avatar.variant.Rounded}
-              renderInvalidUrls
-              isOnline
-            />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Aspect Ratio",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/aspect-ratio.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <AspectRatio />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
             title: "Tooltip",
             link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/tooltip.tsx",
           }}
         >
           <Tooltip />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Progress",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/progress.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <Progress />
-          </div>
         </DemoCard>
       </div>
     </Fragment>

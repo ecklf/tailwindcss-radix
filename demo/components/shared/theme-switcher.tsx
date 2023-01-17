@@ -141,7 +141,7 @@ const ThemeSwitcher = (props: Props) => {
             align="end"
             sideOffset={5}
             className={cx(
-              " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
+              "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
               "bg-gray-50 dark:bg-gray-700"
             )}

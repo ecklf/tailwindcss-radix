@@ -3,6 +3,7 @@ import plugin from "tailwindcss/plugin";
 const dataAttributes = ["disabled", "highlighted", "placeholder"];
 
 const namedDataAttributes = {
+  align: ["center", "end", "start"],
   state: [
     "active",
     "checked",
@@ -43,12 +44,14 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   // `--radix-context-menu-content-transform-origin`,
   // `--radix-dropdown-menu-content-transform-origin`,
   // `--radix-hover-card-content-transform-origin `,
+  // `--radix-menubar-content-transform-origin`
   // `--radix-popover-content-transform-origin`,
   // `--radix-tooltip-content-transform-origin`,
   const transformOrigins = [
     "context-menu",
     "dropdown-menu",
     "hover-card",
+    "menubar",
     "popover",
     "tooltip",
   ];
