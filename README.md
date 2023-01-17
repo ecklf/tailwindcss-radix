@@ -213,6 +213,10 @@ Use the generated `origin-*` utilities to transform from the content position or
   transform-origin: var(--radix-context-menu-content-transform-origin);
 }
 
+.origin-radix-menubar {
+  transform-origin: var(--radix-menubar-content-transform-origin);
+}
+
 .origin-radix-popover {
   transform-origin: var(--radix-popover-content-transform-origin);
 }
