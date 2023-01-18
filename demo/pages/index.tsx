@@ -1,3 +1,4 @@
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import React, { Fragment } from "react";
@@ -28,6 +29,204 @@ import Toggle from "../components/toggle";
 import ToggleGroup from "../components/toggle-group";
 import Toolbar from "../components/toolbar";
 import Tooltip from "../components/tooltip";
+import { CommandMenu } from "../components/shared/command-menu";
+import {
+  QuestionMarkCircledIcon,
+  QuestionMarkIcon,
+  SunIcon,
+} from "@radix-ui/react-icons";
+import cx from "classnames";
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
+
+const REPO_URL = "https://github.com/ecklf/tailwindcss-radix/blob/main/demo";
+
+interface RadixComponent {
+  label: string;
+  link: string;
+  component: JSX.Element;
+  isNew?: boolean;
+  center?: boolean;
+  wrapper?: React.ReactNode;
+}
+
+const RADIX_COMPONENTS: RadixComponent[] = [
+  {
+    label: "Accordion",
+    link: `${REPO_URL}/components/accordion.tsx`,
+    center: true,
+    component: (
+      <div className="max-w-sm">
+        <Accordion />
+      </div>
+    ),
+  },
+  {
+    label: "Alert Dialog",
+    link: `${REPO_URL}/components/alert-dialog.tsx`,
+    component: <AlertDialog />,
+  },
+  {
+    label: "Aspect Ratio",
+    link: `${REPO_URL}/components/aspect-ratio.tsx`,
+    component: (
+      <div className="w-full max-w-sm">
+        <AspectRatio />
+      </div>
+    ),
+  },
+  {
+    label: "Avatar",
+    link: `${REPO_URL}/components/avatar.tsx`,
+    component: (
+      <div className="z-10 grid grid-cols-4 gap-6">
+        <Avatar variant={Avatar.variant.Circle} />
+        <Avatar variant={Avatar.variant.Circle} renderInvalidUrls isOnline />
+        <Avatar variant={Avatar.variant.Rounded} />
+        <Avatar variant={Avatar.variant.Rounded} renderInvalidUrls isOnline />
+      </div>
+    ),
+  },
+  {
+    label: "Checkbox",
+    link: `${REPO_URL}/components/checkbox.tsx`,
+    component: (
+      <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
+        <Checkbox />
+      </div>
+    ),
+  },
+  {
+    label: "Collapsible",
+    link: `${REPO_URL}/components/collapsible.tsx`,
+    center: true,
+    component: (
+      <div className="w-full max-w-sm">
+        <Collapsible />
+      </div>
+    ),
+  },
+  {
+    label: "Context Menu",
+    link: `${REPO_URL}/components/context-menu.tsx`,
+    center: true,
+    component: <ContextMenu />,
+  },
+  {
+    label: "Dialog",
+    link: `${REPO_URL}/components/dialog.tsx`,
+    component: <Dialog />,
+  },
+  {
+    label: "Dropdown Menu",
+    link: `${REPO_URL}/components/dropdown-menu.tsx`,
+    center: true,
+    component: <DropdownMenu />,
+  },
+  {
+    label: "Hover Card",
+    link: `${REPO_URL}/components/hover-card.tsx`,
+    center: true,
+    component: <HoverCard />,
+  },
+  {
+    label: "Menubar",
+    link: `${REPO_URL}/components/menubar.tsx`,
+    center: true,
+    component: (
+      <div>
+        <Menubar />
+      </div>
+    ),
+  },
+  {
+    label: "Navigation Menu",
+    link: `${REPO_URL}/components/navigation-menu.tsx`,
+    center: true,
+    component: (
+      <div>
+        <NavigationMenu />
+      </div>
+    ),
+  },
+  {
+    label: "Popover",
+    link: `${REPO_URL}/components/popover.tsx`,
+    center: true,
+    component: <Popover />,
+  },
+  {
+    label: "Progress",
+    link: `${REPO_URL}/components/progress.tsx`,
+    component: (
+      <div className="w-full max-w-sm">
+        <Progress />
+      </div>
+    ),
+  },
+  {
+    label: "Radio Group",
+    link: `${REPO_URL}/components/radio-group.tsx`,
+    component: (
+      <div className="flex items-center justify-center rounded-md bg-white px-4 py-3 dark:bg-gray-800">
+        <RadioGroup />
+      </div>
+    ),
+  },
+  {
+    label: "Select",
+    link: `${REPO_URL}/components/select.tsx`,
+    component: <Select />,
+  },
+  {
+    label: "Slider",
+    link: `${REPO_URL}/components/slider.tsx`,
+    component: <Slider />,
+  },
+  {
+    label: "Switch",
+    link: `${REPO_URL}/components/switch.tsx`,
+    component: <Switch />,
+  },
+  {
+    label: "Tabs",
+    link: `${REPO_URL}/components/tabs.tsx`,
+    component: (
+      <div className="w-full max-w-sm">
+        <Tabs />
+      </div>
+    ),
+  },
+  {
+    label: "Toast",
+    link: `${REPO_URL}/components/toast.tsx`,
+    center: true,
+    component: (
+      <div>
+        <Toast />
+      </div>
+    ),
+  },
+  {
+    label: "Toggle",
+    link: `${REPO_URL}/components/toggle.tsx`,
+    component: <Toggle />,
+  },
+  {
+    label: "Toggle Group",
+    link: `${REPO_URL}/components/toggle-group.tsx`,
+    component: <ToggleGroup />,
+  },
+  {
+    label: "Toolbar",
+    link: `${REPO_URL}/components/toolbar.tsx`,
+    component: <Toolbar />,
+  },
+  {
+    label: "Tooltip",
+    link: `${REPO_URL}/components/tooltip.tsx`,
+    component: <Tooltip />,
+  },
+];
 
 const Hero = () => {
   return (
@@ -97,7 +296,55 @@ const Hero = () => {
         </GitHubButton>
       </div>
 
-      <ThemeSwitcher />
+      <div className="flex items-center space-x-4 ">
+        <div>
+          <TooltipPrimitive.Provider>
+            <TooltipPrimitive.Root>
+              <TooltipPrimitive.Trigger asChild>
+                <div
+                  className={cx(
+                    "inline-flex select-none justify-center rounded-md px-2 py-1.5 text-sm font-medium",
+                    "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
+                    "border border-gray-300 dark:border-transparent",
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                  )}
+                >
+                  <QuestionMarkCircleIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+                </div>
+              </TooltipPrimitive.Trigger>
+              <TooltipPrimitive.Content
+                sideOffset={4}
+                className={cx(
+                  "radix-side-top:animate-slide-down-fade",
+                  "radix-side-right:animate-slide-left-fade",
+                  "radix-side-bottom:animate-slide-up-fade",
+                  "radix-side-left:animate-slide-right-fade",
+                  "inline-flex items-center rounded-md px-4 py-2.5",
+                  "bg-white dark:bg-gray-800"
+                )}
+              >
+                <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
+                <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300">
+                  <span className="block text-xs leading-none text-gray-700 dark:text-gray-100">
+                    Show Menu
+                  </span>
+                  <div className="flex justify-center items-center space-x-1">
+                    <kbd className="w-auto h-5 flex items-center justify-center select-none hover:cursor-pointer rounded-md font-bold bg-black/10 dark:bg-white/10 pt-0.5 px-1.5">
+                      ⌘{" "}
+                    </kbd>
+                    <span className="">+</span>
+                    <kbd className="w-auto text-xs h-5 flex items-center justify-center select-none hover:cursor-pointer rounded-md font-bold bg-black/10 dark:bg-white/10 px-1.5">
+                      K
+                    </kbd>
+                  </div>
+                </div>
+              </TooltipPrimitive.Content>
+            </TooltipPrimitive.Root>
+          </TooltipPrimitive.Provider>
+        </div>
+
+        <ThemeSwitcher />
+      </div>
     </div>
   );
 };
@@ -136,266 +383,37 @@ const Demo = () => {
       />
 
       <Hero />
+      <CommandMenu<RadixComponent>
+        items={RADIX_COMPONENTS}
+        onSelect={({ item, modifiers }) => {
+          if (modifiers.control) {
+            const newWindow = window.open(item.link, "_blank");
+            if (newWindow) setTimeout(() => newWindow.focus(), 10);
+          } else {
+            const element = document.getElementById(
+              item.label.replace(" ", "_").toLowerCase()
+            );
+            if (element) {
+              requestAnimationFrame(() =>
+                element.scrollIntoView({ behavior: "smooth" })
+              );
+            }
+          }
+        }}
+      />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Accordion",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/accordion.tsx",
-          }}
-        >
-          <div className="max-w-sm">
-            <Accordion />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Alert Dialog",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/alert-dialog.tsx",
-          }}
-        >
-          <AlertDialog />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Aspect Ratio",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/aspect-ratio.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <AspectRatio />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Avatar",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/avatar.tsx",
-          }}
-        >
-          <div className="z-10 grid grid-cols-4 gap-6">
-            <Avatar variant={Avatar.variant.Circle} />
-            <Avatar
-              variant={Avatar.variant.Circle}
-              renderInvalidUrls
-              isOnline
-            />
-            <Avatar variant={Avatar.variant.Rounded} />
-            <Avatar
-              variant={Avatar.variant.Rounded}
-              renderInvalidUrls
-              isOnline
-            />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Checkbox",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/checkbox.tsx",
-          }}
-        >
-          <div className="max-w-sm rounded-md bg-white p-3 dark:bg-gray-800">
-            <Checkbox />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Collapsible",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/collapsible.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <Collapsible />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Context Menu",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/context-menu.tsx",
-          }}
-        >
-          <ContextMenu />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Dialog",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/dialog.tsx",
-          }}
-        >
-          <Dialog />
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Dropdown Menu",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/dropdown-menu.tsx",
-          }}
-        >
-          <DropdownMenu />
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Hover Card",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/hover-card.tsx",
-          }}
-        >
-          <HoverCard />
-        </DemoCard>
-
-        <DemoCard
-          isNew
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Menubar",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/menubar.tsx",
-          }}
-        >
-          <div>
-            <Menubar />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Navigation Menu",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/navigation-menu.tsx",
-          }}
-        >
-          <div>
-            <NavigationMenu />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Popover",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/popover.tsx",
-          }}
-        >
-          <Popover />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Progress",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/progress.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <Progress />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Radio Group",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/radio-group.tsx",
-          }}
-        >
-          <div className="flex items-center justify-center rounded-md bg-white px-4 py-3 dark:bg-gray-800">
-            <RadioGroup />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Select",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/select.tsx",
-          }}
-        >
-          <Select />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Slider",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/slider.tsx",
-          }}
-        >
-          <Slider />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Switch",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/switch.tsx",
-          }}
-        >
-          <Switch />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Tabs",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/tabs.tsx",
-          }}
-        >
-          <div className="w-full max-w-sm">
-            <Tabs />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          variant={DemoCard.variant.JustifyCenter}
-          data={{
-            title: "Toast",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toast.tsx",
-          }}
-        >
-          <div>
-            <Toast />
-          </div>
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Toggle",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toggle.tsx",
-          }}
-        >
-          <Toggle />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Toggle Group",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toggle-group.tsx",
-          }}
-        >
-          <ToggleGroup />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Toolbar",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/toolbar.tsx",
-          }}
-        >
-          <Toolbar />
-        </DemoCard>
-
-        <DemoCard
-          data={{
-            title: "Tooltip",
-            link: "https://github.com/ecklf/tailwindcss-radix/blob/main/demo/components/tooltip.tsx",
-          }}
-        >
-          <Tooltip />
-        </DemoCard>
+        {RADIX_COMPONENTS.map(({ label, link, component }, i) => (
+          <DemoCard
+            key={`${label}-${i}`}
+            data={{
+              title: label,
+              link: link,
+            }}
+          >
+            {component}
+          </DemoCard>
+        ))}
       </div>
     </Fragment>
   );
