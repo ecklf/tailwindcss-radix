@@ -87,7 +87,7 @@ function CommandMenu<T extends { label: string }>({
       </div>
       <Command.Separator
         alwaysRender
-        className="mt-2 h-px bg-gray-300/70 dark:bg-gray-300/10 -mx-3"
+        className="mt-2 h-px bg-gray-300/70 dark:bg-gray-300/10"
       />
       <Command.List
         style={{
@@ -120,7 +120,7 @@ function CommandMenu<T extends { label: string }>({
           </Command.Item>
         ))}
       </Command.List>
-      <div className="h-px bg-gray-300/70 dark:bg-gray-300/10 -mx-3" />
+      <div className="h-px bg-gray-300/70 dark:bg-gray-300/10" />
       <div className="ml-px pl-3.5 pr-5 w-full flex items-center justify-between py-2">
         <svg
           className="h-3 w-3 text-black dark:text-white fill-current"
