@@ -25,6 +25,7 @@ function CommandMenu<T extends { label: string }>({
     const down = (e: KeyboardEvent) => {
       // Toggle the menu when ⌘K is pressed
       if (e.key === "k" && e.metaKey) {
+        e.preventDefault();
         setOpen((open) => !open);
       }
     };
