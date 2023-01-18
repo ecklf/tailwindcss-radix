@@ -14,7 +14,7 @@ const items = [
   },
   {
     id: "max-width",
-    label: "Max. width",
+    label: "Max. Width",
     defaultValue: "300px",
   },
   {
@@ -24,7 +24,7 @@ const items = [
   },
   {
     id: "max-height",
-    label: "Max. height",
+    label: "Max. Height",
     defaultValue: "none",
   },
 ];
