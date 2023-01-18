@@ -201,16 +201,16 @@ const ContextMenu = () => {
 Use the generated `origin-*` utilities to transform from the content position origin.
 
 ```css
+.origin-radix-context-menu {
+  transform-origin: var(--radix-context-menu-content-transform-origin);
+}
+
 .origin-radix-dropdown-menu {
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
 }
 
 .origin-radix-hover-card {
   transform-origin: var(--radix-hover-card-content-transform-origin);
-}
-
-.origin-radix-context-menu {
-  transform-origin: var(--radix-context-menu-content-transform-origin);
 }
 
 .origin-radix-menubar {
