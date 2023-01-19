@@ -30,11 +30,6 @@ import ToggleGroup from "../components/toggle-group";
 import Toolbar from "../components/toolbar";
 import Tooltip from "../components/tooltip";
 import { CommandMenu } from "../components/shared/command-menu";
-import {
-  QuestionMarkCircledIcon,
-  QuestionMarkIcon,
-  SunIcon,
-} from "@radix-ui/react-icons";
 import cx from "classnames";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
@@ -125,7 +120,6 @@ const RADIX_COMPONENTS: RadixComponent[] = [
   {
     label: "Hover Card",
     link: `${REPO_URL}/components/hover-card.tsx`,
-    center: true,
     component: <HoverCard />,
   },
   {
@@ -199,7 +193,6 @@ const RADIX_COMPONENTS: RadixComponent[] = [
   {
     label: "Toast",
     link: `${REPO_URL}/components/toast.tsx`,
-    center: true,
     component: (
       <div>
         <Toast />
@@ -403,8 +396,9 @@ const Demo = () => {
       />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
-        {RADIX_COMPONENTS.map(({ label, link, component }, i) => (
+        {RADIX_COMPONENTS.map(({ label, link, component, center }, i) => (
           <DemoCard
+            variant={center && DemoCard.variant.JustifyCenter}
             key={`${label}-${i}`}
             data={{
               title: label,

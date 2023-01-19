@@ -15,6 +15,7 @@ import {
 } from "@radix-ui/react-icons";
 import cx from "classnames";
 import React, { ReactNode, useState } from "react";
+import Button from "./shared/button";
 
 interface RadixMenuItem {
   label: string;
@@ -77,10 +78,8 @@ const ContextMenu = (props: Props) => {
   return (
     <div>
       <ContextMenuPrimitive.Root>
-        <ContextMenuPrimitive.Trigger className="inline-flex w-36 items-center justify-center rounded-md border-2 border-dashed border-gray-500 bg-white px-3 py-4 dark:border-gray-300 dark:bg-gray-800">
-          <span className="select-none text-sm font-medium text-gray-700 dark:text-gray-100">
-            Right Click
-          </span>
+        <ContextMenuPrimitive.Trigger asChild>
+          <Button>Right Click</Button>
         </ContextMenuPrimitive.Trigger>
 
         <ContextMenuPrimitive.Portal>
