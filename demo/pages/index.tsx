@@ -2,35 +2,35 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import React, { Fragment } from "react";
+import { clsx } from "clsx";
 import GitHubButton from "react-github-btn";
-import Accordion from "../components/accordion";
-import AlertDialog from "../components/alert-dialog";
-import AspectRatio from "../components/aspect-ratio";
-import Avatar from "../components/avatar";
-import Checkbox from "../components/checkbox";
-import Collapsible from "../components/collapsible";
-import ContextMenu from "../components/context-menu";
-import Dialog from "../components/dialog";
-import DropdownMenu from "../components/dropdown-menu";
-import HoverCard from "../components/hover-card";
-import Menubar from "../components/menubar";
-import NavigationMenu from "../components/navigation-menu";
-import Popover from "../components/popover";
-import Progress from "../components/progress";
-import RadioGroup from "../components/radio-group";
-import Select from "../components/select";
-import DemoCard from "../components/shared/demo-card";
-import ThemeSwitcher from "../components/shared/theme-switcher";
-import Slider from "../components/slider";
-import Switch from "../components/switch";
-import Tabs from "../components/tabs";
-import Toast from "../components/toast";
-import Toggle from "../components/toggle";
-import ToggleGroup from "../components/toggle-group";
-import Toolbar from "../components/toolbar";
-import Tooltip from "../components/tooltip";
+import { Accordion } from "../components/accordion";
+import { AlertDialog } from "../components/alert-dialog";
+import { AspectRatio } from "../components/aspect-ratio";
+import { Avatar } from "../components/avatar";
+import { Checkbox } from "../components/checkbox";
+import { Collapsible } from "../components/collapsible";
+import { ContextMenu } from "../components/context-menu";
+import { Dialog } from "../components/dialog";
+import { DropdownMenu } from "../components/dropdown-menu";
+import { HoverCard } from "../components/hover-card";
+import { Menubar } from "../components/menubar";
+import { NavigationMenu } from "../components/navigation-menu";
+import { Popover } from "../components/popover";
+import { Progress } from "../components/progress";
+import { RadioGroup } from "../components/radio-group";
+import { Select } from "../components/select";
+import { DemoCard } from "../components/shared/demo-card";
+import { ThemeSwitcher } from "../components/shared/theme-switcher";
+import { Slider } from "../components/slider";
+import { Switch } from "../components/switch";
+import { Tabs } from "../components/tabs";
+import { Toast } from "../components/toast";
+import { Toggle } from "../components/toggle";
+import { ToggleGroup } from "../components/toggle-group";
+import { Toolbar } from "../components/toolbar";
+import { Tooltip } from "../components/tooltip";
 import { CommandMenu } from "../components/shared/command-menu";
-import cx from "classnames";
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
 const REPO_URL = "https://github.com/ecklf/tailwindcss-radix/blob/main/demo";
@@ -295,7 +295,7 @@ const Hero = () => {
             <TooltipPrimitive.Root>
               <TooltipPrimitive.Trigger asChild>
                 <div
-                  className={cx(
+                  className={clsx(
                     "inline-flex select-none justify-center rounded-md px-2 py-1.5 text-sm font-medium",
                     "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
                     "border border-gray-300 dark:border-transparent",
@@ -307,7 +307,7 @@ const Hero = () => {
               </TooltipPrimitive.Trigger>
               <TooltipPrimitive.Content
                 sideOffset={4}
-                className={cx(
+                className={clsx(
                   "radix-side-top:animate-slide-down-fade",
                   "radix-side-right:animate-slide-left-fade",
                   "radix-side-bottom:animate-slide-up-fade",

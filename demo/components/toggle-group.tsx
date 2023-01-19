@@ -4,7 +4,7 @@ import {
   UnderlineIcon,
 } from "@radix-ui/react-icons";
 import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactElement } from "react";
 
 interface ToggleItem {
@@ -31,9 +31,9 @@ const settings: ToggleItem[] = [
   },
 ];
 
-interface Props {}
+interface ToggleGroupProps {}
 
-const ToggleGroup = (props: Props) => {
+const ToggleGroup = (props: ToggleGroupProps) => {
   return (
     <ToggleGroupPrimitive.Root type="multiple" aria-label="Font settings">
       {settings.map(({ value, label, icon }, i) => (
@@ -41,7 +41,7 @@ const ToggleGroup = (props: Props) => {
           key={`group-item-${value}-${label}`}
           value={value}
           aria-label={label}
-          className={cx(
+          className={clsx(
             "group radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
             "bg-white dark:bg-gray-800",
             "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
@@ -58,4 +58,4 @@ const ToggleGroup = (props: Props) => {
   );
 };
 
-export default ToggleGroup;
+export { ToggleGroup };

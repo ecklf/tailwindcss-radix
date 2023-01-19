@@ -1,4 +1,4 @@
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
 type Props = Omit<React.ComponentProps<"button">, "className"> & {};
@@ -8,7 +8,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
     <button
       ref={ref}
       {...props}
-      className={cx(
+      className={clsx(
         "inline-flex select-none items-center justify-center rounded-md px-4 py-2 text-sm font-medium",
         "bg-white text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-900",
         "hover:bg-gray-50",

@@ -1,5 +1,5 @@
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { Fragment } from "react";
 import { getRandomInitials } from "../utils/random";
 
@@ -8,7 +8,7 @@ enum Variant {
   Rounded,
 }
 
-type Props = {
+type AvatarProps = {
   variant: Variant;
   renderInvalidUrls?: boolean;
   isOnline?: boolean;
@@ -21,7 +21,11 @@ let users = [
   "https://images.unsplash.com/photo-1546456073-ea246a7bd25f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
 ];
 
-const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
+const Avatar = ({
+  variant,
+  isOnline,
+  renderInvalidUrls = false,
+}: AvatarProps) => {
   const urls = renderInvalidUrls
     ? Array.from({ length: users.length }, () => "")
     : users;
@@ -36,7 +40,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
           <AvatarPrimitive.Image
             src={src}
             alt="Avatar"
-            className={cx(
+            className={clsx(
               "h-full w-full object-cover",
               {
                 [Variant.Circle]: "rounded-full",
@@ -46,7 +50,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
           />
           {isOnline && (
             <div
-              className={cx(
+              className={clsx(
                 "absolute bottom-0 right-0 h-2 w-2",
                 {
                   [Variant.Circle]: "-translate-x-1/2 -translate-y-1/2",
@@ -58,7 +62,7 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
             </div>
           )}
           <AvatarPrimitive.Fallback
-            className={cx(
+            className={clsx(
               "flex h-full w-full items-center justify-center bg-white dark:bg-gray-800",
               {
                 [Variant.Circle]: "rounded-full",
@@ -78,4 +82,4 @@ const Avatar = ({ variant, isOnline, renderInvalidUrls = false }: Props) => {
 };
 
 Avatar.variant = Variant;
-export default Avatar;
+export { Avatar };

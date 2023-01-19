@@ -1,8 +1,8 @@
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 
-interface Props {}
+interface RadioGroupProps {}
 
 const starters = [
   { id: "red", title: "Bulbasaur" },
@@ -10,7 +10,7 @@ const starters = [
   { id: "blue", title: "Squirtle" },
 ];
 
-const RadioGroup = (props: Props) => {
+const RadioGroup = (props: RadioGroupProps) => {
   const [value, setValue] = React.useState(starters[0].title);
 
   return (
@@ -29,7 +29,7 @@ const RadioGroup = (props: Props) => {
               <RadioGroupPrimitive.Item
                 id={pokemon.id}
                 value={pokemon.title}
-                className={cx(
+                className={clsx(
                   "peer relative w-4 h-4 rounded-full",
                   // Setting the background in dark properly requires a workaround (see css/tailwind.css)
                   "border border-transparent text-white",
@@ -56,4 +56,4 @@ const RadioGroup = (props: Props) => {
   );
 };
 
-export default RadioGroup;
+export { RadioGroup };

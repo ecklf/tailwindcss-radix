@@ -4,7 +4,7 @@ import {
   ChevronRightIcon,
   DotFilledIcon,
 } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
 type MenubarSeparatorProps = Omit<
@@ -28,7 +28,7 @@ type MenubarTriggerProps = Omit<
 
 const MenubarTrigger = ({ children, ...rest }: MenubarTriggerProps) => (
   <MenubarPrimitive.Trigger
-    className={cx(
+    className={clsx(
       "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
       "radix-state-open:bg-gray-100 dark:radix-state-open:bg-gray-900",
       "px-4 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -49,7 +49,7 @@ type MenubarSubTriggerProps = Omit<
 
 const MenubarSubTrigger = ({ children, ...rest }: MenubarSubTriggerProps) => (
   <MenubarPrimitive.SubTrigger
-    className={cx(
+    className={clsx(
       "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
@@ -73,7 +73,7 @@ type MenubarItemProps = Omit<
 
 const MenubarItem = ({ children, shortcut, ...rest }: MenubarItemProps) => (
   <MenubarPrimitive.Item
-    className={cx(
+    className={clsx(
       "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
       "w-full flex items-center justify-between",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -105,7 +105,7 @@ const MenubarCheckboxItem = ({
   ...rest
 }: MenubarCheckboxItemProps) => (
   <MenubarPrimitive.CheckboxItem
-    className={cx(
+    className={clsx(
       "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
       "w-full flex items-center justify-between",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -133,7 +133,7 @@ type MenubarRadioItemProps = Omit<
 
 const MenubarRadioItem = ({ children, ...rest }: MenubarRadioItemProps) => (
   <MenubarPrimitive.RadioItem
-    className={cx(
+    className={clsx(
       "cursor-default radix-disabled:opacity-50 radix-disabled:cursor-not-allowed",
       "w-full flex items-center justify-between",
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -154,12 +154,12 @@ const MenubarRadioItem = ({ children, ...rest }: MenubarRadioItemProps) => (
   </MenubarPrimitive.RadioItem>
 );
 
-type Props = {};
+type MenubarProps = {};
 
 const RADIO_ITEMS = ["rauchg", "steventey", "0xca0a"];
 const CHECK_ITEMS = ["Always Show Bookmarks Bar", "Always Show Full URLs"];
 
-const Menubar = (props: Props) => {
+const Menubar = (props: MenubarProps) => {
   const [checkedSelection, setCheckedSelection] = React.useState([
     CHECK_ITEMS[1],
   ]);
@@ -309,4 +309,4 @@ const Menubar = (props: Props) => {
   );
 };
 
-export default Menubar;
+export { Menubar };

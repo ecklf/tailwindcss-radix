@@ -7,7 +7,7 @@ import {
   UnderlineIcon,
 } from "@radix-ui/react-icons";
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactElement } from "react";
 
 interface ToggleItem {
@@ -52,9 +52,9 @@ const textSettings: ToggleItem[] = [
   },
 ];
 
-interface Props {}
+interface ToolbarProps {}
 
-const Toolbar = (props: Props) => {
+const Toolbar = (props: ToolbarProps) => {
   return (
     <ToolbarPrimitive.Root className="flex space-x-4 rounded-lg bg-white px-2.5 py-2 dark:bg-gray-800">
       <ToolbarPrimitive.ToggleGroup type="multiple" aria-label="Font settings">
@@ -63,7 +63,7 @@ const Toolbar = (props: Props) => {
             key={`group-item-${value}-${label}`}
             value={value}
             aria-label={label}
-            className={cx(
+            className={clsx(
               "radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
@@ -88,7 +88,7 @@ const Toolbar = (props: Props) => {
             key={`group-item-${value}-${label}`}
             value={value}
             aria-label={label}
-            className={cx(
+            className={clsx(
               "radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
@@ -107,7 +107,7 @@ const Toolbar = (props: Props) => {
 
       <span className="hidden items-center pr-2 xl:flex">
         <ToolbarPrimitive.Link
-          className={cx(
+          className={clsx(
             "text-sm text-gray-500 dark:text-gray-400",
             "focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
@@ -121,4 +121,4 @@ const Toolbar = (props: Props) => {
   );
 };
 
-export default Toolbar;
+export { Toolbar };

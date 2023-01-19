@@ -1,11 +1,11 @@
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 import Button from "./shared/button";
 
-interface Props {}
+interface TooltipProps {}
 
-const Tooltip = (props: Props) => {
+const Tooltip = (props: TooltipProps) => {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root>
@@ -14,7 +14,7 @@ const Tooltip = (props: Props) => {
         </TooltipPrimitive.Trigger>
         <TooltipPrimitive.Content
           sideOffset={4}
-          className={cx(
+          className={clsx(
             "radix-side-top:animate-slide-down-fade",
             "radix-side-right:animate-slide-left-fade",
             "radix-side-bottom:animate-slide-up-fade",
@@ -33,4 +33,4 @@ const Tooltip = (props: Props) => {
   );
 };
 
-export default Tooltip;
+export { Tooltip };

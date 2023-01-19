@@ -1,18 +1,18 @@
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
-interface Props {}
+interface CheckboxProps {}
 
-const Checkbox = (props: Props) => {
+const Checkbox = (props: CheckboxProps) => {
   return (
     <form className="flex items-center">
       <CheckboxPrimitive.Root
         id="c1"
         defaultChecked
-        className={cx(
+        className={clsx(
           "flex h-5 w-5 items-center justify-center rounded",
           "radix-state-checked:bg-purple-600 radix-state-unchecked:bg-gray-100 dark:radix-state-unchecked:bg-gray-900",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
@@ -33,4 +33,4 @@ const Checkbox = (props: Props) => {
   );
 };
 
-export default Checkbox;
+export { Checkbox };

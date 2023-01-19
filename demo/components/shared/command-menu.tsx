@@ -1,10 +1,10 @@
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { DocumentMagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { DividerVerticalIcon } from "@radix-ui/react-icons";
 
-interface Props<T extends { label: string }> {
+interface CommandMenuProps<T extends { label: string }> {
   items: T[];
   onSelect?: (data: {
     item: T;
@@ -17,7 +17,7 @@ interface Props<T extends { label: string }> {
 function CommandMenu<T extends { label: string }>({
   items,
   onSelect,
-}: Props<T>) {
+}: CommandMenuProps<T>) {
   const [open, setOpen] = useState(false);
   const [isHoldingModifier, setIsHoldingModifier] = useState(false);
 
@@ -57,7 +57,7 @@ function CommandMenu<T extends { label: string }>({
 
   return (
     <Command.Dialog
-      className={cx(
+      className={clsx(
         "z-[50]",
         "fixed top-[20%] left-1/2 transform -translate-x-1/2",
         "w-full sm:max-w-lg md:max-w-xl",
@@ -71,7 +71,7 @@ function CommandMenu<T extends { label: string }>({
       <div className="relative mt-2 pl-1.5 ml-px">
         <Command.Input
           placeholder="Search for a component"
-          className={cx(
+          className={clsx(
             "bg-transparent",
             "block w-full",
             "text-sm font-medium text-gray-700 dark:text-gray-300 placeholder:text-gray-600 dark:placeholder:text-gray-500",
@@ -108,7 +108,7 @@ function CommandMenu<T extends { label: string }>({
               onSelect({ item, modifiers: { control: isHoldingModifier } });
               setOpen(false);
             }}
-            className={cx(
+            className={clsx(
               "px-3 py-3",
               "cursor-pointer",
               "flex items-center rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium",

@@ -1,4 +1,4 @@
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactNode } from "react";
 
 enum Variant {
@@ -7,7 +7,7 @@ enum Variant {
   JustifyCenter,
 }
 
-type Props = {
+type DemoCardProps = {
   variant?: Variant;
   isNew?: boolean;
   children: ReactNode;
@@ -22,13 +22,13 @@ const DemoCard = ({
   isNew,
   children,
   data: { title, link },
-}: Props) => {
+}: DemoCardProps) => {
   const id = title.replace(" ", "_").toLowerCase();
 
   return (
     <section id={id} className="h-[550px] w-full scroll-mt-6 ">
       <div
-        className={cx(
+        className={clsx(
           "relative flex h-full w-full p-6 rounded-xl shadow",
           // "bg-gradient-to-br from-pink-300 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
           // "bg-gradient-to-br from-pink-400 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
@@ -70,4 +70,4 @@ const DemoCard = ({
 };
 
 DemoCard.variant = Variant;
-export default DemoCard;
+export { DemoCard };

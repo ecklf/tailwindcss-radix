@@ -1,5 +1,5 @@
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
 const TailwindLogo = () => (
@@ -16,14 +16,14 @@ const TailwindLogo = () => (
   </svg>
 );
 
-interface Props {}
+interface HoverCardProps {}
 
-const HoverCard = (props: Props) => {
+const HoverCard = (props: HoverCardProps) => {
   return (
     <HoverCardPrimitive.Root>
       <HoverCardPrimitive.Trigger asChild>
         <div
-          className={cx(
+          className={clsx(
             "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2.5 dark:bg-gray-900"
           )}
         >
@@ -33,7 +33,7 @@ const HoverCard = (props: Props) => {
       <HoverCardPrimitive.Content
         align="center"
         sideOffset={4}
-        className={cx(
+        className={clsx(
           " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
           "max-w-md rounded-lg p-4 md:w-full",
           "bg-white dark:bg-gray-800",
@@ -44,7 +44,7 @@ const HoverCard = (props: Props) => {
 
         <div className="flex h-full w-full space-x-4">
           <div
-            className={cx(
+            className={clsx(
               "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900"
             )}
           >
@@ -67,4 +67,4 @@ const HoverCard = (props: Props) => {
   );
 };
 
-export default HoverCard;
+export { HoverCard };

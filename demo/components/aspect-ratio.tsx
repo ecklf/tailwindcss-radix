@@ -1,10 +1,10 @@
 import * as AspectRatioPrimitive from "@radix-ui/react-aspect-ratio";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { Fragment } from "react";
 
-interface Props {}
+interface AspectRatioProps {}
 
-const AspectRatio = (props: Props) => {
+const AspectRatio = (props: AspectRatioProps) => {
   return (
     <Fragment>
       <AspectRatioPrimitive.Root
@@ -17,7 +17,7 @@ const AspectRatio = (props: Props) => {
           </h3>
         </div>
         <div
-          className={cx(
+          className={clsx(
             "absolute inset-0 bg-gray-600 object-cover group-hover:bg-gray-500",
             "transition-colors duration-300 ease-in-out"
           )}
@@ -34,4 +34,4 @@ const AspectRatio = (props: Props) => {
   );
 };
 
-export default AspectRatio;
+export { AspectRatio };
