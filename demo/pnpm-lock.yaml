@@ -36,7 +36,7 @@ specifiers:
   '@types/react': ^18.0.26
   '@vercel/analytics': ^0.1.8
   autoprefixer: ^10.4.13
-  classnames: ^2.3.2
+  clsx: ^1.2.1
   cmdk: ^0.1.21
   eslint: 8.32.0
   eslint-config-next: 13.1.2
@@ -85,7 +85,7 @@ dependencies:
   '@radix-ui/react-toolbar': 1.0.2_biqbaboplfbrettd7655fr4n2y
   '@radix-ui/react-tooltip': 1.0.3_ib3m5ricvtkl2cll7qpr2f6lvq
   '@vercel/analytics': 0.1.8_react@18.2.0
-  classnames: 2.3.2
+  clsx: 1.2.1
   cmdk: 0.1.21_ib3m5ricvtkl2cll7qpr2f6lvq
   next: 13.1.2_biqbaboplfbrettd7655fr4n2y
   next-seo: 5.15.0_7jnwqgtpcnwg4nzft4b6xlzlfi
@@ -1696,12 +1696,13 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
-
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: false
 
   /cmdk/0.1.21_ib3m5ricvtkl2cll7qpr2f6lvq:

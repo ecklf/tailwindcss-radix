@@ -1,17 +1,17 @@
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 import { PlayIcon, Share2Icon, TriangleRightIcon } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
-interface Props {}
+interface CollapsibleProps {}
 
-const Collapsible = (props: Props) => {
+const Collapsible = (props: CollapsibleProps) => {
   const [isOpen, setIsOpen] = React.useState(true);
 
   return (
     <CollapsiblePrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <CollapsiblePrimitive.Trigger
-        className={cx(
+        className={clsx(
           "group flex w-full select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
           "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100",
           "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
@@ -25,7 +25,7 @@ const Collapsible = (props: Props) => {
           (title, i) => (
             <div
               key={`collapsible-${title}-${i}`}
-              className={cx(
+              className={clsx(
                 "group",
                 "ml-12 flex select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
                 "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-900"
@@ -44,4 +44,4 @@ const Collapsible = (props: Props) => {
   );
 };
 
-export default Collapsible;
+export { Collapsible };

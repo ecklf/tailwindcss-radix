@@ -13,7 +13,7 @@ import {
   PersonIcon,
   TransparencyGridIcon,
 } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactNode, useState } from "react";
 import Button from "./shared/button";
 
@@ -69,9 +69,9 @@ const users: User[] = [
   },
 ];
 
-interface Props {}
+interface DropdownMenuProps {}
 
-const DropdownMenu = (props: Props) => {
+const DropdownMenu = (props: DropdownMenuProps) => {
   const [showGrid, setShowGrid] = useState(false);
   const [showUi, setShowUi] = useState(false);
 
@@ -86,7 +86,7 @@ const DropdownMenu = (props: Props) => {
           <DropdownMenuPrimitive.Content
             align="end"
             sideOffset={5}
-            className={cx(
+            className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
               "bg-white dark:bg-gray-800"
@@ -95,7 +95,7 @@ const DropdownMenu = (props: Props) => {
             {generalMenuItems.map(({ label, icon, shortcut }, i) => (
               <DropdownMenuPrimitive.Item
                 key={`${label}-${i}`}
-                className={cx(
+                className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -117,7 +117,7 @@ const DropdownMenu = (props: Props) => {
                   setShowGrid(state);
                 }
               }}
-              className={cx(
+              className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
@@ -142,7 +142,7 @@ const DropdownMenu = (props: Props) => {
                   setShowUi(state);
                 }
               }}
-              className={cx(
+              className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
@@ -169,7 +169,7 @@ const DropdownMenu = (props: Props) => {
             {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
               <DropdownMenuPrimitive.Item
                 key={`${label}-${i}`}
-                className={cx(
+                className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -186,7 +186,7 @@ const DropdownMenu = (props: Props) => {
 
             <DropdownMenuPrimitive.Sub>
               <DropdownMenuPrimitive.SubTrigger
-                className={cx(
+                className={clsx(
                   "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -199,7 +199,7 @@ const DropdownMenu = (props: Props) => {
               </DropdownMenuPrimitive.SubTrigger>
               <DropdownMenuPrimitive.Portal>
                 <DropdownMenuPrimitive.SubContent
-                  className={cx(
+                  className={clsx(
                     "origin-radix-dropdown-menu radix-side-right:animate-scale-in",
                     "w-full rounded-md px-1 py-1 text-xs shadow-md",
                     "bg-white dark:bg-gray-800"
@@ -208,7 +208,7 @@ const DropdownMenu = (props: Props) => {
                   {users.map(({ name, url }, i) => (
                     <DropdownMenuPrimitive.Item
                       key={`${name}-${i}`}
-                      className={cx(
+                      className={clsx(
                         "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none md:w-32",
                         "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                       )}
@@ -236,4 +236,4 @@ const DropdownMenu = (props: Props) => {
   );
 };
 
-export default DropdownMenu;
+export { DropdownMenu };

@@ -1,12 +1,12 @@
 import * as ToastPrimitive from "@radix-ui/react-toast";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 import { useMediaQuery } from "../hooks/use-media-query";
 import Button from "./shared/button";
 
-type Props = {};
+type ToastProps = {};
 
-const Toast = (props: Props) => {
+const Toast = (props: ToastProps) => {
   const [open, setOpen] = React.useState(false);
   const isMd = useMediaQuery("(min-width: 768px)");
 
@@ -29,7 +29,7 @@ const Toast = (props: Props) => {
       <ToastPrimitive.Root
         open={open}
         onOpenChange={setOpen}
-        className={cx(
+        className={clsx(
           "z-50 fixed bottom-4 inset-x-4 w-auto md:top-4 md:right-4 md:left-auto md:bottom-auto md:w-full md:max-w-sm shadow-lg rounded-lg",
           "bg-white dark:bg-gray-800",
           "radix-state-open:animate-toast-slide-in-bottom md:radix-state-open:animate-toast-slide-in-right",
@@ -83,4 +83,4 @@ const Toast = (props: Props) => {
   );
 };
 
-export default Toast;
+export { Toast };

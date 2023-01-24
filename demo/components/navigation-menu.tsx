@@ -1,16 +1,16 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
-type Props = {};
+type NavigationMenuProps = {};
 
-const NavigationMenu = (props: Props) => {
+const NavigationMenu = (props: NavigationMenuProps) => {
   return (
     <NavigationMenuPrimitive.Root className="relative">
       <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white dark:bg-gray-800 p-2 space-x-2">
         <NavigationMenuPrimitive.Item>
           <NavigationMenuPrimitive.Trigger
-            className={cx(
+            className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium",
               "text-gray-700 dark:text-gray-100",
@@ -21,7 +21,7 @@ const NavigationMenu = (props: Props) => {
           </NavigationMenuPrimitive.Trigger>
 
           <NavigationMenuPrimitive.Content
-            className={cx(
+            className={clsx(
               "absolute w-auto top-0 left-0 rounded-lg",
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
@@ -46,7 +46,7 @@ const NavigationMenu = (props: Props) => {
 
         <NavigationMenuPrimitive.Item>
           <NavigationMenuPrimitive.Trigger
-            className={cx(
+            className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium text-gray-700 dark:text-gray-100",
               "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
@@ -56,7 +56,7 @@ const NavigationMenu = (props: Props) => {
           </NavigationMenuPrimitive.Trigger>
 
           <NavigationMenuPrimitive.Content
-            className={cx(
+            className={clsx(
               "absolute w-auto top-0 left-0 rounded-lg",
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
@@ -67,7 +67,7 @@ const NavigationMenu = (props: Props) => {
             <div className="w-[16rem] lg:w-[18rem] p-3">
               <div className="w-full flex flex-col space-y-2">
                 <NavigationMenuPrimitive.Link
-                  className={cx(
+                  className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
@@ -84,7 +84,7 @@ const NavigationMenu = (props: Props) => {
                 </NavigationMenuPrimitive.Link>
 
                 <NavigationMenuPrimitive.Link
-                  className={cx(
+                  className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
                     "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
@@ -107,7 +107,7 @@ const NavigationMenu = (props: Props) => {
         <NavigationMenuPrimitive.Item asChild>
           <NavigationMenuPrimitive.Link
             href="https://github.com/ecklf/tailwindcss-radix"
-            className={cx(
+            className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium text-gray-700 dark:text-gray-100"
             )}
@@ -117,7 +117,7 @@ const NavigationMenu = (props: Props) => {
         </NavigationMenuPrimitive.Item>
 
         <NavigationMenuPrimitive.Indicator
-          className={cx(
+          className={clsx(
             "z-10",
             "top-[100%] flex items-end justify-center h-2 overflow-hidden",
             "radix-state-visible:animate-fade-in",
@@ -130,7 +130,7 @@ const NavigationMenu = (props: Props) => {
       </NavigationMenuPrimitive.List>
 
       <div
-        className={cx(
+        className={clsx(
           "absolute flex justify-center",
           "w-[140%] left-[-20%] top-[100%]"
         )}
@@ -139,7 +139,7 @@ const NavigationMenu = (props: Props) => {
         }}
       >
         <NavigationMenuPrimitive.Viewport
-          className={cx(
+          className={clsx(
             "relative mt-2 shadow-lg rounded-md bg-white dark:bg-gray-800 overflow-hidden",
             "w-radix-navigation-menu-viewport",
             "h-radix-navigation-menu-viewport",
@@ -153,4 +153,4 @@ const NavigationMenu = (props: Props) => {
   );
 };
 
-export default NavigationMenu;
+export { NavigationMenu };

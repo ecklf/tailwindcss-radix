@@ -8,7 +8,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactNode, useEffect, useState } from "react";
 
 interface RadixMenuItem {
@@ -63,7 +63,7 @@ const users: User[] = [
   },
 ];
 
-interface Props {}
+interface ThemeSwitcherProps {}
 
 const themes = [
   {
@@ -84,7 +84,7 @@ const themes = [
   },
 ];
 
-const ThemeSwitcher = (props: Props) => {
+const ThemeSwitcher = (props: ThemeSwitcherProps) => {
   const [preferredTheme, setPreferredTheme] = useState<null | string>(null);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const ThemeSwitcher = (props: Props) => {
     <div className="relative inline-block text-left">
       <DropdownMenuPrimitive.Root>
         <DropdownMenuPrimitive.Trigger
-          className={cx(
+          className={clsx(
             "inline-flex select-none justify-center rounded-md px-2.5 py-2 text-sm font-medium",
             "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
             "border border-gray-300 dark:border-transparent",
@@ -140,7 +140,7 @@ const ThemeSwitcher = (props: Props) => {
           <DropdownMenuPrimitive.Content
             align="end"
             sideOffset={5}
-            className={cx(
+            className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
               "bg-gray-50 dark:bg-gray-800"
@@ -150,7 +150,7 @@ const ThemeSwitcher = (props: Props) => {
               return (
                 <DropdownMenuPrimitive.Item
                   key={`theme-${i}`}
-                  className={cx(
+                  className={clsx(
                     "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                     "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-700"
                   )}
@@ -175,4 +175,4 @@ const ThemeSwitcher = (props: Props) => {
   );
 };
 
-export default ThemeSwitcher;
+export { ThemeSwitcher };

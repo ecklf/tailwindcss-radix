@@ -13,8 +13,9 @@ import {
   PersonIcon,
   TransparencyGridIcon,
 } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React, { ReactNode, useState } from "react";
+import Button from "./shared/button";
 
 interface RadixMenuItem {
   label: string;
@@ -68,24 +69,22 @@ const users: User[] = [
   },
 ];
 
-interface Props {}
+interface ContextMenuProps {}
 
-const ContextMenu = (props: Props) => {
+const ContextMenu = (props: ContextMenuProps) => {
   const [showGrid, setShowGrid] = useState(false);
   const [showUi, setShowUi] = useState(false);
 
   return (
     <div>
       <ContextMenuPrimitive.Root>
-        <ContextMenuPrimitive.Trigger className="inline-flex w-36 items-center justify-center rounded-md border-2 border-dashed border-gray-500 bg-white px-3 py-4 dark:border-gray-300 dark:bg-gray-800">
-          <span className="select-none text-sm font-medium text-gray-700 dark:text-gray-100">
-            Right Click
-          </span>
+        <ContextMenuPrimitive.Trigger asChild>
+          <Button>Right Click</Button>
         </ContextMenuPrimitive.Trigger>
 
         <ContextMenuPrimitive.Portal>
           <ContextMenuPrimitive.Content
-            className={cx(
+            className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
               "bg-white dark:bg-gray-800"
@@ -94,7 +93,7 @@ const ContextMenu = (props: Props) => {
             {generalMenuItems.map(({ label, icon, shortcut }, i) => (
               <ContextMenuPrimitive.Item
                 key={`${label}-${i}`}
-                className={cx(
+                className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -116,7 +115,7 @@ const ContextMenu = (props: Props) => {
                   setShowGrid(state);
                 }
               }}
-              className={cx(
+              className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
@@ -141,7 +140,7 @@ const ContextMenu = (props: Props) => {
                   setShowUi(state);
                 }
               }}
-              className={cx(
+              className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
@@ -168,7 +167,7 @@ const ContextMenu = (props: Props) => {
             {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
               <ContextMenuPrimitive.Item
                 key={`${label}-${i}`}
-                className={cx(
+                className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -185,7 +184,7 @@ const ContextMenu = (props: Props) => {
 
             <ContextMenuPrimitive.Sub>
               <ContextMenuPrimitive.SubTrigger
-                className={cx(
+                className={clsx(
                   "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
@@ -198,7 +197,7 @@ const ContextMenu = (props: Props) => {
               </ContextMenuPrimitive.SubTrigger>
               <ContextMenuPrimitive.Portal>
                 <ContextMenuPrimitive.SubContent
-                  className={cx(
+                  className={clsx(
                     "origin-radix-context-menu radix-side-right:animate-scale-in",
                     "w-full rounded-md px-1 py-1 text-xs shadow-md",
                     "bg-white dark:bg-gray-800"
@@ -207,7 +206,7 @@ const ContextMenu = (props: Props) => {
                   {users.map(({ name, url }, i) => (
                     <ContextMenuPrimitive.Item
                       key={`${name}-${i}`}
-                      className={cx(
+                      className={clsx(
                         "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none md:w-32",
                         "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                       )}
@@ -235,4 +234,4 @@ const ContextMenu = (props: Props) => {
   );
 };
 
-export default ContextMenu;
+export { ContextMenu };

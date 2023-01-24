@@ -3,9 +3,9 @@ import * as TogglePrimitive from "@radix-ui/react-toggle";
 import React, { useState } from "react";
 import Button from "./shared/button";
 
-interface Props {}
+interface ToggleProps {}
 
-const Toggle = (props: Props) => {
+const Toggle = (props: ToggleProps) => {
   const [starred, setStarred] = useState(false);
 
   return (
@@ -26,4 +26,4 @@ const Toggle = (props: Props) => {
   );
 };
 
-export default Toggle;
+export { Toggle };

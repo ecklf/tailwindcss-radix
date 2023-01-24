@@ -4,13 +4,13 @@ import {
   ChevronUpIcon,
 } from "@radix-ui/react-icons";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 import Button from "./shared/button";
 
-type Props = {};
+type SelectProps = {};
 
-const Select = (props: Props) => {
+const Select = (props: SelectProps) => {
   return (
     <SelectPrimitive.Root defaultValue="blueberry">
       <SelectPrimitive.Trigger asChild aria-label="Food">
@@ -33,7 +33,7 @@ const Select = (props: Props) => {
                   disabled={f === "Grapes"}
                   key={`${f}-${i}`}
                   value={f.toLowerCase()}
-                  className={cx(
+                  className={clsx(
                     "relative flex items-center px-8 py-2 rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium focus:bg-gray-100 dark:focus:bg-gray-900",
                     "radix-disabled:opacity-50",
                     "focus:outline-none select-none"
@@ -56,4 +56,4 @@ const Select = (props: Props) => {
   );
 };
 
-export default Select;
+export { Select };

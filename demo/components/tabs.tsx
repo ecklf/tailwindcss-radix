@@ -1,5 +1,5 @@
 import * as TabsPrimitive from "@radix-ui/react-tabs";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
 interface Tab {
@@ -23,19 +23,19 @@ const tabs: Tab[] = [
   },
 ];
 
-interface Props {}
+interface TabsProps {}
 
-const Tabs = (props: Props) => {
+const Tabs = (props: TabsProps) => {
   return (
     <TabsPrimitive.Root defaultValue="tab1">
       <TabsPrimitive.List
-        className={cx("flex w-full rounded-t-lg bg-white dark:bg-gray-800")}
+        className={clsx("flex w-full rounded-t-lg bg-white dark:bg-gray-800")}
       >
         {tabs.map(({ title, value }) => (
           <TabsPrimitive.Trigger
             key={`tab-trigger-${value}`}
             value={value}
-            className={cx(
+            className={clsx(
               "group",
               "first:rounded-tl-lg last:rounded-tr-lg",
               "border-b first:border-r last:border-l",
@@ -47,7 +47,7 @@ const Tabs = (props: Props) => {
             )}
           >
             <span
-              className={cx(
+              className={clsx(
                 "text-sm font-medium",
                 "text-gray-700 dark:text-gray-100"
               )}
@@ -61,7 +61,7 @@ const Tabs = (props: Props) => {
         <TabsPrimitive.Content
           key={`tab-content-${value}`}
           value={value}
-          className={cx("rounded-b-lg bg-white px-6 py-4 dark:bg-gray-800")}
+          className={clsx("rounded-b-lg bg-white px-6 py-4 dark:bg-gray-800")}
         >
           <span className="text-sm text-gray-700 dark:text-gray-100">
             {
@@ -78,4 +78,4 @@ const Tabs = (props: Props) => {
   );
 };
 
-export default Tabs;
+export { Tabs };

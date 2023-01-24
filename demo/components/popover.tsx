@@ -1,10 +1,10 @@
 import { Cross1Icon } from "@radix-ui/react-icons";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 import Button from "./shared/button";
 
-interface Props {}
+interface PopoverProps {}
 
 const items = [
   {
@@ -29,7 +29,7 @@ const items = [
   },
 ];
 
-const Popover = (props: Props) => {
+const Popover = (props: PopoverProps) => {
   return (
     <div className="relative inline-block text-left">
       <PopoverPrimitive.Root>
@@ -39,7 +39,7 @@ const Popover = (props: Props) => {
         <PopoverPrimitive.Content
           align="center"
           sideOffset={4}
-          className={cx(
+          className={clsx(
             "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
             "w-48 rounded-lg p-4 shadow-md md:w-56",
             "bg-white dark:bg-gray-800"
@@ -69,7 +69,7 @@ const Popover = (props: Props) => {
                     type="text"
                     defaultValue={defaultValue}
                     autoComplete="given-name"
-                    className={cx(
+                    className={clsx(
                       "block w-1/2 rounded-md",
                       "text-xs text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                       "border border-gray-400 focus-visible:border-transparent dark:border-gray-700 dark:bg-gray-800",
@@ -82,7 +82,7 @@ const Popover = (props: Props) => {
           </form>
 
           <PopoverPrimitive.Close
-            className={cx(
+            className={clsx(
               "absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1",
               "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
@@ -95,4 +95,4 @@ const Popover = (props: Props) => {
   );
 };
 
-export default Popover;
+export { Popover };

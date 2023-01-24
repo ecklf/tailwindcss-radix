@@ -1,6 +1,6 @@
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
 interface AccordionItem {
@@ -25,14 +25,14 @@ const items: AccordionItem[] = [
   },
 ];
 
-interface Props {}
+interface AccordionProps {}
 
-const Accordion = (props: Props) => {
+const Accordion = (props: AccordionProps) => {
   return (
     <AccordionPrimitive.Root
       type="single"
       defaultValue="item-1"
-      className={cx("space-y-4")}
+      className={clsx("space-y-4")}
     >
       {items.map(({ header, content }, i) => (
         <AccordionPrimitive.Item
@@ -42,7 +42,7 @@ const Accordion = (props: Props) => {
         >
           <AccordionPrimitive.Header className="w-full">
             <AccordionPrimitive.Trigger
-              className={cx(
+              className={clsx(
                 "group",
                 "radix-state-open:rounded-t-lg radix-state-closed:rounded-lg",
                 "focus:outline-none",
@@ -53,7 +53,7 @@ const Accordion = (props: Props) => {
                 {header}
               </span>
               <ChevronDownIcon
-                className={cx(
+                className={clsx(
                   "ml-2 h-5 w-5 shrink-0 text-gray-700 ease-in-out dark:text-gray-400",
                   "group-radix-state-open:rotate-180 group-radix-state-open:duration-300"
                 )}
@@ -71,4 +71,4 @@ const Accordion = (props: Props) => {
   );
 };
 
-export default Accordion;
+export { Accordion };

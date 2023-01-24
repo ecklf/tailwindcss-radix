@@ -1,13 +1,13 @@
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-import cx from "classnames";
+import { clsx } from "clsx";
 import React from "react";
 
-interface Props {}
+interface SwitchProps {}
 
-const Switch = (props: Props) => {
+const Switch = (props: SwitchProps) => {
   return (
     <SwitchPrimitive.Root
-      className={cx(
+      className={clsx(
         "group",
         "radix-state-checked:bg-purple-600",
         "radix-state-unchecked:bg-gray-200 dark:radix-state-unchecked:bg-gray-800",
@@ -16,7 +16,7 @@ const Switch = (props: Props) => {
       )}
     >
       <SwitchPrimitive.Thumb
-        className={cx(
+        className={clsx(
           "group-radix-state-checked:translate-x-5",
           "group-radix-state-unchecked:translate-x-0",
           "pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"
@@ -26,4 +26,4 @@ const Switch = (props: Props) => {
   );
 };
 
-export default Switch;
+export { Switch };
