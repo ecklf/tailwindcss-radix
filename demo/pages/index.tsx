@@ -50,7 +50,7 @@ const RADIX_COMPONENTS: RadixComponent[] = [
     link: `${REPO_URL}/components/accordion.tsx`,
     center: true,
     component: (
-      <div className="max-w-sm">
+      <div className="max-w-sm w-full">
         <Accordion />
       </div>
     ),

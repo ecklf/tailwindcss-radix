@@ -32,13 +32,13 @@ const Accordion = (props: AccordionProps) => {
     <AccordionPrimitive.Root
       type="single"
       defaultValue="item-1"
-      className={clsx("space-y-4")}
+      className={clsx("space-y-4 w-full")}
     >
       {items.map(({ header, content }, i) => (
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
-          className="rounded-lg focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-none"
+          className="rounded-lg focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-none w-full"
         >
           <AccordionPrimitive.Header className="w-full">
             <AccordionPrimitive.Trigger
@@ -60,7 +60,7 @@ const Accordion = (props: AccordionProps) => {
               />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
-          <AccordionPrimitive.Content className="pt-r1 w-full rounded-b-lg bg-white px-4 pb-3 dark:bg-gray-800">
+          <AccordionPrimitive.Content className="pt-1 w-full rounded-b-lg bg-white px-4 pb-3 dark:bg-gray-800">
             <div className="text-sm text-gray-700 dark:text-gray-400">
               {content}
             </div>
