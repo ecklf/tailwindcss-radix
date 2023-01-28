@@ -41,7 +41,7 @@ const Popover = (props: PopoverProps) => {
           sideOffset={4}
           className={clsx(
             "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
-            "w-48 rounded-lg p-4 shadow-md md:w-56",
+            "z-50 w-48 rounded-lg p-4 shadow-md md:w-56",
             "bg-white dark:bg-gray-800"
           )}
         >
@@ -57,7 +57,7 @@ const Popover = (props: PopoverProps) => {
                   key={`popover-items-${id}`}
                   className="flex items-center"
                 >
-                  {/* <legend>Choose your favorite monster</legend> */}
+                  <legend>Choose</legend>
                   <label
                     htmlFor={id}
                     className="shrink-0 grow text-xs font-medium text-gray-700 dark:text-gray-400"
