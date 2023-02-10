@@ -46,6 +46,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
   // `--radix-hover-card-content-transform-origin `,
   // `--radix-menubar-content-transform-origin`
   // `--radix-popover-content-transform-origin`,
+  // `--radix-select-content-transform-origin`,
   // `--radix-tooltip-content-transform-origin`,
   const transformOrigins = [
     "context-menu",
@@ -53,6 +54,7 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     "hover-card",
     "menubar",
     "popover",
+    "select",
     "tooltip",
   ];
 
