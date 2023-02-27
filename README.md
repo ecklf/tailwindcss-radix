@@ -221,6 +221,10 @@ Use the generated `origin-*` utilities to transform from the content position or
   transform-origin: var(--radix-popover-content-transform-origin);
 }
 
+.origin-radix-select {
+  transform-origin: var(--radix-select-content-transform-origin);
+}
+
 .origin-radix-tooltip {
   transform-origin: var(--radix-tooltip-content-transform-origin);
 }
