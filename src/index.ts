@@ -147,6 +147,64 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     });
   });
 
+  // Adds the following [width|height] utilities
+  // `--radix-context-menu-content-available-[width|height]`,
+  // `--radix-context-menu-trigger-[width|height]`,
+  // `--radix-dropdown-menu-content-available-[width|height]`,
+  // `--radix-dropdown-menu-trigger-[width|height]`,
+  // `--radix-hover-card-content-available-[width|height]`,
+  // `--radix-hover-card-trigger-[width|height]`,
+  // `--radix-menubar-content-available-[width|height]`,
+  // `--radix-menubar-trigger-[width|height]`,
+  // `--radix-popover-content-available-[width|height]`,
+  // `--radix-popover-trigger-[width|height]`,
+  // `--radix-select-content-available-[width|height]`,
+  // `--radix-select-trigger-[width|height]`,
+  // `--radix-tooltip-content-available-[width|height]`,
+  // `--radix-tooltip-trigger-[width|height]`,
+  const sizeConstraintsAttributes = [
+    "context-menu",
+    "dropdown-menu",
+    "hover-card",
+    "menubar",
+    "popover",
+    "select",
+    "tooltip",
+  ];
+
+  sizeConstraintsAttributes.forEach((component) => {
+    addUtilities({
+      [`.w-${variantPrefix}${component}-content-available-width`]: {
+        width: `var(--radix-${component}-content-available-width)`,
+      },
+    });
+    addUtilities({
+      [`.max-w-${variantPrefix}${component}-content-available-width`]: {
+        maxWidth: `var(--radix-${component}-content-available-width)`,
+      },
+    });
+    addUtilities({
+      [`.h-${variantPrefix}${component}-content-available-height`]: {
+        height: `var(--radix-${component}-content-available-height)`,
+      },
+    });
+    addUtilities({
+      [`.max-h-${variantPrefix}${component}-content-available-height`]: {
+        maxHeight: `var(--radix-${component}-content-available-height)`,
+      },
+    });
+    addUtilities({
+      [`.w-${variantPrefix}${component}-trigger-width`]: {
+        width: `var(--radix-${component}-trigger-width)`,
+      },
+    });
+    addUtilities({
+      [`.h-${variantPrefix}${component}-trigger-height`]: {
+        height: `var(--radix-${component}-trigger-height)`,
+      },
+    });
+  });
+
   // Adds the following [x|y] utilities
   // `--radix-toast-swipe-end-[x|y]`,
   // `--radix-toast-swipe-move-[x|y]`,
