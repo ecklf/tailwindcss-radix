@@ -144,9 +144,9 @@ export default App;
 
 #### Accessing sibling state
 
-When you need to style an element based on the state of a sibling element, mark the sibiling with the `peer` class and style the target with `peer-radix-*` modifiers.
+When you need to style an element based on the state of a sibling element, mark the sibling with the `peer` class and style the target with `peer-radix-*` modifiers.
 
-Example usage of a conditional icon color for a sibiling of a Radix `Checkbox`:
+Example usage of a conditional icon color for a sibling of a Radix `Checkbox`:
 
 ```tsx
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
