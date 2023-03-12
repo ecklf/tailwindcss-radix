@@ -57,7 +57,6 @@ const Popover = (props: PopoverProps) => {
                   key={`popover-items-${id}`}
                   className="flex items-center"
                 >
-                  <legend>Choose</legend>
                   <label
                     htmlFor={id}
                     className="shrink-0 grow text-xs font-medium text-gray-700 dark:text-gray-400"
