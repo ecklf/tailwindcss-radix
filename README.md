@@ -194,89 +194,124 @@ const ContextMenu = () => {
 };
 ```
 
-### Animation
+### CSS Variable Utilities
 
 #### Origin position
 
 Use the generated `origin-*` utilities to transform from the content position origin.
 
-```css
-.origin-radix-context-menu {
-  transform-origin: var(--radix-context-menu-content-transform-origin);
-}
-
-.origin-radix-dropdown-menu {
-  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
-}
-
-.origin-radix-hover-card {
-  transform-origin: var(--radix-hover-card-content-transform-origin);
-}
-
-.origin-radix-menubar {
-  transform-origin: var(--radix-menubar-content-transform-origin);
-}
-
-.origin-radix-popover {
-  transform-origin: var(--radix-popover-content-transform-origin);
-}
-
-.origin-radix-select {
-  transform-origin: var(--radix-select-content-transform-origin);
-}
-
-.origin-radix-tooltip {
-  transform-origin: var(--radix-tooltip-content-transform-origin);
-}
-```
+| **Class**                    | **Properties**                                                           |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| `origin-radix-context-menu`  | `transform-origin: var(--radix-context-menu-content-transform-origin);`  |
+| `origin-radix-dropdown-menu` | `transform-origin: var(--radix-dropdown-menu-content-transform-origin);` |
+| `origin-radix-hover-card`    | `transform-origin: var(--radix-dropdown-hover-card-transform-origin);`   |
+| `origin-radix-menubar`       | `transform-origin: var(--radix-menubar-content-transform-origin);`       |
+| `origin-radix-popover`       | `transform-origin: var(--radix-popover-content-transform-origin);`       |
+| `origin-radix-select`        | `transform-origin: var(--radix-select-content-transform-origin);`        |
+| `origin-radix-tooltip`       | `transform-origin: var(--radix-tooltip-content-transform-origin);`       |
 
 #### Content size
 
 Use the generated `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
 
-```css
-.h-radix-accordion {
-  height: var(--radix-accordion-content-height);
-}
+##### Content / Viewport Width
 
-.w-radix-accordion {
-  width: var(--radix-accordion-content-width);
-}
+| **Class**                          | **Properties**                                        |
+| ---------------------------------- | ----------------------------------------------------- |
+| `w-radix-accordion-content`        | `width: var(--radix-accordion-content-width);`        |
+| `w-radix-collapsible-content`      | `width: var(--radix-collapsible-content-width);`      |
+| `w-radix-navigation-menu-viewport` | `width: var(--radix-navigation-menu-viewport-width);` |
 
-.h-radix-collapsible {
-  height: var(--radix-collapsible-content-height);
-}
+##### Available Width
 
-.w-radix-collapsible {
-  width: var(--radix-collapsible-content-width);
-}
-```
+| **Class**                                       | **Properties**                                               |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| `w-radix-context-menu-content-available-width`  | `width: var(--radix-context-menu-content-available-width);`  |
+| `w-radix-dropdown-menu-content-available-width` | `width: var(--radix-dropdown-menu-content-available-width);` |
+| `w-radix-hover-card-content-available-width`    | `width: var(--radix-hover-card-content-available-width);`    |
+| `w-radix-menubar-content-available-width`       | `width: var(--radix-menubar-content-available-width);`       |
+| `w-radix-popover-content-available-width`       | `width: var(--radix-popover-content-available-width);`       |
+| `w-radix-select-content-available-width`        | `width: var(--radix-select-content-available-width);`        |
+| `w-radix-tooltip-content-available-width`       | `width: var(--radix-tooltip-content-available-width);`       |
+
+| **Class**                                           | **Properties**                                                  |
+| --------------------------------------------------- | --------------------------------------------------------------- |
+| `max-w-radix-context-menu-content-available-width`  | `max-width: var(--radix-context-menu-content-available-width)`  |
+| `max-w-radix-dropdown-menu-content-available-width` | `max-width: var(--radix-dropdown-menu-content-available-width)` |
+| `max-w-radix-hover-card-content-available-width`    | `max-width: var(--radix-hover-card-content-available-width)`    |
+| `max-w-radix-menubar-content-available-width`       | `max-width: var(--radix-menubar-content-available-width)`       |
+| `max-w-radix-popover-content-available-width`       | `max-width: var(--radix-popover-content-available-width)`       |
+| `max-w-radix-select-content-available-width`        | `max-width: var(--radix-select-content-available-width)`        |
+| `max-w-radix-tooltip-content-available-width`       | `max-width: var(--radix-tooltip-content-available-width)`       |
+
+##### Trigger Width
+
+| **Class**                                     | **Properties**                                     |
+| --------------------------------------------- | -------------------------------------------------- |
+| `w-radix-context-menu-content-trigger-width`  | `width: var(--radix-context-menu-trigger-width);`  |
+| `w-radix-dropdown-menu-content-trigger-width` | `width: var(--radix-dropdown-menu-trigger-width);` |
+| `w-radix-hover-card-content-trigger-width`    | `width: var(--radix-hover-card-trigger-width);`    |
+| `w-radix-menubar-content-trigger-width`       | `width: var(--radix-menubar-trigger-width);`       |
+| `w-radix-popover-content-trigger-width`       | `width: var(--radix-popover-trigger-width);`       |
+| `w-radix-select-content-trigger-width`        | `width: var(--radix-select-trigger-width);`        |
+| `w-radix-tooltip-content-trigger-width`       | `width: var(--radix-tooltip-trigger-width);`       |
+
+##### Content / Viewport Height
+
+| **Class**                          | **Properties**                                          |
+| ---------------------------------- | ------------------------------------------------------- |
+| `h-radix-accordion-content`        | `height: var(--radix-accordion-content-height);`        |
+| `h-radix-collapsible-content`      | `height: var(--radix-collapsible-content-height);`      |
+| `h-radix-navigation-menu-viewport` | `height: var(--radix-navigation-menu-viewport-height);` |
+
+##### Available Height
+
+| **Class**                                        | **Properties**                                                 |
+| ------------------------------------------------ | -------------------------------------------------------------- |
+| `h-radix-context-menu-content-available-height`  | `height: var(--radix-context-menu-content-available-height);`  |
+| `h-radix-dropdown-menu-content-available-height` | `height: var(--radix-dropdown-menu-content-available-height);` |
+| `h-radix-hover-card-content-available-height`    | `height: var(--radix-hover-card-content-available-height);`    |
+| `h-radix-menubar-content-available-height`       | `height: var(--radix-menubar-content-available-height);`       |
+| `h-radix-popover-content-available-height`       | `height: var(--radix-popover-content-available-height);`       |
+| `h-radix-select-content-available-height`        | `height: var(--radix-select-content-available-height);`        |
+| `h-radix-tooltip-content-available-height`       | `height: var(--radix-tooltip-content-available-height);`       |
+
+| **Class**                                            | **Properties**                                                     |
+| ---------------------------------------------------- | ------------------------------------------------------------------ |
+| `max-h-radix-context-menu-content-available-height`  | `max-height: var(--radix-context-menu-content-available-height);`  |
+| `max-h-radix-dropdown-menu-content-available-height` | `max-height: var(--radix-dropdown-menu-content-available-height);` |
+| `max-h-radix-hover-card-content-available-height`    | `max-height: var(--radix-hover-card-content-available-height);`    |
+| `max-h-radix-menubar-content-available-height`       | `max-height: var(--radix-menubar-content-available-height);`       |
+| `max-h-radix-popover-content-available-height`       | `max-height: var(--radix-popover-content-available-height);`       |
+| `max-h-radix-select-content-available-height`        | `max-height: var(--radix-select-content-available-height);`        |
+| `max-h-radix-tooltip-content-available-height`       | `max-height: var(--radix-tooltip-content-available-height);`       |
+
+##### Trigger Height
+
+| **Class**                                      | **Properties**                                       |
+| ---------------------------------------------- | ---------------------------------------------------- |
+| `h-radix-context-menu-content-trigger-height`  | `height: var(--radix-context-menu-trigger-height);`  |
+| `h-radix-dropdown-menu-content-trigger-height` | `height: var(--radix-dropdown-menu-trigger-height);` |
+| `h-radix-hover-card-content-trigger-height`    | `height: var(--radix-hover-card-trigger-height);`    |
+| `h-radix-menubar-content-trigger-height`       | `height: var(--radix-menubar-trigger-height);`       |
+| `h-radix-popover-content-trigger-height`       | `height: var(--radix-popover-trigger-height);`       |
+| `h-radix-select-content-trigger-height`        | `height: var(--radix-select-trigger-height);`        |
+| `h-radix-tooltip-content-trigger-height`       | `height: var(--radix-tooltip-trigger-height);`       |
 
 #### Toast swiping
 
 Use the generated `translate-*` utilities to animate swipe gestures.
 
-```css
-.translate-x-radix-toast-swipe-move-x {
-  transform: translateX(var(--radix-toast-swipe-move-x));
-}
-
-.translate-y-radix-toast-swipe-move-y {
-  transform: translateY(var(--radix-toast-swipe-move-y));
-}
-
-.translate-x-radix-toast-swipe-end-x {
-  transform: translateX(var(--radix-toast-swipe-end-x));
-}
-
-.translate-y-radix-toast-swipe-end-y {
-  transform: translateY(var(--radix-toast-swipe-end-y));
-}
-```
+| **Class**                              | **Properties**                                            |
+| -------------------------------------- | --------------------------------------------------------- |
+| `translate-x-radix-toast-swipe-move-x` | `transform: translateX(var(--radix-toast-swipe-move-x));` |
+| `translate-y-radix-toast-swipe-move-y` | `transform: translateY(var(--radix-toast-swipe-move-y));` |
+| `translate-x-radix-toast-swipe-end-x`  | `transform: translateX(var(--radix-toast-swipe-end-x));`  |
+| `translate-y-radix-toast-swipe-end-y`  | `transform: translateY(var(--radix-toast-swipe-end-y));`  |
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 <!-- [<img src="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.png" width="967">](https://tailwindcss-radix.vercel.app)
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
