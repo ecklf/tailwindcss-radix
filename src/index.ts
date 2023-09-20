@@ -40,37 +40,11 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
       ? ""
       : `${options.variantPrefix}-`;
 
-  // Adds the following transform origin utilities
-  // `--radix-context-menu-content-transform-origin`,
-  // `--radix-dropdown-menu-content-transform-origin`,
-  // `--radix-hover-card-content-transform-origin `,
-  // `--radix-menubar-content-transform-origin`
-  // `--radix-popover-content-transform-origin`,
-  // `--radix-select-content-transform-origin`,
-  // `--radix-tooltip-content-transform-origin`,
-  const transformOrigins = [
-    "context-menu",
-    "dropdown-menu",
-    "hover-card",
-    "menubar",
-    "popover",
-    "select",
-    "tooltip",
-  ];
-
-  transformOrigins.forEach((transformOrigin) => {
-    addUtilities({
-      [`.origin-${variantPrefix}${transformOrigin}`]: {
-        "transform-origin": `var(--radix-${transformOrigin}-content-transform-origin)`,
-      },
-    });
-  });
-
   dataAttributes.forEach((attributeValue) => {
-    let variantName = `${variantPrefix}${attributeValue}`;
-    let selector = `data-${attributeValue}`;
+    const variantName = `${variantPrefix}${attributeValue}`;
+    const selector = `data-${attributeValue}`;
 
-    addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
+    addVariant(variantName, ({ modifySelectors, separator }) => {
       modifySelectors(({ className }: { className: string }) => {
         return `.${e(`${variantName}${separator}${className}`)}[${selector}]`;
       });
@@ -97,10 +71,10 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
     namedDataAttributes[
       attributeName as keyof typeof namedDataAttributes
     ].forEach((attributeValue) => {
-      let variantName = `${variantPrefix}${attributeName}-${attributeValue}`;
-      let selector = `data-${attributeName}="${attributeValue}"`;
+      const variantName = `${variantPrefix}${attributeName}-${attributeValue}`;
+      const selector = `data-${attributeName}="${attributeValue}"`;
 
-      addVariant(`${variantName}`, ({ modifySelectors, separator }) => {
+      addVariant(variantName, ({ modifySelectors, separator }) => {
         modifySelectors(({ className }: { className: string }) => {
           return `.${e(`${variantName}${separator}${className}`)}[${selector}]`;
         });
@@ -121,6 +95,32 @@ export = plugin.withOptions((options) => ({ addUtilities, addVariant, e }) => {
           )}`;
         });
       });
+    });
+  });
+
+  // Adds the following transform origin utilities
+  // `--radix-context-menu-content-transform-origin`,
+  // `--radix-dropdown-menu-content-transform-origin`,
+  // `--radix-hover-card-content-transform-origin `,
+  // `--radix-menubar-content-transform-origin`
+  // `--radix-popover-content-transform-origin`,
+  // `--radix-select-content-transform-origin`,
+  // `--radix-tooltip-content-transform-origin`,
+  const transformOrigins = [
+    "context-menu",
+    "dropdown-menu",
+    "hover-card",
+    "menubar",
+    "popover",
+    "select",
+    "tooltip",
+  ];
+
+  transformOrigins.forEach((transformOrigin) => {
+    addUtilities({
+      [`.origin-${variantPrefix}${transformOrigin}`]: {
+        "transform-origin": `var(--radix-${transformOrigin}-content-transform-origin)`,
+      },
     });
   });
 
