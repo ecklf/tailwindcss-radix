@@ -120,8 +120,8 @@ dependencies:
     specifier: ^1.4.0
     version: 1.4.0(react@18.2.0)
   tailwindcss-radix:
-    specifier: link:..
-    version: link:..
+    specifier: ^2.9.0
+    version: 2.9.0
 
 devDependencies:
   '@tailwindcss/forms':
@@ -4202,6 +4202,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /tailwindcss-radix@2.9.0:
+    resolution: {integrity: sha512-N49SnciSeRgLC+VK+Fu5VULNJIvJUvN7tUKF1kEHPXrS76WAlwrSVthCbJ9NUw0Cj/ptxs73pdVEdosomAN5Lg==}
+    dev: false
 
   /tailwindcss@3.4.1:
     resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
