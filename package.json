@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "lint": "prettier --write .",
     "test": "vitest",
-    "build": "rimraf dist/ && tsc --removeComments && cp -R types dist/",
+    "build": "rimraf dist/ && tsc --removeComments",
     "release": "npm run build && release-it"
   },
   "repository": {
