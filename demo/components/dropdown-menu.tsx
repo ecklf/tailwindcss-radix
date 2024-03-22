@@ -69,7 +69,7 @@ const users: User[] = [
   },
 ];
 
-interface DropdownMenuProps { }
+interface DropdownMenuProps {}
 
 const DropdownMenu = (props: DropdownMenuProps) => {
   const [showGrid, setShowGrid] = useState(false);
