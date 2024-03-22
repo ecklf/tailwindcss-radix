@@ -69,7 +69,7 @@ const users: User[] = [
   },
 ];
 
-interface ContextMenuProps { }
+interface ContextMenuProps {}
 
 const ContextMenu = (props: ContextMenuProps) => {
   const [showGrid, setShowGrid] = useState(false);
