@@ -15,7 +15,7 @@ const Checkbox = (props: CheckboxProps) => {
         className={clsx(
           "flex h-5 w-5 items-center justify-center rounded",
           "radix-state-checked:bg-purple-600 radix-state-unchecked:bg-gray-100 dark:radix-state-unchecked:bg-gray-900",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
         )}
       >
         <CheckboxPrimitive.Indicator>

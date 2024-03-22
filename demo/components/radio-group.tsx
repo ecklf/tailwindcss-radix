@@ -35,7 +35,7 @@ const RadioGroup = (props: RadioGroupProps) => {
                   "border border-transparent text-white",
                   "radix-state-checked:bg-purple-600",
                   "radix-state-unchecked:bg-gray-100 dark:radix-state-unchecked:bg-gray-900",
-                  "focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800"
+                  "focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800",
                 )}
               >
                 <RadioGroupPrimitive.Indicator className="absolute inset-0 flex items-center justify-center leading-0">

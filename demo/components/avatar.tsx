@@ -45,7 +45,7 @@ const Avatar = ({
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
-              }[variant]
+              }[variant],
             )}
           />
           {isOnline && (
@@ -55,7 +55,7 @@ const Avatar = ({
                 {
                   [Variant.Circle]: "-translate-x-1/2 -translate-y-1/2",
                   [Variant.Rounded]: "",
-                }[variant]
+                }[variant],
               )}
             >
               <span className="block h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -67,7 +67,7 @@ const Avatar = ({
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
-              }[variant]
+              }[variant],
             )}
             delayMs={600}
           >

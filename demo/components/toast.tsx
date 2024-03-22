@@ -39,7 +39,7 @@ const Toast = (props: ToastProps) => {
           "radix-swipe-direction-down:radix-swipe-end:animate-toast-swipe-out-y",
           "radix-swipe-direction-down:translate-y-radix-toast-swipe-move-y",
           "radix-swipe-cancel:translate-x-0 radix-swipe-cancel:duration-200 radix-swipe-cancel:ease-[ease]",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
         )}
       >
         <div className="flex">

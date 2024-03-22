@@ -62,7 +62,7 @@ function CommandMenu<T extends { label: string }>({
         "fixed top-[20%] left-1/2 transform -translate-x-1/2",
         "w-full sm:max-w-lg md:max-w-xl",
         "bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl",
-        "rounded-lg shadow-lg"
+        "rounded-lg shadow-lg",
       )}
       open={open}
       onOpenChange={setOpen}
@@ -75,7 +75,7 @@ function CommandMenu<T extends { label: string }>({
             "bg-transparent",
             "block w-full",
             "text-sm font-medium text-gray-700 dark:text-gray-300 placeholder:text-gray-600 dark:placeholder:text-gray-500",
-            "focus:outline-none border-none focus:border-transparent focus-visible:ring-transparent"
+            "focus:outline-none border-none focus:border-transparent focus-visible:ring-transparent",
           )}
         />
         <kbd
@@ -113,7 +113,7 @@ function CommandMenu<T extends { label: string }>({
               "cursor-pointer",
               "flex items-center rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium",
               "aria-selected:bg-black/10 dark:aria-selected:bg-white/10",
-              "focus:outline-none select-none"
+              "focus:outline-none select-none",
             )}
           >
             {item.label}

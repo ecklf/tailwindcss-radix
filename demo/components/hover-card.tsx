@@ -24,7 +24,7 @@ const HoverCard = (props: HoverCardProps) => {
       <HoverCardPrimitive.Trigger asChild>
         <div
           className={clsx(
-            "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2.5 dark:bg-gray-900"
+            "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2.5 dark:bg-gray-900",
           )}
         >
           <TailwindLogo />
@@ -37,7 +37,7 @@ const HoverCard = (props: HoverCardProps) => {
           " radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
           "max-w-md rounded-lg p-4 md:w-full",
           "bg-white dark:bg-gray-800",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
         )}
       >
         <HoverCardPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
@@ -45,7 +45,7 @@ const HoverCard = (props: HoverCardProps) => {
         <div className="flex h-full w-full space-x-4">
           <div
             className={clsx(
-              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900"
+              "flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-inner bg-gray-50/60 p-2.5 dark:bg-gray-900",
             )}
           >
             <TailwindLogo />

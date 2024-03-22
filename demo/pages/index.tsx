@@ -299,7 +299,7 @@ const Hero = () => {
                     "inline-flex select-none justify-center rounded-md px-2 py-1.5 text-sm font-medium",
                     "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
                     "border border-gray-300 dark:border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
                   )}
                 >
                   <QuestionMarkCircleIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
@@ -313,7 +313,7 @@ const Hero = () => {
                   "radix-side-bottom:animate-slide-up-fade",
                   "radix-side-left:animate-slide-right-fade",
                   "inline-flex items-center rounded-md px-4 py-2.5",
-                  "bg-white dark:bg-gray-800"
+                  "bg-white dark:bg-gray-800",
                 )}
               >
                 <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
@@ -384,11 +384,11 @@ const Demo = () => {
             if (newWindow) setTimeout(() => newWindow.focus(), 10);
           } else {
             const element = document.getElementById(
-              item.label.replace(" ", "_").toLowerCase()
+              item.label.replace(" ", "_").toLowerCase(),
             );
             if (element) {
               requestAnimationFrame(() =>
-                element.scrollIntoView({ behavior: "smooth" })
+                element.scrollIntoView({ behavior: "smooth" }),
               );
             }
           }

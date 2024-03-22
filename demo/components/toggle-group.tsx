@@ -46,7 +46,7 @@ const ToggleGroup = (props: ToggleGroupProps) => {
             "bg-white dark:bg-gray-800",
             "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
             "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
-            "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+            "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
           )}
         >
           {React.cloneElement(icon, {

@@ -14,7 +14,7 @@ export function useMediaQuery(query: string) {
       // Remove the event listener on cleanup
       return () => mediaQuery.removeEventListener("change", handler);
     },
-    [] // Empty array ensures effect is only run on mount and unmount
+    [], // Empty array ensures effect is only run on mount and unmount
   );
   return matches;
 }

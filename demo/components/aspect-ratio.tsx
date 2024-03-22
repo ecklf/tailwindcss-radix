@@ -19,7 +19,7 @@ const AspectRatio = (props: AspectRatioProps) => {
         <div
           className={clsx(
             "absolute inset-0 bg-gray-600 object-cover group-hover:bg-gray-500",
-            "transition-colors duration-300 ease-in-out"
+            "transition-colors duration-300 ease-in-out",
           )}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}

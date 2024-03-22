@@ -19,19 +19,13 @@
 
 </div>
 
+TL;DR it's [@headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/@headlessui-tailwindcss) for Radix
+
 ## Installation
 
 ```sh
-npm i tailwindcss-radix
+pnpm add tailwindcss-radix
 ```
-
-```sh
-yarn add tailwindcss-radix
-```
-
-## Migrate from v1
-
-To prevent a possible future name clashing the `skipAttributeNames` option has been removed. In case you used this option, please update the class names accordingly.
 
 ## Demo
 
@@ -282,3 +276,7 @@ MIT
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
 [![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
 [![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix) -->
+
+## Migrate from v1
+
+To prevent a possible future name clashing the `skipAttributeNames` option has been removed. In case you used this option, please update the class names accordingly.
