@@ -8,7 +8,7 @@ const Progress = (props: ProgressProps) => {
   const [progress, setProgress] = React.useState(60);
 
   useEffect(() => {
-    let timerId: null | NodeJS.Timer = null;
+    let timerId: ReturnType<typeof setTimeout> = null;
 
     timerId = setInterval(() => {
       const p = Math.ceil(getRandomArbitrary(0, 100) / 10) * 10;
