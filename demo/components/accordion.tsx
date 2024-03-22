@@ -46,7 +46,7 @@ const Accordion = (props: AccordionProps) => {
                 "group",
                 "radix-state-open:rounded-t-lg radix-state-closed:rounded-lg",
                 "focus:outline-none",
-                "inline-flex w-full items-center justify-between bg-white px-4 py-2 text-left dark:bg-gray-800"
+                "inline-flex w-full items-center justify-between bg-white px-4 py-2 text-left dark:bg-gray-800",
               )}
             >
               <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -55,7 +55,7 @@ const Accordion = (props: AccordionProps) => {
               <ChevronDownIcon
                 className={clsx(
                   "ml-2 h-5 w-5 shrink-0 text-gray-700 ease-in-out dark:text-gray-400",
-                  "group-radix-state-open:rotate-180 group-radix-state-open:duration-300"
+                  "group-radix-state-open:rotate-180 group-radix-state-open:duration-300",
                 )}
               />
             </AccordionPrimitive.Trigger>

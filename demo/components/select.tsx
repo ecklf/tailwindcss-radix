@@ -36,7 +36,7 @@ const Select = (props: SelectProps) => {
                   className={clsx(
                     "relative flex items-center px-8 py-2 rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium focus:bg-gray-100 dark:focus:bg-gray-900",
                     "radix-disabled:opacity-50",
-                    "focus:outline-none select-none"
+                    "focus:outline-none select-none",
                   )}
                 >
                   <SelectPrimitive.ItemText>{f}</SelectPrimitive.ItemText>
@@ -44,7 +44,7 @@ const Select = (props: SelectProps) => {
                     <CheckIcon />
                   </SelectPrimitive.ItemIndicator>
                 </SelectPrimitive.Item>
-              )
+              ),
             )}
           </SelectPrimitive.Group>
         </SelectPrimitive.Viewport>

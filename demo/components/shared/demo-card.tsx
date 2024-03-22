@@ -37,7 +37,7 @@ const DemoCard = ({
             [Variant.Default]: "items-center justify-center",
             [Variant.ItemsCenter]: "items-center",
             [Variant.JustifyCenter]: "justify-center pt-24", // Height of title bar
-          }[variant]
+          }[variant],
         )}
       >
         {children}
