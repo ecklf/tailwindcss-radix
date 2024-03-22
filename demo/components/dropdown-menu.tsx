@@ -69,7 +69,7 @@ const users: User[] = [
   },
 ];
 
-interface DropdownMenuProps {}
+interface DropdownMenuProps { }
 
 const DropdownMenu = (props: DropdownMenuProps) => {
   const [showGrid, setShowGrid] = useState(false);
@@ -113,9 +113,7 @@ const DropdownMenu = (props: DropdownMenuProps) => {
             <DropdownMenuPrimitive.CheckboxItem
               checked={showGrid}
               onCheckedChange={(state) => {
-                if (state !== "indeterminate") {
-                  setShowGrid(state);
-                }
+                setShowGrid(state);
               }}
               className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
@@ -138,9 +136,7 @@ const DropdownMenu = (props: DropdownMenuProps) => {
             <DropdownMenuPrimitive.CheckboxItem
               checked={showUi}
               onCheckedChange={(state) => {
-                if (state !== "indeterminate") {
-                  setShowUi(state);
-                }
+                setShowUi(state);
               }}
               className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
