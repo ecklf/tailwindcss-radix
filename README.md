@@ -19,7 +19,11 @@
 
 </div>
 
-TL;DR it's [@headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/@headlessui-tailwindcss) for Radix
+## What is this?
+
+The main purpose of this library adding classnames for accessing Radix data attributes, which gains you the benefit of auto-completion compared to using `data-*` variants.
+
+**TL;DR** It's [@headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/@headlessui-tailwindcss) for Radix.
 
 ## Installation
 
@@ -268,6 +272,115 @@ Use the generated `translate-*` utilities to animate swipe gestures.
 }
 ```
 
+## Migrate from v1
+
+To prevent a possible future name clashing the `skipAttributeNames` option has been removed. In case you used this option, please update the class names accordingly.
+
+## Migrate from v2
+
+In case you use `content-available` utilities:
+
+- Add `-content-available` to the width-based classnames
+- Remove `width` and `height` from `content-available-[width|height]`
+
+<details><summary>View diff</summary>
+<p>
+
+```diff
+-w-radix-context-menu
++w-radix-context-menu-content-available
+
+-h-radix-context-menu-content-available-height
++h-radix-context-menu-content-available
+
+-max-w-radix-context-menu-content-available-width
++max-w-radix-context-menu-content-available
+
+-max-h-radix-context-menu-content-available-height
++max-h-radix-context-menu-content-available
+
+
+-w-radix-dropdown-menu
++w-radix-dropdown-menu-content-available
+
+-h-radix-dropdown-menu-content-available-height
++h-radix-dropdown-menu-content-available
+
+-max-w-radix-dropdown-menu-content-available-width
++max-w-radix-dropdown-menu-content-available
+
+-max-h-radix-dropdown-menu-content-available-height
++max-h-radix-dropdown-menu-content-available
+
+
+-w-radix-hover-card
++w-radix-hover-card-content-available
+
+-h-radix-hover-card-content-available-height
++h-radix-hover-card-content-available
+
+-max-w-radix-hover-card-content-available-width
++max-w-radix-hover-card-content-available
+
+-max-h-radix-hover-card-content-available-height
++max-h-radix-hover-card-content-available
+
+
+-w-radix-menubar
++w-radix-menubar-content-available
+
+-h-radix-menubar-content-available-height
++h-radix-menubar-content-available
+
+-max-w-radix-menubar-content-available-width
++max-w-radix-menubar-content-available
+
+-max-h-radix-menubar-content-available-height
++max-h-radix-menubar-content-available
+
+
+-w-radix-popover
++w-radix-popover-content-available
+
+-h-radix-popover-content-available-height
++h-radix-popover-content-available
+
+-max-w-radix-popover-content-available-width
++max-w-radix-popover-content-available
+
+-max-h-radix-popover-content-available-height
++max-h-radix-popover-content-available
+
+
+-w-radix-select
++w-radix-select-content-available
+
+-h-radix-select
++h-radix-select-content-available
+
+-max-w-radix-select-content-available-width
++max-w-radix-select-content-available
+
+-max-h-radix-select-content-available-height
++max-h-radix-select-content-available
+
+
+-w-radix-tooltip
++w-radix-tooltip-content-available
+
+-h-radix-tooltip
++h-radix-tooltip-content-available
+
+-max-w-radix-tooltip-content-available-width
++max-w-radix-tooltip-content-available
+
+-max-h-radix-tooltip-content-available-height
++max-h-radix-tooltip-content-available
+```
+
+</p>
+</details>
+
 ## License
 
 MIT
@@ -276,7 +389,3 @@ MIT
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
 [![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
 [![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix) -->
-
-## Migrate from v1
-
-To prevent a possible future name clashing the `skipAttributeNames` option has been removed. In case you used this option, please update the class names accordingly.
