@@ -192,61 +192,190 @@ const ContextMenu = () => {
 };
 ```
 
-### Animation
+### CSS Variable Utilities
 
 #### Origin position
 
-Use the generated `origin-*` utilities to transform from the content position origin.
-
 ```css
 .origin-radix-context-menu {
-  transform-origin: var(--radix-context-menu-content-transform-origin);
+    transform-origin: var(--radix-context-menu-content-transform-origin)
 }
-
 .origin-radix-dropdown-menu {
-  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+    transform-origin: var(--radix-dropdown-menu-content-transform-origin)
 }
-
 .origin-radix-hover-card {
-  transform-origin: var(--radix-hover-card-content-transform-origin);
+    transform-origin: var(--radix-hover-card-content-transform-origin)
 }
-
 .origin-radix-menubar {
-  transform-origin: var(--radix-menubar-content-transform-origin);
+    transform-origin: var(--radix-menubar-content-transform-origin)
 }
-
 .origin-radix-popover {
-  transform-origin: var(--radix-popover-content-transform-origin);
+    transform-origin: var(--radix-popover-content-transform-origin)
 }
-
 .origin-radix-select {
-  transform-origin: var(--radix-select-content-transform-origin);
+    transform-origin: var(--radix-select-content-transform-origin)
 }
-
 .origin-radix-tooltip {
-  transform-origin: var(--radix-tooltip-content-transform-origin);
+    transform-origin: var(--radix-tooltip-content-transform-origin)
 }
 ```
 
-#### Content size
-
-Use the generated `h-*` and `w-*` utilities to animate the size of the content when it opens/closes.
+#### Content / Viewport Width
 
 ```css
-.h-radix-accordion {
-  height: var(--radix-accordion-content-height);
+.w-radix-accordion-content {
+    width: var(--radix-accordion-content-width)
 }
-
-.w-radix-accordion {
-  width: var(--radix-accordion-content-width);
+.h-radix-accordion-content {
+    height: var(--radix-accordion-content-height)
 }
-
-.h-radix-collapsible {
-  height: var(--radix-collapsible-content-height);
+.w-radix-collapsible-content {
+    width: var(--radix-collapsible-content-width)
 }
+.h-radix-collapsible-content {
+    height: var(--radix-collapsible-content-height)
+}
+.w-radix-navigation-menu-viewport {
+    width: var(--radix-navigation-menu-viewport-width)
+}
+.h-radix-navigation-menu-viewport {
+    height: var(--radix-navigation-menu-viewport-height)
+}
+```
 
-.w-radix-collapsible {
-  width: var(--radix-collapsible-content-width);
+#### Content Available Width / Height
+
+```css
+.w-radix-context-menu-content-available {
+    width: var(--radix-context-menu-content-available-width)
+}
+.max-w-radix-context-menu-content-available {
+    max-width: var(--radix-context-menu-content-available-width)
+}
+.h-radix-context-menu-content-available {
+    height: var(--radix-context-menu-content-available-height)
+}
+.max-h-radix-context-menu-content-available {
+    max-height: var(--radix-context-menu-content-available-height)
+}
+.w-radix-dropdown-menu-content-available {
+    width: var(--radix-dropdown-menu-content-available-width)
+}
+.max-w-radix-dropdown-menu-content-available {
+    max-width: var(--radix-dropdown-menu-content-available-width)
+}
+.h-radix-dropdown-menu-content-available {
+    height: var(--radix-dropdown-menu-content-available-height)
+}
+.max-h-radix-dropdown-menu-content-available {
+    max-height: var(--radix-dropdown-menu-content-available-height)
+}
+.w-radix-hover-card-content-available {
+    width: var(--radix-hover-card-content-available-width)
+}
+.max-w-radix-hover-card-content-available {
+    max-width: var(--radix-hover-card-content-available-width)
+}
+.h-radix-hover-card-content-available {
+    height: var(--radix-hover-card-content-available-height)
+}
+.max-h-radix-hover-card-content-available {
+    max-height: var(--radix-hover-card-content-available-height)
+}
+.w-radix-menubar-content-available {
+    width: var(--radix-menubar-content-available-width)
+}
+.max-w-radix-menubar-content-available {
+    max-width: var(--radix-menubar-content-available-width)
+}
+.h-radix-menubar-content-available {
+    height: var(--radix-menubar-content-available-height)
+}
+.max-h-radix-menubar-content-available {
+    max-height: var(--radix-menubar-content-available-height)
+}
+.w-radix-popover-content-available {
+    width: var(--radix-popover-content-available-width)
+}
+.max-w-radix-popover-content-available {
+    max-width: var(--radix-popover-content-available-width)
+}
+.h-radix-popover-content-available {
+    height: var(--radix-popover-content-available-height)
+}
+.max-h-radix-popover-content-available {
+    max-height: var(--radix-popover-content-available-height)
+}
+.w-radix-select-content-available {
+    width: var(--radix-select-content-available-width)
+}
+.max-w-radix-select-content-available {
+    max-width: var(--radix-select-content-available-width)
+}
+.h-radix-select-content-available {
+    height: var(--radix-select-content-available-height)
+}
+.max-h-radix-select-content-available {
+    max-height: var(--radix-select-content-available-height)
+}
+.w-radix-tooltip-content-available {
+    width: var(--radix-tooltip-content-available-width)
+}
+.max-w-radix-tooltip-content-available {
+    max-width: var(--radix-tooltip-content-available-width)
+}
+.h-radix-tooltip-content-available {
+    height: var(--radix-tooltip-content-available-height)
+}
+.max-h-radix-tooltip-content-available {
+    max-height: var(--radix-tooltip-content-available-height)
+}
+```
+
+#### Trigger Available Width / Height
+
+```css
+.w-radix-context-menu-trigger {
+    width: var(--radix-context-menu-trigger-width)
+}
+.h-radix-context-menu-trigger {
+    height: var(--radix-context-menu-trigger-height)
+}
+.w-radix-dropdown-menu-trigger {
+    width: var(--radix-dropdown-menu-trigger-width)
+}
+.h-radix-dropdown-menu-trigger {
+    height: var(--radix-dropdown-menu-trigger-height)
+}
+.w-radix-hover-card-trigger {
+    width: var(--radix-hover-card-trigger-width)
+}
+.h-radix-hover-card-trigger {
+    height: var(--radix-hover-card-trigger-height)
+}
+.w-radix-menubar-trigger {
+    width: var(--radix-menubar-trigger-width)
+}
+.h-radix-menubar-trigger {
+    height: var(--radix-menubar-trigger-height)
+}
+.w-radix-popover-trigger {
+    width: var(--radix-popover-trigger-width)
+}
+.h-radix-popover-trigger {
+    height: var(--radix-popover-trigger-height)
+}
+.w-radix-select-trigger {
+    width: var(--radix-select-trigger-width)
+}
+.h-radix-select-trigger {
+    height: var(--radix-select-trigger-height)
+}
+.w-radix-tooltip-trigger {
+    width: var(--radix-tooltip-trigger-width)
+}
+.h-radix-tooltip-trigger {
+    height: var(--radix-tooltip-trigger-height)
 }
 ```
 
@@ -255,20 +384,17 @@ Use the generated `h-*` and `w-*` utilities to animate the size of the content w
 Use the generated `translate-*` utilities to animate swipe gestures.
 
 ```css
-.translate-x-radix-toast-swipe-move-x {
-  transform: translateX(var(--radix-toast-swipe-move-x));
-}
-
-.translate-y-radix-toast-swipe-move-y {
-  transform: translateY(var(--radix-toast-swipe-move-y));
-}
-
 .translate-x-radix-toast-swipe-end-x {
-  transform: translateX(var(--radix-toast-swipe-end-x));
+    transform: translateX(var(--radix-toast-swipe-end-x))
 }
-
 .translate-y-radix-toast-swipe-end-y {
-  transform: translateY(var(--radix-toast-swipe-end-y));
+    transform: translateY(var(--radix-toast-swipe-end-y))
+}
+.translate-x-radix-toast-swipe-move-x {
+    transform: translateX(var(--radix-toast-swipe-move-x))
+}
+.translate-y-radix-toast-swipe-move-y {
+    transform: translateY(var(--radix-toast-swipe-move-y))
 }
 ```
 
@@ -383,7 +509,7 @@ In case you use `content-available` utilities:
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 <!-- [<img src="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.png" width="967">](https://tailwindcss-radix.vercel.app)
 [![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)

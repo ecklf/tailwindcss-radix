@@ -106,57 +106,79 @@ it("should generate [width|height] utilities", async () => {
   });
 });
 
-it("should generate [width|height] `content-available` and `trigger` utilities", async () => {
+it("should generate [width|height] `content-available` utilities", async () => {
   let config = {
     content: [
       {
         raw: html`
-          <div class="w-radix-context-menu" />
+          <div class="w-radix-context-menu-content-available" />
           <div class="max-w-radix-context-menu-content-available" />
           <div class="h-radix-context-menu-content-available" />
           <div class="max-h-radix-context-menu-content-available" />
-          <div class="w-radix-context-menu-trigger" />
-          <div class="h-radix-context-menu-trigger" />
 
-          <div class="w-radix-dropdown-menu" />
+          <div class="w-radix-dropdown-menu-content-available" />
           <div class="max-w-radix-dropdown-menu-content-available" />
           <div class="h-radix-dropdown-menu-content-available" />
           <div class="max-h-radix-dropdown-menu-content-available" />
-          <div class="w-radix-dropdown-menu-trigger" />
-          <div class="h-radix-dropdown-menu-trigger" />
 
-          <div class="w-radix-hover-card" />
+          <div class="w-radix-hover-card-content-available" />
           <div class="max-w-radix-hover-card-content-available" />
           <div class="h-radix-hover-card-content-available" />
           <div class="max-h-radix-hover-card-content-available" />
-          <div class="w-radix-hover-card-trigger" />
-          <div class="h-radix-hover-card-trigger" />
 
-          <div class="w-radix-menubar" />
+          <div class="w-radix-menubar-content-available" />
           <div class="max-w-radix-menubar-content-available" />
           <div class="h-radix-menubar-content-available" />
           <div class="max-h-radix-menubar-content-available" />
-          <div class="w-radix-menubar-trigger" />
-          <div class="h-radix-menubar-trigger" />
 
-          <div class="w-radix-popover" />
+          <div class="w-radix-popover-content-available" />
           <div class="max-w-radix-popover-content-available" />
           <div class="h-radix-popover-content-available" />
           <div class="max-h-radix-popover-content-available" />
-          <div class="w-radix-popover-trigger" />
-          <div class="h-radix-popover-trigger" />
 
-          <div class="w-radix-select" />
+          <div class="w-radix-select-content-available" />
           <div class="max-w-radix-select-content-available" />
           <div class="h-radix-select-content-available" />
           <div class="max-h-radix-select-content-available" />
-          <div class="w-radix-select-trigger" />
-          <div class="h-radix-select-trigger" />
 
-          <div class="w-radix-tooltip" />
+          <div class="w-radix-tooltip-content-available" />
           <div class="max-w-radix-tooltip-content-available" />
           <div class="h-radix-tooltip-content-available" />
           <div class="max-h-radix-tooltip-content-available" />
+        `,
+      },
+    ],
+    plugins: [radix],
+  };
+
+  return run("@tailwind utilities", config).then((result) => {
+    expect(result.css).toMatchSnapshot();
+  });
+});
+
+it("should generate [width|height] `trigger` utilities", async () => {
+  let config = {
+    content: [
+      {
+        raw: html`
+          <div class="w-radix-context-menu-trigger" />
+          <div class="h-radix-context-menu-trigger" />
+
+          <div class="w-radix-dropdown-menu-trigger" />
+          <div class="h-radix-dropdown-menu-trigger" />
+
+          <div class="w-radix-hover-card-trigger" />
+          <div class="h-radix-hover-card-trigger" />
+
+          <div class="w-radix-menubar-trigger" />
+          <div class="h-radix-menubar-trigger" />
+
+          <div class="w-radix-popover-trigger" />
+          <div class="h-radix-popover-trigger" />
+
+          <div class="w-radix-select-trigger" />
+          <div class="h-radix-select-trigger" />
+
           <div class="w-radix-tooltip-trigger" />
           <div class="h-radix-tooltip-trigger" />
         `,
