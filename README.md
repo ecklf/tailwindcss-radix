@@ -220,7 +220,7 @@ const ContextMenu = () => {
 }
 ```
 
-#### Content / Viewport Width
+#### Content / Viewport Width / Height
 
 ```css
 .w-radix-accordion-content {
