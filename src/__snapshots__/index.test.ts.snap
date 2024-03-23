@@ -1,177 +1,114 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should generate dimension origins 1`] = `
-".w-radix-context-menu {
-    width: var(--radix-context-menu-content-available-width)
-}
-.max-w-radix-context-menu-content-available-width {
+exports[`should generate [width|height] \`content-available\` and \`trigger\` utilities 1`] = `
+".max-w-radix-context-menu-content-available {
     max-width: var(--radix-context-menu-content-available-width)
 }
-.h-radix-context-menu-content-available-height {
+.h-radix-context-menu-content-available {
     height: var(--radix-context-menu-content-available-height)
 }
-.max-h-radix-context-menu-content-available-height {
+.max-h-radix-context-menu-content-available {
     max-height: var(--radix-context-menu-content-available-height)
 }
-.w-radix-context-menu-trigger-width {
+.w-radix-context-menu-trigger {
     width: var(--radix-context-menu-trigger-width)
 }
-.h-radix-context-menu-trigger-height {
+.h-radix-context-menu-trigger {
     height: var(--radix-context-menu-trigger-height)
 }
-.w-radix-dropdown-menu {
-    width: var(--radix-dropdown-menu-content-available-width)
-}
-.max-w-radix-dropdown-menu-content-available-width {
+.max-w-radix-dropdown-menu-content-available {
     max-width: var(--radix-dropdown-menu-content-available-width)
 }
-.h-radix-dropdown-menu-content-available-height {
+.h-radix-dropdown-menu-content-available {
     height: var(--radix-dropdown-menu-content-available-height)
 }
-.max-h-radix-dropdown-menu-content-available-height {
+.max-h-radix-dropdown-menu-content-available {
     max-height: var(--radix-dropdown-menu-content-available-height)
 }
-.w-radix-dropdown-menu-trigger-width {
+.w-radix-dropdown-menu-trigger {
     width: var(--radix-dropdown-menu-trigger-width)
 }
-.h-radix-dropdown-menu-trigger-height {
+.h-radix-dropdown-menu-trigger {
     height: var(--radix-dropdown-menu-trigger-height)
 }
-.w-radix-hover-card {
-    width: var(--radix-hover-card-content-available-width)
-}
-.max-w-radix-hover-card-content-available-width {
+.max-w-radix-hover-card-content-available {
     max-width: var(--radix-hover-card-content-available-width)
 }
-.h-radix-hover-card-content-available-height {
+.h-radix-hover-card-content-available {
     height: var(--radix-hover-card-content-available-height)
 }
-.max-h-radix-hover-card-content-available-height {
+.max-h-radix-hover-card-content-available {
     max-height: var(--radix-hover-card-content-available-height)
 }
-.w-radix-hover-card-trigger-width {
+.w-radix-hover-card-trigger {
     width: var(--radix-hover-card-trigger-width)
 }
-.h-radix-hover-card-trigger-height {
+.h-radix-hover-card-trigger {
     height: var(--radix-hover-card-trigger-height)
 }
-.w-radix-menubar {
-    width: var(--radix-menubar-content-available-width)
-}
-.max-w-radix-menubar-content-available-width {
+.max-w-radix-menubar-content-available {
     max-width: var(--radix-menubar-content-available-width)
 }
-.h-radix-menubar-content-available-height {
+.h-radix-menubar-content-available {
     height: var(--radix-menubar-content-available-height)
 }
-.max-h-radix-menubar-content-available-height {
+.max-h-radix-menubar-content-available {
     max-height: var(--radix-menubar-content-available-height)
 }
-.w-radix-menubar-trigger-width {
+.w-radix-menubar-trigger {
     width: var(--radix-menubar-trigger-width)
 }
-.h-radix-menubar-trigger-height {
+.h-radix-menubar-trigger {
     height: var(--radix-menubar-trigger-height)
 }
-.w-radix-popover {
-    width: var(--radix-popover-content-available-width)
-}
-.max-w-radix-popover-content-available-width {
+.max-w-radix-popover-content-available {
     max-width: var(--radix-popover-content-available-width)
 }
-.h-radix-popover-content-available-height {
+.h-radix-popover-content-available {
     height: var(--radix-popover-content-available-height)
 }
-.max-h-radix-popover-content-available-height {
+.max-h-radix-popover-content-available {
     max-height: var(--radix-popover-content-available-height)
 }
-.w-radix-popover-trigger-width {
+.w-radix-popover-trigger {
     width: var(--radix-popover-trigger-width)
 }
-.h-radix-popover-trigger-height {
+.h-radix-popover-trigger {
     height: var(--radix-popover-trigger-height)
 }
-.w-radix-select {
-    width: var(--radix-select-content-available-width)
-}
-.max-w-radix-select-content-available-width {
+.max-w-radix-select-content-available {
     max-width: var(--radix-select-content-available-width)
 }
-.h-radix-select-content-available-height {
+.h-radix-select-content-available {
     height: var(--radix-select-content-available-height)
 }
-.max-h-radix-select-content-available-height {
+.max-h-radix-select-content-available {
     max-height: var(--radix-select-content-available-height)
 }
-.w-radix-select-trigger-width {
+.w-radix-select-trigger {
     width: var(--radix-select-trigger-width)
 }
-.h-radix-select-trigger-height {
+.h-radix-select-trigger {
     height: var(--radix-select-trigger-height)
 }
-.w-radix-tooltip {
-    width: var(--radix-tooltip-content-available-width)
-}
-.max-w-radix-tooltip-content-available-width {
+.max-w-radix-tooltip-content-available {
     max-width: var(--radix-tooltip-content-available-width)
 }
-.h-radix-tooltip-content-available-height {
+.h-radix-tooltip-content-available {
     height: var(--radix-tooltip-content-available-height)
 }
-.max-h-radix-tooltip-content-available-height {
+.max-h-radix-tooltip-content-available {
     max-height: var(--radix-tooltip-content-available-height)
 }
-.w-radix-tooltip-trigger-width {
+.w-radix-tooltip-trigger {
     width: var(--radix-tooltip-trigger-width)
 }
-.h-radix-tooltip-trigger-height {
+.h-radix-tooltip-trigger {
     height: var(--radix-tooltip-trigger-height)
 }"
 `;
 
-exports[`should generate stateful data attributes 1`] = `
-".radix-state-open\\:opacity-50[data-state="open"] {
-    opacity: 0.5
-}
-.group[data-state="open"] .group-radix-state-open\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer[data-state="open"] ~ .peer-radix-state-open\\:cursor-not-allowed {
-    cursor: not-allowed
-}"
-`;
-
-exports[`should generate static data attributes 1`] = `
-".radix-disabled\\:opacity-50[data-disabled] {
-    opacity: 0.5
-}
-.group[data-disabled] .group-radix-disabled\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer[data-disabled] ~ .peer-radix-disabled\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.radix-highlighted\\:opacity-50[data-highlighted] {
-    opacity: 0.5
-}
-.group[data-highlighted] .group-radix-highlighted\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer[data-highlighted] ~ .peer-radix-highlighted\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.radix-placeholder\\:opacity-50[data-placeholder] {
-    opacity: 0.5
-}
-.group[data-placeholder] .group-radix-placeholder\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer[data-placeholder] ~ .peer-radix-placeholder\\:cursor-not-allowed {
-    cursor: not-allowed
-}"
-`;
-
-exports[`should generate tooltip dimensions 1`] = `
+exports[`should generate [width|height] utilities 1`] = `
 ".w-radix-accordion-content {
     width: var(--radix-accordion-content-width)
 }
@@ -192,24 +129,12 @@ exports[`should generate tooltip dimensions 1`] = `
 }"
 `;
 
-exports[`should generate tooltip transoforms 1`] = `
-".translate-x-radix-toast-swipe-end-x {
-    transform: translateX(var(--radix-toast-swipe-end-x))
-}
-.translate-y-radix-toast-swipe-end-y {
-    transform: translateY(var(--radix-toast-swipe-end-y))
-}
-.translate-x-radix-toast-swipe-move-x {
-    transform: translateX(var(--radix-toast-swipe-move-x))
-}
-.translate-y-radix-toast-swipe-move-y {
-    transform: translateY(var(--radix-toast-swipe-move-y))
-}"
-`;
-
-exports[`should generate transform origins 1`] = `
+exports[`should generate \`content-transform-origin\` utilities 1`] = `
 ".origin-radix-context-menu {
     transform-origin: var(--radix-context-menu-content-transform-origin)
+}
+.origin-radix-dropdown-menu {
+    transform-origin: var(--radix-dropdown-menu-content-transform-origin)
 }
 .origin-radix-hover-card {
     transform-origin: var(--radix-hover-card-content-transform-origin)
@@ -225,5 +150,38 @@ exports[`should generate transform origins 1`] = `
 }
 .origin-radix-tooltip {
     transform-origin: var(--radix-tooltip-content-transform-origin)
+}"
+`;
+
+exports[`should generate tooltip transform utilities 1`] = `
+".translate-x-radix-toast-swipe-end-x {
+    transform: translateX(var(--radix-toast-swipe-end-x))
+}
+.translate-y-radix-toast-swipe-end-y {
+    transform: translateY(var(--radix-toast-swipe-end-y))
+}
+.translate-x-radix-toast-swipe-move-x {
+    transform: translateX(var(--radix-toast-swipe-move-x))
+}
+.translate-y-radix-toast-swipe-move-y {
+    transform: translateY(var(--radix-toast-swipe-move-y))
+}"
+`;
+
+exports[`should generate value data attribute variants 1`] = `
+".radix-state-open\\:opacity-50[data-state="open"] {
+    opacity: 0.5
+}
+.group\\/named[data-state="open"] .group-radix-state-open\\/named\\:cursor-not-allowed {
+    cursor: not-allowed
+}
+.group[data-state="open"] .group-radix-state-open\\:cursor-not-allowed {
+    cursor: not-allowed
+}
+.peer\\/named[data-state="open"] ~ .peer-radix-state-open\\/named\\:cursor-not-allowed {
+    cursor: not-allowed
+}
+.peer[data-state="open"] ~ .peer-radix-state-open\\:cursor-not-allowed {
+    cursor: not-allowed
 }"
 `;

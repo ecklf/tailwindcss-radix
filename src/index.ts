@@ -6,7 +6,7 @@ interface Options {
 
 export = plugin.withOptions<Options>(
   (options) =>
-    ({ addUtilities, addVariant, e }) => {
+    ({ addUtilities, matchVariant }) => {
       options = options
         ? options
         : {
@@ -18,18 +18,50 @@ export = plugin.withOptions<Options>(
         (typeof options.variantPrefix === "boolean" &&
           options.variantPrefix === false)
           ? ""
-          : `${options.variantPrefix}-`;
+          : `${options.variantPrefix}`;
 
-      (["disabled", "highlighted", "placeholder"] as const).forEach(
-        (attributeValue) => {
-          let variantName = `${variantPrefix}${attributeValue}`;
-          let selector = `data-${attributeValue}`;
-          addVariant(variantName, `&[${selector}]`);
-          addVariant(`group-${variantName}`, `:merge(.group)[${selector}] &`);
-          addVariant(`peer-${variantName}`, `:merge(.peer)[${selector}] ~ &`);
+      // Adds variants for boolean data attributes
+      const booleanAttributes = {
+        disabled: "disabled",
+        highlighted: "highlighted",
+        placeholder: "placeholder",
+      } as const;
+
+      matchVariant(
+        variantPrefix,
+        (value) => {
+          return `&[data-${value}]`;
+        },
+        {
+          values: booleanAttributes,
         }
       );
 
+      matchVariant(
+        `group-${variantPrefix}`,
+        (value, { modifier }) => {
+          return modifier
+            ? `:merge(.group\\/${modifier})[data-${value}] &`
+            : `:merge(.group)[data-${value}] &`;
+        },
+        {
+          values: booleanAttributes,
+        }
+      );
+
+      matchVariant(
+        `peer-${variantPrefix}`,
+        (value, { modifier }) => {
+          return modifier
+            ? `:merge(.peer\\/${modifier})[data-${value}] ~ &`
+            : `:merge(.peer)[data-${value}] ~ &`;
+        },
+        {
+          values: booleanAttributes,
+        }
+      );
+
+      // Adds variants for value data attributes
       Object.entries({
         align: ["center", "end", "start"],
         state: [
@@ -53,39 +85,43 @@ export = plugin.withOptions<Options>(
         swipe: ["cancel", "end", "move", "start"],
         "swipe-direction": ["down", "left", "right", "up"],
       } as const).forEach(([attributeName, attributeValues]) => {
-        attributeValues.forEach((attributeValue) => {
-          let variantName = `${variantPrefix}${attributeName}-${attributeValue}`;
-          let selector = `data-${attributeName}="${attributeValue}"`;
-          addVariant(variantName, `&[${selector}]`);
-          addVariant(`group-${variantName}`, `:merge(.group)[${selector}] &`);
-          addVariant(`peer-${variantName}`, `:merge(.peer)[${selector}] ~ &`);
-        });
-      });
+        const values = Object.fromEntries(
+          attributeValues.map((item) => [item, item])
+        );
 
-      // Adds the following transform origin utilities
-      // `--radix-context-menu-content-transform-origin`,
-      // `--radix-dropdown-menu-content-transform-origin`,
-      // `--radix-hover-card-content-transform-origin `,
-      // `--radix-menubar-content-transform-origin`
-      // `--radix-popover-content-transform-origin`,
-      // `--radix-select-content-transform-origin`,
-      // `--radix-tooltip-content-transform-origin`,
-      (
-        [
-          "context-menu",
-          "dropdown-menu",
-          "hover-card",
-          "menubar",
-          "popover",
-          "select",
-          "tooltip",
-        ] as const
-      ).forEach((transformOrigin) => {
-        addUtilities({
-          [`.origin-${variantPrefix}${transformOrigin}`]: {
-            "transform-origin": `var(--radix-${transformOrigin}-content-transform-origin)`,
+        matchVariant(
+          `${variantPrefix}-${attributeName}`,
+          (value) => {
+            return `&[data-${attributeName}="${value}"]`;
           },
-        });
+          {
+            values,
+          }
+        );
+
+        matchVariant(
+          `group-${variantPrefix}-${attributeName}`,
+          (value, { modifier }) => {
+            return modifier
+              ? `:merge(.group\\/${modifier})[data-${attributeName}="${value}"] &`
+              : `:merge(.group)[data-${attributeName}="${value}"] &`;
+          },
+          {
+            values,
+          }
+        );
+
+        matchVariant(
+          `peer-${variantPrefix}-${attributeName}`,
+          (value, { modifier }) => {
+            return modifier
+              ? `:merge(.peer\\/${modifier})[data-${attributeName}="${value}"] ~ &`
+              : `:merge(.peer)[data-${attributeName}="${value}"] ~ &`;
+          },
+          {
+            values,
+          }
+        );
       });
 
       // Adds the following [width|height] utilities
@@ -98,15 +134,15 @@ export = plugin.withOptions<Options>(
           "collapsible-content",
           "navigation-menu-viewport",
         ] as const
-      ).forEach((component) => {
+      ).forEach((kind) => {
         addUtilities({
-          [`.w-${variantPrefix}${component}`]: {
-            width: `var(--radix-${component}-width)`,
+          [`.w-${variantPrefix}-${kind}`]: {
+            width: `var(--radix-${kind}-width)`,
           },
         });
         addUtilities({
-          [`.h-${variantPrefix}${component}`]: {
-            height: `var(--radix-${component}-height)`,
+          [`.h-${variantPrefix}-${kind}`]: {
+            height: `var(--radix-${kind}-height)`,
           },
         });
       });
@@ -138,33 +174,59 @@ export = plugin.withOptions<Options>(
         ] as const
       ).forEach((component) => {
         addUtilities({
-          [`.w-${variantPrefix}${component}`]: {
+          [`.w-${variantPrefix}-${component}-content-available`]: {
             width: `var(--radix-${component}-content-available-width)`,
           },
         });
         addUtilities({
-          [`.max-w-${variantPrefix}${component}-content-available-width`]: {
+          [`.max-w-${variantPrefix}-${component}-content-available`]: {
             maxWidth: `var(--radix-${component}-content-available-width)`,
           },
         });
         addUtilities({
-          [`.h-${variantPrefix}${component}-content-available-height`]: {
+          [`.h-${variantPrefix}-${component}-content-available`]: {
             height: `var(--radix-${component}-content-available-height)`,
           },
         });
         addUtilities({
-          [`.max-h-${variantPrefix}${component}-content-available-height`]: {
+          [`.max-h-${variantPrefix}-${component}-content-available`]: {
             maxHeight: `var(--radix-${component}-content-available-height)`,
           },
         });
         addUtilities({
-          [`.w-${variantPrefix}${component}-trigger-width`]: {
+          [`.w-${variantPrefix}-${component}-trigger`]: {
             width: `var(--radix-${component}-trigger-width)`,
           },
         });
         addUtilities({
-          [`.h-${variantPrefix}${component}-trigger-height`]: {
+          [`.h-${variantPrefix}-${component}-trigger`]: {
             height: `var(--radix-${component}-trigger-height)`,
+          },
+        });
+      });
+
+      // Adds the following content-transform-origin utilities
+      // `--radix-context-menu-content-transform-origin`,
+      // `--radix-dropdown-menu-content-transform-origin`,
+      // `--radix-hover-card-content-transform-origin `,
+      // `--radix-menubar-content-transform-origin`
+      // `--radix-popover-content-transform-origin`,
+      // `--radix-select-content-transform-origin`,
+      // `--radix-tooltip-content-transform-origin`
+      (
+        [
+          "context-menu",
+          "dropdown-menu",
+          "hover-card",
+          "menubar",
+          "popover",
+          "select",
+          "tooltip",
+        ] as const
+      ).forEach((component) => {
+        addUtilities({
+          [`.origin-${variantPrefix}-${component}`]: {
+            "transform-origin": `var(--radix-${component}-content-transform-origin)`,
           },
         });
       });
@@ -172,19 +234,17 @@ export = plugin.withOptions<Options>(
       // Adds the following [x|y] utilities
       // `--radix-toast-swipe-end-[x|y]`,
       // `--radix-toast-swipe-move-[x|y]`,
-      (["toast-swipe-end", "toast-swipe-move"] as const).forEach(
-        (component) => {
-          addUtilities({
-            [`.translate-x-${variantPrefix}${component}-x`]: {
-              transform: `translateX(var(--radix-${component}-x))`,
-            },
-          });
-          addUtilities({
-            [`.translate-y-${variantPrefix}${component}-y`]: {
-              transform: `translateY(var(--radix-${component}-y))`,
-            },
-          });
-        }
-      );
+      (["toast-swipe-end", "toast-swipe-move"] as const).forEach((swipe) => {
+        addUtilities({
+          [`.translate-x-${variantPrefix}-${swipe}-x`]: {
+            transform: `translateX(var(--radix-${swipe}-x))`,
+          },
+        });
+        addUtilities({
+          [`.translate-y-${variantPrefix}-${swipe}-y`]: {
+            transform: `translateY(var(--radix-${swipe}-y))`,
+          },
+        });
+      });
     }
 );
