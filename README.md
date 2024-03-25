@@ -21,7 +21,7 @@
 
 ## What is this?
 
-The main purpose of this library adding classnames for accessing Radix data attributes, which gains you the benefit of auto-completion compared to using `data-*` variants.
+The main purpose of this library is adding classnames for accessing Radix data attributes, which gains you the benefit of auto-completion compared to using `data-*` variants.
 
 **TL;DR** It's [@headlessui-tailwindcss](https://github.com/tailwindlabs/headlessui/tree/main/packages/@headlessui-tailwindcss) for Radix.
 
