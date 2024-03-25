@@ -381,8 +381,6 @@ const ContextMenu = () => {
 
 #### Toast swiping
 
-Use the generated `translate-*` utilities to animate swipe gestures.
-
 ```css
 .translate-x-radix-toast-swipe-end-x {
   transform: translateX(var(--radix-toast-swipe-end-x));
