@@ -1,4 +1,4 @@
-(function () {
+(() => {
   function changeTheme(newTheme) {
     window.__theme = newTheme;
     if (newTheme === "light") {
@@ -16,15 +16,15 @@
     }
   }
 
-  var prefersDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  var preferredTheme;
+  const prefersDarkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  let preferredTheme;
 
   try {
     // Obtain the local user theme setting if available
     preferredTheme = localStorage.getItem("theme");
   } catch (error) {}
 
-  window.__setPreferredTheme = function (newTheme) {
+  window.__setPreferredTheme = (newTheme) => {
     if (newTheme !== "system") {
       changeTheme(newTheme);
     } else {
@@ -36,7 +36,7 @@
     } catch (err) {}
   };
 
-  prefersDarkQuery.addEventListener("change", function (e) {
+  prefersDarkQuery.addEventListener("change", () => {
     // window.__setPreferredTheme(e.matches ? "dark" : "light");
     window.__setPreferredTheme("system");
   });

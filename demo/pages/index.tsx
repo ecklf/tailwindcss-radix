@@ -1,7 +1,7 @@
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { clsx } from "clsx";
 import GitHubButton from "react-github-btn";
 import { Accordion } from "../components/accordion";
@@ -228,6 +228,7 @@ const Hero = () => {
         viewBox="0 0 248 31"
         className="h-4 w-auto text-gray-900 dark:text-white"
       >
+        <title>tailwindcss-radix</title>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -251,6 +252,7 @@ const Hero = () => {
             marginRight: 3,
           }}
         >
+          <title>tailwindcss-radix</title>
           <path
             d="M12 25a8 8 0 1 1 0-16v16ZM12 0H4v8h8V0ZM17 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
             fill="currentcolor"
@@ -263,6 +265,7 @@ const Hero = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <title>tailwindcss-radix</title>
           <path
             d="M21.902 17.006h2.548c-.185-.968-.28-1.89-.28-3v-4.63c0-3.12-1.78-4.655-4.976-4.655-2.894 0-4.862 1.512-5.116 4.087h2.847c.093-1.11.88-1.842 2.177-1.842 1.343 0 2.222.708 2.222 2.173v.567l-3.519.402c-2.384.283-4.237 1.275-4.237 3.685 0 2.174 1.667 3.473 3.96 3.473 1.875 0 3.457-.78 4.112-2.15.029.821.262 1.89.262 1.89Zm-3.564-1.843c-1.181 0-1.83-.59-1.83-1.535 0-1.252.95-1.536 2.2-1.701l2.616-.307v.732c0 1.89-1.458 2.811-2.986 2.811Zm15.92 1.843h2.918V0h-2.964v6.966c-.555-1.205-1.898-2.245-3.727-2.245-3.18 0-5.386 2.575-5.386 6.284 0 3.733 2.207 6.285 5.386 6.285 1.783 0 3.195-.993 3.774-2.197v1.913Zm.024-5.788c0 2.339-1.088 3.85-2.963 3.85-1.922 0-3.133-1.582-3.133-4.063 0-2.457 1.21-4.063 3.133-4.063 1.875 0 2.963 1.512 2.963 3.85v.426Zm4.625-8.245h3.148V.02h-3.148v2.953Zm.092 14.033h2.964V5.005h-2.964v12.001Zm6.665 0 2.94-4.11 2.917 4.11h3.404l-4.561-6.284 4.19-5.717h-3.172l-2.616 3.709-2.593-3.71H42.77l4.237 5.86-4.515 6.142h3.172Z"
             fill="currentcolor"
@@ -299,7 +302,7 @@ const Hero = () => {
                     "inline-flex select-none justify-center rounded-md px-2 py-1.5 text-sm font-medium",
                     "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
                     "border border-gray-300 dark:border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
                   <QuestionMarkCircleIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
@@ -313,7 +316,7 @@ const Hero = () => {
                   "radix-side-bottom:animate-slide-up-fade",
                   "radix-side-left:animate-slide-right-fade",
                   "inline-flex items-center rounded-md px-4 py-2.5",
-                  "bg-white dark:bg-gray-800",
+                  "bg-white dark:bg-gray-800"
                 )}
               >
                 <TooltipPrimitive.Arrow className="fill-current text-white dark:text-gray-800" />
@@ -384,11 +387,11 @@ const Demo = () => {
             if (newWindow) setTimeout(() => newWindow.focus(), 10);
           } else {
             const element = document.getElementById(
-              item.label.replace(" ", "_").toLowerCase(),
+              item.label.replace(" ", "_").toLowerCase()
             );
             if (element) {
               requestAnimationFrame(() =>
-                element.scrollIntoView({ behavior: "smooth" }),
+                element.scrollIntoView({ behavior: "smooth" })
               );
             }
           }
@@ -396,10 +399,10 @@ const Demo = () => {
       />
 
       <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
-        {RADIX_COMPONENTS.map(({ label, link, component, center }, i) => (
+        {RADIX_COMPONENTS.map(({ label, link, component, center }) => (
           <DemoCard
             variant={center && DemoCard.variant.JustifyCenter}
-            key={`${label}-${i}`}
+            key={`demo-card-${label}`}
             data={{
               title: label,
               link: link,

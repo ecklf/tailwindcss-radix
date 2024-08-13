@@ -2,9 +2,7 @@ import * as ProgressPrimitive from "@radix-ui/react-progress";
 import React, { useEffect } from "react";
 import { getRandomArbitrary } from "../utils/math";
 
-interface ProgressProps {}
-
-const Progress = (props: ProgressProps) => {
+const Progress = () => {
   const [progress, setProgress] = React.useState(60);
 
   useEffect(() => {

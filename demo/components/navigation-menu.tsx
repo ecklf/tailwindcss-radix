@@ -2,9 +2,7 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { clsx } from "clsx";
 import React from "react";
 
-type NavigationMenuProps = {};
-
-const NavigationMenu = (props: NavigationMenuProps) => {
+const NavigationMenu = () => {
   return (
     <NavigationMenuPrimitive.Root className="relative">
       <NavigationMenuPrimitive.List className="flex flex-row rounded-lg bg-white dark:bg-gray-800 p-2 space-x-2">
@@ -14,7 +12,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium",
               "text-gray-700 dark:text-gray-100",
-              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             Overview
@@ -26,18 +24,18 @@ const NavigationMenu = (props: NavigationMenuProps) => {
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
               "radix-motion-to-start:animate-exit-to-left",
-              "radix-motion-to-end:animate-exit-to-right",
+              "radix-motion-to-end:animate-exit-to-right"
             )}
           >
             <div className="w-[21rem] lg:w-[23rem] p-3">
               <div className="grid grid-cols-6 gap-4">
-                <div className="col-span-2 w-full bg-gray-100 dark:bg-gray-900 p-4 rounded-md"></div>
+                <div className="col-span-2 w-full bg-gray-100 dark:bg-gray-900 p-4 rounded-md" />
 
                 <div className="col-span-4 w-full flex flex-col space-y-3 bg-gray-100 dark:bg-gray-900 p-4 rounded-md">
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md"></div>
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md"></div>
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md"></div>
-                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md"></div>
+                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
+                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
+                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
+                  <div className="w-full bg-white dark:bg-gray-700 h-12 rounded-md" />
                 </div>
               </div>
             </div>
@@ -49,7 +47,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium text-gray-700 dark:text-gray-100",
-              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             Resources
@@ -61,7 +59,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
               "radix-motion-from-start:animate-enter-from-left",
               "radix-motion-from-end:animate-enter-from-right",
               "radix-motion-to-start:animate-exit-to-left",
-              "radix-motion-to-end:animate-exit-to-right",
+              "radix-motion-to-end:animate-exit-to-right"
             )}
           >
             <div className="w-[16rem] lg:w-[18rem] p-3">
@@ -69,7 +67,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
                 <NavigationMenuPrimitive.Link
                   className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://tailwindcss.com"
                 >
@@ -86,7 +84,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
                 <NavigationMenuPrimitive.Link
                   className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://www.radix-ui.com"
                 >
@@ -109,7 +107,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
             href="https://github.com/ecklf/tailwindcss-radix"
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
-              "text-sm font-medium text-gray-700 dark:text-gray-100",
+              "text-sm font-medium text-gray-700 dark:text-gray-100"
             )}
           >
             GitHub
@@ -122,7 +120,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
             "top-[100%] flex items-end justify-center h-2 overflow-hidden",
             "radix-state-visible:animate-fade-in",
             "radix-state-hidden:animate-fade-out",
-            "transition-[width_transform] duration-[250ms] ease-[ease]",
+            "transition-[width_transform] duration-[250ms] ease-[ease]"
           )}
         >
           <div className="top-1 relative bg-white dark:bg-gray-800 w-2 h-2 rotate-45" />
@@ -132,7 +130,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
       <div
         className={clsx(
           "absolute flex justify-center",
-          "w-[140%] left-[-20%] top-[100%]",
+          "w-[140%] left-[-20%] top-[100%]"
         )}
         style={{
           perspective: "2000px",
@@ -145,7 +143,7 @@ const NavigationMenu = (props: NavigationMenuProps) => {
             "h-radix-navigation-menu-viewport",
             "radix-state-open:animate-scale-in-content",
             "radix-state-closed:animate-scale-out-content",
-            "origin-[top_center] transition-[width_height] duration-300 ease-[ease]",
+            "origin-[top_center] transition-[width_height] duration-300 ease-[ease]"
           )}
         />
       </div>

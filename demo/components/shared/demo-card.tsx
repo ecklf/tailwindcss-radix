@@ -1,10 +1,10 @@
 import { clsx } from "clsx";
-import React, { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 enum Variant {
-  Default,
-  ItemsCenter,
-  JustifyCenter,
+  Default = 0,
+  ItemsCenter = 1,
+  JustifyCenter = 2,
 }
 
 type DemoCardProps = {
@@ -37,7 +37,7 @@ const DemoCard = ({
             [Variant.Default]: "items-center justify-center",
             [Variant.ItemsCenter]: "items-center",
             [Variant.JustifyCenter]: "justify-center pt-24", // Height of title bar
-          }[variant],
+          }[variant]
         )}
       >
         {children}

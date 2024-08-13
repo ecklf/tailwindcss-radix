@@ -1,69 +1,7 @@
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import {
-  CropIcon,
-  FileIcon,
-  FrameIcon,
-  Half2Icon,
-  MixerHorizontalIcon,
-  MoonIcon,
-  SunIcon,
-} from "@radix-ui/react-icons";
+import { Half2Icon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
-import React, { ReactNode, useEffect, useState } from "react";
-
-interface RadixMenuItem {
-  label: string;
-  shortcut?: string;
-  icon?: ReactNode;
-}
-
-interface User {
-  name: string;
-  url?: string;
-}
-
-const generalMenuItems: RadixMenuItem[] = [
-  {
-    label: "New File",
-    icon: <FileIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+N",
-  },
-  {
-    label: "Settings",
-    icon: <MixerHorizontalIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+,",
-  },
-];
-
-const regionToolMenuItems: RadixMenuItem[] = [
-  {
-    label: "Frame",
-    icon: <FrameIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+F",
-  },
-  {
-    label: "Crop",
-    icon: <CropIcon className="mr-2 h-3.5 w-3.5" />,
-    shortcut: "⌘+S",
-  },
-];
-
-const users: User[] = [
-  {
-    name: "Adam",
-    url: "https://github.com/adamwathan.png",
-  },
-  {
-    name: "Steve",
-    url: "https://github.com/steveschoger.png",
-  },
-  {
-    name: "Robin",
-    url: "https://github.com/robinmalfait.png",
-  },
-];
-
-interface ThemeSwitcherProps {}
+import React, { useEffect, useState } from "react";
 
 const themes = [
   {
@@ -84,12 +22,12 @@ const themes = [
   },
 ];
 
-const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+const ThemeSwitcher = () => {
   const [preferredTheme, setPreferredTheme] = useState<null | string>(null);
 
   useEffect(() => {
     try {
-      let found = localStorage.getItem("theme");
+      const found = localStorage.getItem("theme");
       setPreferredTheme(found);
     } catch (error) {}
   }, []);
@@ -114,10 +52,10 @@ const ThemeSwitcher = (props: ThemeSwitcherProps) => {
             "inline-flex select-none justify-center rounded-md px-2.5 py-2 text-sm font-medium",
             "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
             "border border-gray-300 dark:border-transparent",
-            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
-          {(function () {
+          {(() => {
             switch (preferredTheme) {
               case "light":
                 return (
@@ -143,19 +81,23 @@ const ThemeSwitcher = (props: ThemeSwitcherProps) => {
             className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
-              "bg-gray-50 dark:bg-gray-800",
+              "bg-gray-50 dark:bg-gray-800"
             )}
           >
-            {themes.map(({ key, label, icon }, i) => {
+            {themes.map(({ key, label, icon }) => {
               return (
                 <DropdownMenuPrimitive.Item
-                  key={`theme-${i}`}
+                  key={`dropdown-theme-${label}`}
                   className={clsx(
                     "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                    "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-700",
+                    "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-700"
                   )}
                   onClick={() => {
-                    (window as any).__setPreferredTheme(key);
+                    (
+                      window as unknown as Window & {
+                        __setPreferredTheme: (key: string) => void;
+                      }
+                    ).__setPreferredTheme(key);
                     setPreferredTheme(key);
                   }}
                 >

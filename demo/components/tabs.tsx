@@ -23,9 +23,7 @@ const tabs: Tab[] = [
   },
 ];
 
-interface TabsProps {}
-
-const Tabs = (props: TabsProps) => {
+const Tabs = () => {
   return (
     <TabsPrimitive.Root defaultValue="tab1">
       <TabsPrimitive.List
@@ -43,13 +41,13 @@ const Tabs = (props: TabsProps) => {
               "radix-state-active:border-b-gray-700 focus-visible:radix-state-active:border-b-transparent radix-state-inactive:bg-gray-50 dark:radix-state-active:border-b-gray-100 dark:radix-state-active:bg-gray-900 focus-visible:dark:radix-state-active:border-b-transparent dark:radix-state-inactive:bg-gray-800",
               "flex-1 px-3 py-2.5",
               "focus:radix-state-active:border-b-red",
-              "focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+              "focus:z-10 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             <span
               className={clsx(
                 "text-sm font-medium",
-                "text-gray-700 dark:text-gray-100",
+                "text-gray-700 dark:text-gray-100"
               )}
             >
               {title}

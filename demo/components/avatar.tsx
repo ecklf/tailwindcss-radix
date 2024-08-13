@@ -4,8 +4,8 @@ import React, { Fragment } from "react";
 import { getRandomInitials } from "../utils/random";
 
 enum Variant {
-  Circle,
-  Rounded,
+  Circle = 0,
+  Rounded = 1,
 }
 
 type AvatarProps = {
@@ -14,7 +14,7 @@ type AvatarProps = {
   isOnline?: boolean;
 };
 
-let users = [
+const users = [
   "https://images.unsplash.com/photo-1573607217032-18299406d100?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80",
   "https://images.unsplash.com/photo-1594089426440-ab4513b4d0d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
   "https://images.unsplash.com/photo-1549237511-6b64e006ce65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
@@ -32,9 +32,9 @@ const Avatar = ({
 
   return (
     <Fragment>
-      {urls.map((src, i) => (
+      {urls.map((src) => (
         <AvatarPrimitive.Root
-          key={`avatar-${i}-{src}`}
+          key={`avatar-${src}`}
           className="relative inline-flex h-10 w-10"
         >
           <AvatarPrimitive.Image
@@ -45,7 +45,7 @@ const Avatar = ({
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
-              }[variant],
+              }[variant]
             )}
           />
           {isOnline && (
@@ -55,7 +55,7 @@ const Avatar = ({
                 {
                   [Variant.Circle]: "-translate-x-1/2 -translate-y-1/2",
                   [Variant.Rounded]: "",
-                }[variant],
+                }[variant]
               )}
             >
               <span className="block h-2.5 w-2.5 rounded-full bg-green-400" />
@@ -67,7 +67,7 @@ const Avatar = ({
               {
                 [Variant.Circle]: "rounded-full",
                 [Variant.Rounded]: "rounded",
-              }[variant],
+              }[variant]
             )}
             delayMs={600}
           >

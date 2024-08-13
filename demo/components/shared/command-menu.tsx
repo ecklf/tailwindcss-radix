@@ -62,7 +62,7 @@ function CommandMenu<T extends { label: string }>({
         "fixed top-[20%] left-1/2 transform -translate-x-1/2",
         "w-full sm:max-w-lg md:max-w-xl",
         "bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl",
-        "rounded-lg shadow-lg",
+        "rounded-lg shadow-lg"
       )}
       open={open}
       onOpenChange={setOpen}
@@ -75,10 +75,15 @@ function CommandMenu<T extends { label: string }>({
             "bg-transparent",
             "block w-full",
             "text-sm font-medium text-gray-700 dark:text-gray-300 placeholder:text-gray-600 dark:placeholder:text-gray-500",
-            "focus:outline-none border-none focus:border-transparent focus-visible:ring-transparent",
+            "focus:outline-none border-none focus:border-transparent focus-visible:ring-transparent"
           )}
         />
         <kbd
+          onKeyPress={(e) => {
+            if (e.key === "Escape") {
+              setOpen(false);
+            }
+          }}
           onClick={() => setOpen(false)}
           className="select-none hover:cursor-pointer w-auto h-5 flex items-center justify-center absolute rounded-md text-[0.6rem] right-5 top-1/2 text-gray-700 dark:text-gray-300 font-bold -translate-y-1/2 bg-black/10 dark:bg-white/10 px-1.5 leading-none"
         >
@@ -113,7 +118,7 @@ function CommandMenu<T extends { label: string }>({
               "cursor-pointer",
               "flex items-center rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium",
               "aria-selected:bg-black/10 dark:aria-selected:bg-white/10",
-              "focus:outline-none select-none",
+              "focus:outline-none select-none"
             )}
           >
             {item.label}
@@ -127,6 +132,7 @@ function CommandMenu<T extends { label: string }>({
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
+          <title>I am an SVG</title>
           <path d="M24 22.525H0l12-21.05 12 21.05z" />
         </svg>
 

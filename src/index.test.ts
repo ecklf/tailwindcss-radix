@@ -1,13 +1,13 @@
-import path from "path";
+import path from "node:path";
 import postcss from "postcss";
-import tailwind from "tailwindcss";
+import tailwind, { type Config } from "tailwindcss";
 import { expect, it } from "vitest";
 import radix from "./index";
 
-let html = String.raw;
+const html = String.raw;
 
-function run(input: string, config: any, plugin = tailwind) {
-  let { currentTestName } = expect.getState();
+function run(input: string, config: Config, plugin = tailwind) {
+  const { currentTestName } = expect.getState();
 
   return postcss(plugin(config)).process(input, {
     from: `${path.resolve(__filename)}?test=${currentTestName}`,
@@ -15,7 +15,7 @@ function run(input: string, config: any, plugin = tailwind) {
 }
 
 it("should generate boolean data attribute variants", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -58,7 +58,7 @@ it("should generate boolean data attribute variants", async () => {
 });
 
 it("should generate value data attribute variants", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -85,7 +85,7 @@ it("should generate value data attribute variants", async () => {
 });
 
 it("should generate [width|height] utilities", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -107,7 +107,7 @@ it("should generate [width|height] utilities", async () => {
 });
 
 it("should generate [width|height] `content-available` utilities", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -157,7 +157,7 @@ it("should generate [width|height] `content-available` utilities", async () => {
 });
 
 it("should generate [width|height] `trigger` utilities", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -193,7 +193,7 @@ it("should generate [width|height] `trigger` utilities", async () => {
 });
 
 it("should generate `content-transform-origin` utilities", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`
@@ -216,7 +216,7 @@ it("should generate `content-transform-origin` utilities", async () => {
 });
 
 it("should generate tooltip transform utilities", async () => {
-  let config = {
+  const config = {
     content: [
       {
         raw: html`

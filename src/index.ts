@@ -10,12 +10,12 @@ export = plugin.withOptions<Options>(
       const ops = options
         ? options
         : {
-          variantPrefix: "radix",
-        };
+            variantPrefix: "radix",
+          };
 
       const variantPrefix =
         ops.variantPrefix === "" ||
-          (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
+        (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
           ? ""
           : `${ops.variantPrefix}`;
 

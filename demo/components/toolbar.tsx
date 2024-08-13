@@ -8,7 +8,7 @@ import {
 } from "@radix-ui/react-icons";
 import * as ToolbarPrimitive from "@radix-ui/react-toolbar";
 import { clsx } from "clsx";
-import React, { ReactElement } from "react";
+import React, { type ReactElement } from "react";
 
 interface ToggleItem {
   value: string;
@@ -52,9 +52,7 @@ const textSettings: ToggleItem[] = [
   },
 ];
 
-interface ToolbarProps {}
-
-const Toolbar = (props: ToolbarProps) => {
+const Toolbar = () => {
   return (
     <ToolbarPrimitive.Root className="flex space-x-4 rounded-lg bg-white px-2.5 py-2 dark:bg-gray-800">
       <ToolbarPrimitive.ToggleGroup type="multiple" aria-label="Font settings">
@@ -68,7 +66,7 @@ const Toolbar = (props: ToolbarProps) => {
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
               "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
-              "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+              "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             {React.cloneElement(icon, {
@@ -93,7 +91,7 @@ const Toolbar = (props: ToolbarProps) => {
               "bg-white dark:bg-gray-800",
               "border-y px-2.5 py-2 first:rounded-l-md first:border-x last:rounded-r-md last:border-x",
               "border-gray-200 radix-state-on:border-transparent dark:border-gray-600 dark:radix-state-on:border-transparent",
-              "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+              "focus:relative focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             {React.cloneElement(icon, {
@@ -109,7 +107,7 @@ const Toolbar = (props: ToolbarProps) => {
         <ToolbarPrimitive.Link
           className={clsx(
             "text-sm text-gray-500 dark:text-gray-400",
-            "focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+            "focus:outline-none focus-visible:z-20 focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
           href="https://github.com/ecklf/tailwindcss-radix"
           target="_blank"

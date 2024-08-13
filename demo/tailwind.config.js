@@ -96,23 +96,23 @@ module.exports = {
           "100%": { opacity: 0 },
         },
         "toast-slide-in-right": {
-          "0%": { transform: `translateX(calc(100% + 1rem))` },
+          "0%": { transform: "translateX(calc(100% + 1rem))" },
           "100%": { transform: "translateX(0)" },
         },
         "toast-slide-in-bottom": {
-          "0%": { transform: `translateY(calc(100% + 1rem))` },
+          "0%": { transform: "translateY(calc(100% + 1rem))" },
           "100%": { transform: "translateY(0)" },
         },
         "toast-swipe-out-x": {
           "0%": { transform: "translateX(var(--radix-toast-swipe-end-x))" },
           "100%": {
-            transform: `translateX(calc(100% + 1rem))`,
+            transform: "translateX(calc(100% + 1rem))",
           },
         },
         "toast-swipe-out-y": {
           "0%": { transform: "translateY(var(--radix-toast-swipe-end-y))" },
           "100%": {
-            transform: `translateY(calc(100% + 1rem))`,
+            transform: "translateY(calc(100% + 1rem))",
           },
         },
       },

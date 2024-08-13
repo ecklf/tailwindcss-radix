@@ -14,7 +14,7 @@ import {
   TransparencyGridIcon,
 } from "@radix-ui/react-icons";
 import { clsx } from "clsx";
-import React, { ReactNode, useState } from "react";
+import React, { type ReactNode, useState } from "react";
 import Button from "./shared/button";
 
 interface RadixMenuItem {
@@ -69,11 +69,9 @@ const users: User[] = [
   },
 ];
 
-interface ContextMenuProps {}
-
-const ContextMenu = (props: ContextMenuProps) => {
-  const [showGrid, setShowGrid] = useState(false);
-  const [showUi, setShowUi] = useState(false);
+const ContextMenu = () => {
+  const [showGrid, setShowGrid] = useState<boolean>(false);
+  const [showUi, setShowUi] = useState<boolean>(false);
 
   return (
     <div>
@@ -87,15 +85,15 @@ const ContextMenu = (props: ContextMenuProps) => {
             className={clsx(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
-              "bg-white dark:bg-gray-800",
+              "bg-white dark:bg-gray-800"
             )}
           >
-            {generalMenuItems.map(({ label, icon, shortcut }, i) => (
+            {generalMenuItems.map(({ label, icon, shortcut }) => (
               <ContextMenuPrimitive.Item
-                key={`${label}-${i}`}
+                key={`context-item-${label}`}
                 className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 {icon}
@@ -111,11 +109,13 @@ const ContextMenu = (props: ContextMenuProps) => {
             <ContextMenuPrimitive.CheckboxItem
               checked={showGrid}
               onCheckedChange={(state) => {
-                setShowGrid(state);
+                if (typeof state === "boolean") {
+                  setShowGrid(state);
+                }
               }}
               className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {showGrid ? (
@@ -134,11 +134,13 @@ const ContextMenu = (props: ContextMenuProps) => {
             <ContextMenuPrimitive.CheckboxItem
               checked={showUi}
               onCheckedChange={(state) => {
-                setShowUi(state);
+                if (typeof state === "boolean") {
+                  setShowUi(state);
+                }
               }}
               className={clsx(
                 "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
               {showUi ? (
@@ -160,12 +162,12 @@ const ContextMenu = (props: ContextMenuProps) => {
               Region Tools
             </ContextMenuPrimitive.Label>
 
-            {regionToolMenuItems.map(({ label, icon, shortcut }, i) => (
+            {regionToolMenuItems.map(({ label, icon, shortcut }) => (
               <ContextMenuPrimitive.Item
-                key={`${label}-${i}`}
+                key={`region-tool-menu-item-${label}`}
                 className={clsx(
                   "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 {icon}
@@ -182,7 +184,7 @@ const ContextMenu = (props: ContextMenuProps) => {
               <ContextMenuPrimitive.SubTrigger
                 className={clsx(
                   "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
-                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                  "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 <Link2Icon className="mr-2 h-3.5 w-3.5" />
@@ -196,20 +198,21 @@ const ContextMenu = (props: ContextMenuProps) => {
                   className={clsx(
                     "origin-radix-context-menu radix-side-right:animate-scale-in",
                     "w-full rounded-md px-1 py-1 text-xs shadow-md",
-                    "bg-white dark:bg-gray-800",
+                    "bg-white dark:bg-gray-800"
                   )}
                 >
                   {users.map(({ name, url }, i) => (
                     <ContextMenuPrimitive.Item
-                      key={`${name}-${i}`}
+                      key={`context-menu-primitive-item-${name}`}
                       className={clsx(
                         "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none md:w-32",
-                        "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900",
+                        "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                       )}
                     >
                       {url ? (
                         <img
                           className="mr-2.5 h-6 w-6 rounded-full"
+                          aria-label={"just an image :)"}
                           src={url}
                         />
                       ) : (

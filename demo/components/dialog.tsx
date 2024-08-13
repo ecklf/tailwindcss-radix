@@ -5,10 +5,8 @@ import { clsx } from "clsx";
 import React, { Fragment, useState } from "react";
 import Button from "./shared/button";
 
-interface DialogProps {}
-
-const Dialog = (props: DialogProps) => {
-  let [isOpen, setIsOpen] = useState(false);
+const Dialog = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
@@ -47,7 +45,7 @@ const Dialog = (props: DialogProps) => {
                 "w-[95vw] max-w-md rounded-lg p-4 md:w-full",
                 "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
                 "bg-white dark:bg-gray-800",
-                "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
               )}
             >
               <DialogPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -75,7 +73,7 @@ const Dialog = (props: DialogProps) => {
                       "mt-1 block w-full rounded-md",
                       "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                       "border border-gray-400 focus-visible:border-transparent dark:border-gray-700 dark:bg-gray-800",
-                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   />
                 </fieldset>
@@ -95,7 +93,7 @@ const Dialog = (props: DialogProps) => {
                       "mt-1 block w-full rounded-md",
                       "text-sm text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                       "border border-gray-400 focus-visible:border-transparent dark:border-gray-700 dark:bg-gray-800",
-                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   />
                 </fieldset>
@@ -107,7 +105,7 @@ const Dialog = (props: DialogProps) => {
                     "inline-flex select-none justify-center rounded-md px-4 py-2 text-sm font-medium",
                     "bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-700 dark:text-gray-100 dark:hover:bg-purple-600",
                     "border border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
                   Save
@@ -117,7 +115,7 @@ const Dialog = (props: DialogProps) => {
               <DialogPrimitive.Close
                 className={clsx(
                   "absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1",
-                  "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+                  "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                 )}
               >
                 <Cross1Icon className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />

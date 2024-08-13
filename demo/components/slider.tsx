@@ -2,9 +2,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 import { clsx } from "clsx";
 import React from "react";
 
-interface SliderProps {}
-
-const Slider = (props: SliderProps) => {
+const Slider = () => {
   return (
     <SliderPrimitive.Root
       defaultValue={[50]}
@@ -19,7 +17,7 @@ const Slider = (props: SliderProps) => {
       <SliderPrimitive.Thumb
         className={clsx(
           "block h-5 w-5 rounded-full bg-purple-600 dark:bg-white",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       />
     </SliderPrimitive.Root>

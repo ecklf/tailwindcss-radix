@@ -8,9 +8,7 @@ import { clsx } from "clsx";
 import React from "react";
 import Button from "./shared/button";
 
-type SelectProps = {};
-
-const Select = (props: SelectProps) => {
+const Select = () => {
   return (
     <SelectPrimitive.Root defaultValue="blueberry">
       <SelectPrimitive.Trigger asChild aria-label="Food">
@@ -28,15 +26,15 @@ const Select = (props: SelectProps) => {
         <SelectPrimitive.Viewport className="bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg">
           <SelectPrimitive.Group>
             {["Apple", "Banana", "Blueberry", "Strawberry", "Grapes"].map(
-              (f, i) => (
+              (f) => (
                 <SelectPrimitive.Item
                   disabled={f === "Grapes"}
-                  key={`${f}-${i}`}
+                  key={`select-primitive-item-${f}`}
                   value={f.toLowerCase()}
                   className={clsx(
                     "relative flex items-center px-8 py-2 rounded-md text-sm text-gray-700 dark:text-gray-300 font-medium focus:bg-gray-100 dark:focus:bg-gray-900",
                     "radix-disabled:opacity-50",
-                    "focus:outline-none select-none",
+                    "focus:outline-none select-none"
                   )}
                 >
                   <SelectPrimitive.ItemText>{f}</SelectPrimitive.ItemText>
@@ -44,7 +42,7 @@ const Select = (props: SelectProps) => {
                     <CheckIcon />
                   </SelectPrimitive.ItemIndicator>
                 </SelectPrimitive.Item>
-              ),
+              )
             )}
           </SelectPrimitive.Group>
         </SelectPrimitive.Viewport>
