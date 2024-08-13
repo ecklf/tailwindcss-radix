@@ -1,24 +1,23 @@
 import plugin from "tailwindcss/plugin";
 
 interface Options {
-  variantPrefix?: string;
+  variantPrefix?: string | boolean;
 }
 
 export = plugin.withOptions<Options>(
   (options) =>
     ({ addUtilities, matchVariant }) => {
-      options = options
+      const ops = options
         ? options
         : {
-            variantPrefix: "radix",
-          };
+          variantPrefix: "radix",
+        };
 
       const variantPrefix =
-        options.variantPrefix === "" ||
-        (typeof options.variantPrefix === "boolean" &&
-          options.variantPrefix === false)
+        ops.variantPrefix === "" ||
+          (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
           ? ""
-          : `${options.variantPrefix}`;
+          : `${ops.variantPrefix}`;
 
       // Adds variants for boolean data attributes
       const booleanAttributes = {
@@ -62,7 +61,7 @@ export = plugin.withOptions<Options>(
       );
 
       // Adds variants for value data attributes
-      Object.entries({
+      for (const [attributeName, attributeValues] of Object.entries({
         align: ["center", "end", "start"],
         state: [
           "active",
@@ -84,7 +83,7 @@ export = plugin.withOptions<Options>(
         motion: ["from-end", "from-start", "to-end", "to-start"],
         swipe: ["cancel", "end", "move", "start"],
         "swipe-direction": ["down", "left", "right", "up"],
-      } as const).forEach(([attributeName, attributeValues]) => {
+      } as const)) {
         const values = Object.fromEntries(
           attributeValues.map((item) => [item, item])
         );
@@ -122,7 +121,7 @@ export = plugin.withOptions<Options>(
             values,
           }
         );
-      });
+      }
 
       // Adds the following [width|height] utilities
       // `--radix-accordion-content-[width|height]`,
