@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-radix",
-  "version": "3.0.4",
+  "version": "3.0.3",
   "description": "Utilities and variants for styling Radix state",
   "main": "dist/index.js",
   "scripts": {
