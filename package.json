@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "husky",
     "format": "npx biome format --write",
-    "test": "vitest",
+    "test": "vitest --run",
     "build": "rimraf dist/ && tsc --removeComments",
     "release": "npm run build && release-it"
   },
@@ -15,12 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/ecklf/tailwindcss-radix.git"
   },
-  "keywords": [
-    "tailwindcss",
-    "plugin",
-    "radix",
-    "react"
-  ],
+  "keywords": ["tailwindcss", "plugin", "radix", "react"],
   "author": {
     "email": "ecklf@icloud.com",
     "name": "Florentin Eckl",
