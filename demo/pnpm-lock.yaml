@@ -157,8 +157,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       tailwindcss-radix:
-        specifier: file:../
-        version: file:..(tailwindcss@4.0.0)
+        specifier: ^4.0.0
+        version: 4.0.0(tailwindcss@4.0.0)
       typescript:
         specifier: ^5.4.3
         version: 5.4.3
@@ -2323,8 +2323,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  tailwindcss-radix@file:..:
-    resolution: {directory: .., type: directory}
+  tailwindcss-radix@4.0.0:
+    resolution: {integrity: sha512-dZk/HYBNqrWtUKh4gi/BuJg4jcZa9zkuC162UqnbdYcXGw8gzGqQEhXEhxAQVlmhNht//kLcnCiGRm7JllfxaA==}
     engines: {pnpm: '9'}
     peerDependencies:
       tailwindcss: ^3.4.1
@@ -4785,7 +4785,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  tailwindcss-radix@file:..(tailwindcss@4.0.0):
+  tailwindcss-radix@4.0.0(tailwindcss@4.0.0):
     dependencies:
       tailwindcss: 4.0.0
 
