@@ -300,9 +300,9 @@ const Hero = () => {
                 <div
                   className={clsx(
                     "inline-flex select-none justify-center rounded-md px-2 py-1.5 text-sm font-medium",
-                    "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
+                    "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-800",
                     "border border-gray-300 dark:border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
                   <QuestionMarkCircleIcon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
@@ -398,7 +398,7 @@ const Demo = () => {
         }}
       />
 
-      <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-(--breakpoint-2xl) grid-cols-1 gap-4 px-4 py-8 md:gap-6 md:px-6 lg:grid-cols-2">
         {RADIX_COMPONENTS.map(({ label, link, component, center }) => (
           <DemoCard
             variant={center && DemoCard.variant.JustifyCenter}

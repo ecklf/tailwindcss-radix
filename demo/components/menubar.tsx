@@ -34,7 +34,7 @@ const MenubarTrigger = ({ children, ...rest }: MenubarTriggerProps) => (
       "px-4 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
-      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     )}
     {...rest}
   >
@@ -54,7 +54,7 @@ const MenubarSubTrigger = ({ children, ...rest }: MenubarSubTriggerProps) => (
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
-      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     )}
     {...rest}
   >
@@ -79,7 +79,7 @@ const MenubarItem = ({ children, shortcut, ...rest }: MenubarItemProps) => (
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
-      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     )}
     {...rest}
   >
@@ -111,7 +111,7 @@ const MenubarCheckboxItem = ({
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
-      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     )}
     {...rest}
   >
@@ -139,7 +139,7 @@ const MenubarRadioItem = ({ children, ...rest }: MenubarRadioItemProps) => (
       "px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
       "text-sm font-medium",
       "text-gray-700 dark:text-gray-100",
-      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
     )}
     {...rest}
   >

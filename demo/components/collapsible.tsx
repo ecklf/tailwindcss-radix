@@ -12,7 +12,7 @@ const Collapsible = () => {
         className={clsx(
           "group flex w-full select-none items-center justify-between rounded-md px-4 py-2 text-left text-sm font-medium",
           "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+          "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       >
         <div>My Playlists</div>

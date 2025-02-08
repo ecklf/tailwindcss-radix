@@ -10,12 +10,12 @@ export = plugin.withOptions<Options>(
       const ops = options
         ? options
         : {
-            variantPrefix: "radix",
-          };
+          variantPrefix: "radix",
+        };
 
       const variantPrefix =
         ops.variantPrefix === "" ||
-        (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
+          (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
           ? ""
           : `${ops.variantPrefix}`;
 
@@ -36,29 +36,29 @@ export = plugin.withOptions<Options>(
         }
       );
 
-      matchVariant(
-        `group-${variantPrefix}`,
-        (value, { modifier }) => {
-          return modifier
-            ? `:merge(.group\\/${modifier})[data-${value}] &`
-            : `:merge(.group)[data-${value}] &`;
-        },
-        {
-          values: booleanAttributes,
-        }
-      );
-
-      matchVariant(
-        `peer-${variantPrefix}`,
-        (value, { modifier }) => {
-          return modifier
-            ? `:merge(.peer\\/${modifier})[data-${value}] ~ &`
-            : `:merge(.peer)[data-${value}] ~ &`;
-        },
-        {
-          values: booleanAttributes,
-        }
-      );
+      /* matchVariant( */
+      /*   `group-${variantPrefix}`, */
+      /*   (value, { modifier }) => { */
+      /*     return modifier */
+      /*       ? `:merge(.group\\/${modifier})[data-${value}] &` */
+      /*       : `:merge(.group)[data-${value}] &`; */
+      /*   }, */
+      /*   { */
+      /*     values: booleanAttributes, */
+      /*   } */
+      /* ); */
+      /**/
+      /* matchVariant( */
+      /*   `peer-${variantPrefix}`, */
+      /*   (value, { modifier }) => { */
+      /*     return modifier */
+      /*       ? `:merge(.peer\\/${modifier})[data-${value}] ~ &` */
+      /*       : `:merge(.peer)[data-${value}] ~ &`; */
+      /*   }, */
+      /*   { */
+      /*     values: booleanAttributes, */
+      /*   } */
+      /* ); */
 
       // Adds variants for value data attributes
       for (const [attributeName, attributeValues] of Object.entries({

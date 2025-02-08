@@ -29,10 +29,10 @@ const DemoCard = ({
     <section id={id} className="h-[550px] w-full scroll-mt-6 ">
       <div
         className={clsx(
-          "relative flex h-full w-full p-6 rounded-xl shadow",
-          // "bg-gradient-to-br from-pink-300 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
-          // "bg-gradient-to-br from-pink-400 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
-          "bg-gradient-to-br from-pink-300 via-fuchsia-200 to-purple-300 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
+          "relative flex h-full w-full p-6 rounded-xl shadow-sm",
+          // "bg-linear-to-br from-pink-300 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800"
+          // "bg-linear-to-br from-pink-400 via-fuchsia-300 to-purple-400 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
+          "bg-linear-to-br from-pink-300 via-fuchsia-200 to-purple-300 dark:from-pink-800 dark:via-fuchsia-900 dark:to-purple-800",
           {
             [Variant.Default]: "items-center justify-center",
             [Variant.ItemsCenter]: "items-center",
@@ -59,7 +59,7 @@ const DemoCard = ({
             href={link}
             rel={"noreferrer"}
             target={"_blank"}
-            className="select-none rounded bg-white/25 px-2 py-1.5 text-xs font-medium text-white hover:bg-white/30 dark:text-gray-100"
+            className="select-none rounded-sm bg-white/25 px-2 py-1.5 text-xs font-medium text-white hover:bg-white/30 dark:text-gray-100"
           >
             Code
           </a>

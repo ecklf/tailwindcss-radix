@@ -17,7 +17,7 @@ const Slider = () => {
       <SliderPrimitive.Thumb
         className={clsx(
           "block h-5 w-5 rounded-full bg-purple-600 dark:bg-white",
-          "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+          "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         )}
       />
     </SliderPrimitive.Root>

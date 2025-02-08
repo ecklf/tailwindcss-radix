@@ -44,7 +44,7 @@ const Avatar = ({
               "h-full w-full object-cover",
               {
                 [Variant.Circle]: "rounded-full",
-                [Variant.Rounded]: "rounded",
+                [Variant.Rounded]: "rounded-sm",
               }[variant]
             )}
           />
@@ -66,7 +66,7 @@ const Avatar = ({
               "flex h-full w-full items-center justify-center bg-white dark:bg-gray-800",
               {
                 [Variant.Circle]: "rounded-full",
-                [Variant.Rounded]: "rounded",
+                [Variant.Rounded]: "rounded-sm",
               }[variant]
             )}
             delayMs={600}

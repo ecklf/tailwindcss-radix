@@ -36,14 +36,14 @@ const Accordion = () => {
         <AccordionPrimitive.Item
           key={`accordion-header-${header}`}
           value={`item-${i + 1}`}
-          className="rounded-lg focus-within:ring focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-none w-full"
+          className="rounded-lg focus-within:ring-3 focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-hidden w-full"
         >
           <AccordionPrimitive.Header className="w-full">
             <AccordionPrimitive.Trigger
               className={clsx(
                 "group",
                 "radix-state-open:rounded-t-lg radix-state-closed:rounded-lg",
-                "focus:outline-none",
+                "focus:outline-hidden",
                 "inline-flex w-full items-center justify-between bg-white px-4 py-2 text-left dark:bg-gray-800"
               )}
             >

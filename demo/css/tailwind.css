@@ -1,50 +1,69 @@
-@import url("https://rsms.me/inter/inter.css");
+@import url('https://rsms.me/inter/inter.css') layer(base);
 
-@tailwind base;
+@import 'tailwindcss';
 
-:root {
-  @apply scroll-smooth font-display antialiased;
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-html {
-  @apply bg-white;
-  scrollbar-color: #00000080 transparent;
-  scrollbar-width: auto;
-}
+@layer base {
+  :root {
+    @apply scroll-smooth font-display antialiased;
+  }
 
-html[class*="dark"] {
-  @apply bg-gray-900;
-  scrollbar-color: #ffffffb3 transparent;
-  scrollbar-width: auto;
-}
+  html {
+    @apply bg-white;
+    scrollbar-color: #00000080 transparent;
+    scrollbar-width: auto;
+  }
 
-::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
+  html[class*='dark'] {
+    @apply bg-gray-900;
+    scrollbar-color: #ffffffb3 transparent;
+    scrollbar-width: auto;
+  }
 
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
 
-::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-black/50 dark:bg-white/70;
-}
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-black/60 dark:hover:bg-white/80;
-}
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-black/50 dark:bg-white/70;
+  }
 
-button {
-  /* Disables tap highlight color on Chrome */
-  -webkit-tap-highlight-color: transparent;
-}
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-black/60 dark:hover:bg-white/80;
+  }
 
-/* Input darkmode fix for checkbox / radio */
-.dark [type="checkbox"]:checked,
-.dark [type="radio"]:checked {
-  background-color: currentColor;
-}
+  button {
+    /* Disables tap highlight color on Chrome */
+    -webkit-tap-highlight-color: transparent;
+  }
 
-@tailwind components;
-@tailwind utilities;
+  /* Input darkmode fix for checkbox / radio */
+  .dark [type='checkbox']:checked,
+  .dark [type='radio']:checked {
+    background-color: currentColor;
+  }
+}
