@@ -50,9 +50,9 @@ const ThemeSwitcher = () => {
         <DropdownMenuPrimitive.Trigger
           className={clsx(
             "inline-flex select-none justify-center rounded-md px-2.5 py-2 text-sm font-medium",
-            "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 hover:dark:bg-gray-800",
+            "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-800",
             "border border-gray-300 dark:border-transparent",
-            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+            "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
           )}
         >
           {(() => {
@@ -89,7 +89,7 @@ const ThemeSwitcher = () => {
                 <DropdownMenuPrimitive.Item
                   key={`dropdown-theme-${label}`}
                   className={clsx(
-                    "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                    "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                     "text-gray-500 focus:bg-gray-200 dark:text-gray-400 dark:focus:bg-gray-700"
                   )}
                   onClick={() => {
@@ -104,7 +104,7 @@ const ThemeSwitcher = () => {
                   {React.cloneElement(icon, {
                     className: "w-5 h-5 mr-2 text-gray-700 dark:text-gray-300",
                   })}
-                  <span className="flex-grow text-gray-700 dark:text-gray-300">
+                  <span className="grow text-gray-700 dark:text-gray-300">
                     {label}
                   </span>
                 </DropdownMenuPrimitive.Item>

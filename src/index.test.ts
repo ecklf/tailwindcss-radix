@@ -40,18 +40,6 @@ it("should generate boolean data attribute variants", async () => {
     expect(result.css).toMatchInlineSnapshot(`
       ".radix-disabled\\:opacity-50[data-disabled] {
           opacity: 0.5
-      }
-      .group\\/named[data-disabled] .group-radix-disabled\\/named\\:cursor-not-allowed {
-          cursor: not-allowed
-      }
-      .group[data-disabled] .group-radix-disabled\\:cursor-not-allowed {
-          cursor: not-allowed
-      }
-      .peer\\/named[data-disabled] ~ .peer-radix-disabled\\/named\\:cursor-not-allowed {
-          cursor: not-allowed
-      }
-      .peer[data-disabled] ~ .peer-radix-disabled\\:cursor-not-allowed {
-          cursor: not-allowed
       }"
     `);
   });

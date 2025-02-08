@@ -1,23 +1,16 @@
 import plugin from "tailwindcss/plugin";
 
 interface Options {
-  variantPrefix?: string | boolean;
+  variantPrefix?: string;
 }
 
 export = plugin.withOptions<Options>(
   (options) =>
     ({ addUtilities, matchVariant }) => {
-      const ops = options
-        ? options
-        : {
-            variantPrefix: "radix",
-          };
-
-      const variantPrefix =
-        ops.variantPrefix === "" ||
-        (typeof ops.variantPrefix === "boolean" && ops.variantPrefix === false)
-          ? ""
-          : `${ops.variantPrefix}`;
+      const { variantPrefix } = {
+        variantPrefix: "radix",
+        ...options,
+      };
 
       // Adds variants for boolean data attributes
       const booleanAttributes = {
@@ -30,30 +23,6 @@ export = plugin.withOptions<Options>(
         variantPrefix,
         (value) => {
           return `&[data-${value}]`;
-        },
-        {
-          values: booleanAttributes,
-        }
-      );
-
-      matchVariant(
-        `group-${variantPrefix}`,
-        (value, { modifier }) => {
-          return modifier
-            ? `:merge(.group\\/${modifier})[data-${value}] &`
-            : `:merge(.group)[data-${value}] &`;
-        },
-        {
-          values: booleanAttributes,
-        }
-      );
-
-      matchVariant(
-        `peer-${variantPrefix}`,
-        (value, { modifier }) => {
-          return modifier
-            ? `:merge(.peer\\/${modifier})[data-${value}] ~ &`
-            : `:merge(.peer)[data-${value}] ~ &`;
         },
         {
           values: booleanAttributes,
@@ -92,30 +61,6 @@ export = plugin.withOptions<Options>(
           `${variantPrefix}-${attributeName}`,
           (value) => {
             return `&[data-${attributeName}="${value}"]`;
-          },
-          {
-            values,
-          }
-        );
-
-        matchVariant(
-          `group-${variantPrefix}-${attributeName}`,
-          (value, { modifier }) => {
-            return modifier
-              ? `:merge(.group\\/${modifier})[data-${attributeName}="${value}"] &`
-              : `:merge(.group)[data-${attributeName}="${value}"] &`;
-          },
-          {
-            values,
-          }
-        );
-
-        matchVariant(
-          `peer-${variantPrefix}-${attributeName}`,
-          (value, { modifier }) => {
-            return modifier
-              ? `:merge(.peer\\/${modifier})[data-${attributeName}="${value}"] ~ &`
-              : `:merge(.peer)[data-${attributeName}="${value}"] ~ &`;
           },
           {
             values,

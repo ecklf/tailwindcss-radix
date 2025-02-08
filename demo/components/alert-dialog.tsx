@@ -44,7 +44,7 @@ const AlertDialog = () => {
                 "w-[95vw] max-w-md rounded-lg p-4 md:w-full",
                 "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
                 "bg-white dark:bg-gray-800",
-                "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
               )}
             >
               <AlertDialogPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -58,9 +58,9 @@ const AlertDialog = () => {
                 <AlertDialogPrimitive.Cancel
                   className={clsx(
                     "inline-flex select-none justify-center rounded-md px-4 py-2 text-sm font-medium",
-                    "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-100 hover:dark:bg-gray-600",
+                    "bg-white text-gray-900 hover:bg-gray-50 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600",
                     "border border-gray-300 dark:border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
                   Cancel
@@ -70,7 +70,7 @@ const AlertDialog = () => {
                     "inline-flex select-none justify-center rounded-md px-4 py-2 text-sm font-medium",
                     "bg-purple-600 text-white hover:bg-purple-700 dark:bg-purple-700 dark:text-gray-100 dark:hover:bg-purple-600",
                     "border border-transparent",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                 >
                   Confirm

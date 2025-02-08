@@ -13,7 +13,7 @@
 
 <div align="center">
 
-<a href="https://tailwindcss.com">![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)</a>
+<a href="https://tailwindcss.com">![tailwindcss v4 ready](https://img.shields.io/badge/tailwindcss-v4%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)</a>
 <a href="https://www.npmjs.com/package/tailwindcss-radix">![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)</a>
 <a href="https://www.npmjs.com/package/tailwindcss-radix">![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)</a>
 
@@ -28,6 +28,9 @@ The main purpose of this library is adding classnames for accessing Radix data a
 ## Installation
 
 ```sh
+# For v3 compatibility
+pnpm add tailwindcss-radix@3
+# For v4 compatibility
 pnpm add tailwindcss-radix
 ```
 
@@ -37,7 +40,7 @@ Click on the banner to check out the demo components. You can find the code insi
 
 ## Usage
 
-Add the plugin to your plugins array:
+### Using the [config directive](https://tailwindcss.com/docs/functions-and-directives#config-directive):
 
 ```js
 module.exports = {
@@ -48,27 +51,34 @@ module.exports = {
     // --snip--
   },
   plugins: [
-    // Initialize with default values (see options below)
+    // Default prefix: `radix`
     require("tailwindcss-radix")(),
+    // Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
+    // require("tailwindcss-radix")({
+    //   variantPrefix: "rdx",
+    // }),
   ],
 };
 ```
 
-### Options
-
-```ts
-require("tailwindcss-radix")({
-  // Default: `radix`
-  variantPrefix: "rdx",
-});
+```css
+@config "../../tailwind.config.js";
 ```
 
-```ts
-// Example 1: Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
-variantPrefix: "rdx",
+### Using the [plugin directive](https://tailwindcss.com/docs/functions-and-directives#plugin-directive):
 
-// Example 2: Generates `[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
-variantPrefix: false,
+With defaults:
+```css
+/* Default prefix: `radix` */
+@plugin "tailwindcss-radix";
+```
+
+With custom prefix:
+```css
+/* Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"` */
+@plugin "tailwindcss-radix" {
+  variantPrefix: rdx;
+}
 ```
 
 ### Styling state
@@ -505,11 +515,10 @@ In case you use `content-available` utilities:
 </p>
 </details>
 
+## Migrate from v3
+
+- Support for disabled `variantPrefix` has been removed. Please use a prefix instead.
+
 ## License
 
 [MIT](LICENSE)
-
-<!-- [<img src="https://raw.githubusercontent.com/ecklf/tailwindcss-radix/main/demo/public/static/og.png" width="967">](https://tailwindcss-radix.vercel.app)
-[![tailwindcss v3 ready](https://img.shields.io/badge/tailwindcss-v3%20ready-0F172A?logo=tailwindcss&style=flat&labelColor=38bdf8&logoColor=ffffff)](https://tailwindcss.com)
-[![npm version](https://img.shields.io/npm/v/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix)
-[![npm downloads](https://img.shields.io/npm/dm/tailwindcss-radix.svg)](https://www.npmjs.com/package/tailwindcss-radix) -->

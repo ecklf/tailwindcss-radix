@@ -70,7 +70,7 @@ const Popover = () => {
                       "block w-1/2 rounded-md",
                       "text-xs text-gray-700 placeholder:text-gray-500 dark:text-gray-400 dark:placeholder:text-gray-600",
                       "border border-gray-400 focus-visible:border-transparent dark:border-gray-700 dark:bg-gray-800",
-                      "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                      "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                     )}
                   />
                 </fieldset>
@@ -81,7 +81,7 @@ const Popover = () => {
           <PopoverPrimitive.Close
             className={clsx(
               "absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1",
-              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+              "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             <Cross1Icon className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />

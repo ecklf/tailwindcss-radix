@@ -12,7 +12,7 @@ const NavigationMenu = () => {
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium",
               "text-gray-700 dark:text-gray-100",
-              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+              "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             Overview
@@ -47,7 +47,7 @@ const NavigationMenu = () => {
             className={clsx(
               "px-3 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-900",
               "text-sm font-medium text-gray-700 dark:text-gray-100",
-              "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+              "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
             )}
           >
             Resources
@@ -67,7 +67,7 @@ const NavigationMenu = () => {
                 <NavigationMenuPrimitive.Link
                   className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://tailwindcss.com"
                 >
@@ -84,7 +84,7 @@ const NavigationMenu = () => {
                 <NavigationMenuPrimitive.Link
                   className={clsx(
                     "w-full px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-900 rounded-md",
-                    "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
+                    "focus:outline-hidden focus-visible:ring-3 focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
                   )}
                   href="https://www.radix-ui.com"
                 >

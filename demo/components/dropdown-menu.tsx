@@ -94,12 +94,12 @@ const DropdownMenu = () => {
               <DropdownMenuPrimitive.Item
                 key={`dropdown-item-${label}`}
                 className={clsx(
-                  "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                  "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 {icon}
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
+                <span className="grow text-gray-700 dark:text-gray-300">
                   {label}
                 </span>
                 {shortcut && <span className="text-xs">{shortcut}</span>}
@@ -116,7 +116,7 @@ const DropdownMenu = () => {
                 }
               }}
               className={clsx(
-                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
@@ -125,7 +125,7 @@ const DropdownMenu = () => {
               ) : (
                 <TransparencyGridIcon className="mr-2 h-3.5 w-3.5 text-gray-700 dark:text-gray-300" />
               )}
-              <span className="flex-grow text-gray-700 dark:text-gray-300">
+              <span className="grow text-gray-700 dark:text-gray-300">
                 Show Grid
               </span>
               <DropdownMenuPrimitive.ItemIndicator>
@@ -141,7 +141,7 @@ const DropdownMenu = () => {
                 }
               }}
               className={clsx(
-                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                 "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
               )}
             >
@@ -150,7 +150,7 @@ const DropdownMenu = () => {
               ) : (
                 <EyeClosedIcon className="mr-2 h-3.5 w-3.5" />
               )}
-              <span className="flex-grow text-gray-700 dark:text-gray-300">
+              <span className="grow text-gray-700 dark:text-gray-300">
                 Show UI
               </span>
               <DropdownMenuPrimitive.ItemIndicator>
@@ -168,12 +168,12 @@ const DropdownMenu = () => {
               <DropdownMenuPrimitive.Item
                 key={`region-tool-menu-item-${label}`}
                 className={clsx(
-                  "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                  "flex cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 {icon}
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
+                <span className="grow text-gray-700 dark:text-gray-300">
                   {label}
                 </span>
                 {shortcut && <span className="text-xs">{shortcut}</span>}
@@ -185,12 +185,12 @@ const DropdownMenu = () => {
             <DropdownMenuPrimitive.Sub>
               <DropdownMenuPrimitive.SubTrigger
                 className={clsx(
-                  "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none",
+                  "flex w-full cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden",
                   "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                 )}
               >
                 <Link2Icon className="mr-2 h-3.5 w-3.5" />
-                <span className="flex-grow text-gray-700 dark:text-gray-300">
+                <span className="grow text-gray-700 dark:text-gray-300">
                   Share
                 </span>
                 <CaretRightIcon className="h-3.5 w-3.5" />
@@ -207,7 +207,7 @@ const DropdownMenu = () => {
                     <DropdownMenuPrimitive.Item
                       key={`${name}-${url}`}
                       className={clsx(
-                        "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-none md:w-32",
+                        "flex w-28 cursor-default select-none items-center rounded-md px-2 py-2 text-xs outline-hidden md:w-32",
                         "text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900"
                       )}
                     >

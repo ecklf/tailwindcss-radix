@@ -195,17 +195,5 @@ exports[`should generate tooltip transform utilities 1`] = `
 exports[`should generate value data attribute variants 1`] = `
 ".radix-state-open\\:opacity-50[data-state="open"] {
     opacity: 0.5
-}
-.group\\/named[data-state="open"] .group-radix-state-open\\/named\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.group[data-state="open"] .group-radix-state-open\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer\\/named[data-state="open"] ~ .peer-radix-state-open\\/named\\:cursor-not-allowed {
-    cursor: not-allowed
-}
-.peer[data-state="open"] ~ .peer-radix-state-open\\:cursor-not-allowed {
-    cursor: not-allowed
 }"
 `;
