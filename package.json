@@ -1,5 +1,4 @@
 {
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a",
   "name": "tailwindcss-radix",
   "version": "4.0.0",
   "description": "Utilities and variants for styling Radix state",
@@ -32,18 +31,18 @@
   },
   "homepage": "https://github.com/ecklf/tailwindcss-radix#readme",
   "peerDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.0 || ^4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@types/node": "^20.11.30",
-    "husky": "^9.0.11",
-    "postcss": "^8.4.38",
-    "release-it": "^17.1.1",
-    "rimraf": "^5.0.5",
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.13.1",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.1",
+    "release-it": "^18.1.2",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.3",
-    "vitest": "^1.4.0"
+    "vitest": "^3.0.5"
   },
   "release-it": {
     "git": {
@@ -56,6 +55,7 @@
     }
   },
   "engines": {
-    "pnpm": "9"
-  }
+    "node": "^20"
+  },
+  "packageManager": "pnpm@9.4.0"
 }
