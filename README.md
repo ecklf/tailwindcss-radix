@@ -40,45 +40,51 @@ Click on the banner to check out the demo components. You can find the code insi
 
 ## Usage
 
-### Using the [config directive](https://tailwindcss.com/docs/functions-and-directives#config-directive):
+### With [plugin directive](https://tailwindcss.com/docs/functions-and-directives#plugin-directive) (recommended)
 
-```js
-module.exports = {
-  theme: {
-    // --snip--
-  },
-  variants: {
-    // --snip--
-  },
-  plugins: [
-    // Default prefix: `radix`
-    require("tailwindcss-radix")(),
-    // Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
-    // require("tailwindcss-radix")({
-    //   variantPrefix: "rdx",
-    // }),
-  ],
-};
-```
-
+**Default prefix**
 ```css
-@config "../../tailwind.config.js";
-```
-
-### Using the [plugin directive](https://tailwindcss.com/docs/functions-and-directives#plugin-directive):
-
-With defaults:
-```css
-/* Default prefix: `radix` */
+/* Generates `radix-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"` */
 @plugin "tailwindcss-radix";
 ```
 
-With custom prefix:
+**Custom prefix**
 ```css
 /* Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"` */
 @plugin "tailwindcss-radix" {
   variantPrefix: rdx;
 }
+```
+
+### With [config directive](https://tailwindcss.com/docs/functions-and-directives#config-directive)
+
+**Default prefix**
+```js
+module.exports = {
+  // --snip --
+  plugins: [
+    // Generates `radix-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
+    require("tailwindcss-radix")(),
+  ],
+};
+```
+
+**Custom prefix**
+```js
+module.exports = {
+  // --snip --
+  plugins: [
+    // Generates `rdx-[state/side/orientation]-*` utilities for `data-[state/side/orientation]="*"`
+    require("tailwindcss-radix")({
+      variantPrefix: "rdx",
+    }),
+  ],
+};
+```
+
+**Load configuration**
+```css
+@config "../../tailwind.config.js";
 ```
 
 ### Styling state
