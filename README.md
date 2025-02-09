@@ -40,7 +40,7 @@ Click on the banner to check out the demo components. You can find the code insi
 
 ## Usage
 
-### With [plugin directive](https://tailwindcss.com/docs/functions-and-directives#plugin-directive) (recommended)
+### With [@plugin directive](https://tailwindcss.com/docs/functions-and-directives#plugin-directive) (recommended)
 
 **Default prefix**
 ```css
@@ -56,7 +56,7 @@ Click on the banner to check out the demo components. You can find the code insi
 }
 ```
 
-### With [config directive](https://tailwindcss.com/docs/functions-and-directives#config-directive)
+### With [@config directive](https://tailwindcss.com/docs/functions-and-directives#config-directive)
 
 **Default prefix**
 ```js
