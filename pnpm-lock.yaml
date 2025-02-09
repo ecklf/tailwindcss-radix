@@ -22,7 +22,7 @@ importers:
         version: 8.5.1
       release-it:
         specifier: ^18.1.2
-        version: 18.1.2(@types/node@22.13.1)(typescript@5.4.3)
+        version: 18.1.2(@types/node@22.13.1)(typescript@5.7.3)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -30,8 +30,8 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1
       typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
+        specifier: ^5.7.3
+        version: 5.7.3
       vitest:
         specifier: ^3.0.5
         version: 3.0.5(@types/node@22.13.1)(jiti@2.4.2)
@@ -1807,8 +1807,8 @@ packages:
     resolution: {integrity: sha512-Qcg88ZJsJvRcUijtD6supagRSDf0y1FPZh4NroJpwRkoPYj6gGNidREwTgDuC0Pmq0PVAAzL8C8BZW7xhx5Q4A==}
     engines: {node: '>=16'}
 
-  typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2602,14 +2602,14 @@ snapshots:
       graceful-fs: 4.2.11
       xdg-basedir: 5.1.0
 
-  cosmiconfig@9.0.0(typescript@5.4.3):
+  cosmiconfig@9.0.0(typescript@5.7.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.4.3
+      typescript: 5.7.3
 
   cross-spawn@7.0.3:
     dependencies:
@@ -3377,14 +3377,14 @@ snapshots:
     dependencies:
       rc: 1.2.8
 
-  release-it@18.1.2(@types/node@22.13.1)(typescript@5.4.3):
+  release-it@18.1.2(@types/node@22.13.1)(typescript@5.7.3):
     dependencies:
       '@iarna/toml': 2.2.5
       '@octokit/rest': 21.0.2
       async-retry: 1.3.3
       chalk: 5.4.1
       ci-info: 4.1.0
-      cosmiconfig: 9.0.0(typescript@5.4.3)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       execa: 9.5.2
       git-url-parse: 16.0.0
       globby: 14.0.2
@@ -3637,7 +3637,7 @@ snapshots:
 
   type-fest@4.34.0: {}
 
-  typescript@5.4.3: {}
+  typescript@5.7.3: {}
 
   undici-types@6.20.0: {}
 
