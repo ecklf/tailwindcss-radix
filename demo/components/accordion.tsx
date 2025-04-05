@@ -58,8 +58,19 @@ const Accordion = () => {
               />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
-          <AccordionPrimitive.Content className="pt-1 w-full rounded-b-lg bg-white px-4 pb-3 dark:bg-gray-800">
-            <div className="text-sm text-gray-700 dark:text-gray-400">
+          <AccordionPrimitive.Content
+            className={clsx(
+              "overflow-hidden",
+              "radix-state-open:animate-accordion-slide-down radix-state-closed:animate-accordion-slide-up",
+              "rounded-b-lg bg-white dark:bg-gray-800"
+            )}
+          >
+            <div
+              className={clsx(
+                "pt-1 px-4 pb-3 bg-white dark:bg-gray-800",
+                "text-sm text-gray-700 dark:text-gray-400"
+              )}
+            >
               {content}
             </div>
           </AccordionPrimitive.Content>
