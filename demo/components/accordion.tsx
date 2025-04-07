@@ -36,13 +36,12 @@ const Accordion = () => {
         <AccordionPrimitive.Item
           key={`accordion-header-${header}`}
           value={`item-${i + 1}`}
-          className="rounded-lg focus-within:ring-3 focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-hidden w-full"
+          className="overflow-hidden rounded-lg focus-within:ring-3 focus-within:ring-purple-500 focus-within:ring-opacity-75 focus:outline-hidden w-full"
         >
           <AccordionPrimitive.Header className="w-full">
             <AccordionPrimitive.Trigger
               className={clsx(
                 "group",
-                "radix-state-open:rounded-t-lg radix-state-closed:rounded-lg",
                 "focus:outline-hidden",
                 "inline-flex w-full items-center justify-between bg-white px-4 py-2 text-left dark:bg-gray-800"
               )}
@@ -60,9 +59,8 @@ const Accordion = () => {
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content
             className={clsx(
-              "overflow-hidden",
               "radix-state-open:animate-accordion-slide-down radix-state-closed:animate-accordion-slide-up",
-              "rounded-b-lg bg-white dark:bg-gray-800"
+              "bg-white dark:bg-gray-800"
             )}
           >
             <div
