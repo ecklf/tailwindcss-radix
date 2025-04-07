@@ -5,22 +5,52 @@
 @config '../tailwind.config.js';
 
 @theme {
-  --animate-accordion-slide-down: accordion-slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  --animate-accordion-slide-down: accordion-slide-down 300ms
+    cubic-bezier(0.87, 0, 0.13, 1);
 
   @keyframes accordion-slide-down {
-    0% { height: 0; }
+    0% {
+      height: 0;
+    }
     100% {
       height: var(--radix-accordion-content-height);
     }
   }
 
-  --animate-accordion-slide-up: accordion-slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  --animate-accordion-slide-up: accordion-slide-up 300ms
+    cubic-bezier(0.87, 0, 0.13, 1);
 
   @keyframes accordion-slide-up {
     0% {
       height: var(--radix-accordion-content-height);
     }
-    100% { height: 0; }
+    100% {
+      height: 0;
+    }
+  }
+
+  --animate-collapsible-slide-down: collapsible-slide-down 300ms
+    cubic-bezier(0.87, 0, 0.13, 1);
+
+  @keyframes collapsible-slide-down {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+
+  --animate-collapsible-slide-up: collapsible-slide-up 300ms
+    cubic-bezier(0.87, 0, 0.13, 1);
+
+  @keyframes collapsible-slide-up {
+    0% {
+      height: var(--radix-collapsible-content-height);
+    }
+    100% {
+      height: 0;
+    }
   }
 }
 
